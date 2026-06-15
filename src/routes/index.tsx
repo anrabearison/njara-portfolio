@@ -561,8 +561,13 @@ function Experience() {
               <li key={i} className="relative md:grid md:grid-cols-2 md:gap-12">
                 <Reveal
                   delay={60}
-                  className={`md:${i % 2 === 0 ? "col-start-1 pr-8 text-right" : "col-start-2 pl-8"}`}
+                  className={
+                    i % 2 === 0
+                      ? "md:col-start-1 md:pr-8 md:text-right"
+                      : "md:col-start-2 md:pl-8"
+                  }
                 >
+
                   <div className="relative ml-12 md:ml-0">
                     <span
                       aria-hidden
