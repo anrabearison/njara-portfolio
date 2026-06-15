@@ -724,13 +724,22 @@ function Contact() {
                   <Github className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/rabearison-njara-12114a90/"
                   target="_blank"
                   rel="noreferrer"
                   className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.02] text-muted-foreground transition-colors hover:border-[#00D4FF]/40 hover:text-[#00D4FF]"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://wa.me/261347437044"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.02] text-muted-foreground transition-colors hover:border-[#00D4FF]/40 hover:text-[#00D4FF]"
+                  aria-label="WhatsApp"
+                >
+                  <MessageCircle className="h-5 w-5" />
                 </a>
               </div>
             </Reveal>
