@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   Github,
   Linkedin,
+  MessageCircle,
   Mail,
   MapPin,
   Phone,
