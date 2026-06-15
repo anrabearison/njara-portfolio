@@ -409,7 +409,7 @@ const SKILL_GROUPS = [
   {
     title: "AI & Productivity",
     icon: Sparkles,
-    items: ["Cursor", "GitHub Copilot", "AI-assisted development"],
+    items: ["Cursor", "GitHub Copilot", "Antigravity", "AI-assisted development"],
   },
   {
     title: "Databases",
@@ -419,7 +419,7 @@ const SKILL_GROUPS = [
   {
     title: "DevOps & Tools",
     icon: Wrench,
-    items: ["Docker", "Git", "Jenkins", "GitLab CI/CD", "Postman", "Antigravity"],
+    items: ["Docker", "Git", "Jenkins", "GitLab CI/CD", "Postman"],
   },
   {
     title: "Methodologies",
