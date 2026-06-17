@@ -993,6 +993,7 @@ function Portfolio() {
         <About />
         <Skills />
         <Experience />
+        <Projects />
         <Education />
         <Contact />
       </main>
