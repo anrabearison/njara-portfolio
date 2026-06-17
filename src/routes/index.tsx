@@ -498,7 +498,8 @@ const PROJECTS = [
     description: "Conception et développement d'APIs transactionnelles robustes et modulaires pour le leader de la carte cadeau multi-enseignes (E-commerce et Retail).",
     metrics: "Architecture conçue pour supporter des pics à 100k+ requêtes/jour pendant les fêtes de fin d'année sans perte d'intégrité financière.",
     tags: ["Node.js", "Express", "REST API", "Database Security", "High Load"],
-    link: "https://www.illicado.fr/",
+    link: "https://illicado.com",
+    fallbackLink: "https://www.linkedin.com/company/illicado/",
   },
   {
     title: "Trade-Pilot Scraping Engine",
