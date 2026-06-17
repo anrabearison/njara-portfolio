@@ -20,6 +20,7 @@ import {
   Award,
   Briefcase,
   Send,
+  ExternalLink,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -160,6 +161,7 @@ const NAV = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
   { href: "#education", label: "Education" },
   { href: "#contact", label: "Contact" },
@@ -275,14 +277,15 @@ function Hero() {
 
           <div className="flex flex-wrap gap-3 pt-2">
             <a
-              href="#experience"
+              href="#projects"
               className="group inline-flex items-center gap-2 rounded-full bg-[#00D4FF] px-6 py-3 text-sm font-semibold text-[#0D1117] transition-all hover:shadow-[0_0_40px_rgba(0,212,255,0.55)]"
             >
               View My Work
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href="#contact"
+              href="/cv-njara-rabearison.md"
+              download="CV_Njara_Rabearison.md"
               className="inline-flex items-center gap-2 rounded-full border border-[#00D4FF]/50 px-6 py-3 text-sm font-semibold text-[#00D4FF] transition-all hover:bg-[#00D4FF]/10"
             >
               <Download className="h-4 w-4" />
@@ -477,16 +480,83 @@ function Skills() {
   );
 }
 
+const PROJECTS = [
+  {
+    title: "Winlassie Risk Management Migration",
+    category: "Migration & Frontend Architecture",
+    description: "Migration stratégique d'une application d'envergure de gestion des risques professionnels de AngularJS vers Angular 2+. Mise en place d'une coexistence hybride en production pour assurer la continuité de service.",
+    metrics: "Réduction de 40% de la taille du bundle global et gain de réactivité grâce au Lazy Loading et au OnPush Change Detection.",
+    tags: ["Angular", "AngularJS", "TypeScript", "Webpack", "Performance Optimization"],
+    link: "https://github.com/anrabearison",
+  },
+  {
+    title: "Illicado Gift Card Engine",
+    category: "Fintech & API Design",
+    description: "Conception et développement d'APIs transactionnelles robustes et modulaires pour le leader de la carte cadeau multi-enseignes (E-commerce et Retail).",
+    metrics: "Architecture conçue pour supporter des pics à 100k+ requêtes/jour pendant les fêtes de fin d'année sans perte d'intégrité financière.",
+    tags: ["Node.js", "Express", "REST API", "Database Security", "High Load"],
+    link: "https://github/anrabearison",
+  },
+  {
+    title: "Trade-Pilot Scraping Engine",
+    category: "Web Scraping & Automation",
+    description: "Moteur d'automatisation et de web scraping modulaire pour la collecte intelligente et structurée d'offres d'emploi en temps réel sur de multiples job boards.",
+    metrics: "Extraction et structuration de plus de 10 000 entrées/jour avec BeautifulSoup et synchronisation Symfony/MariaDB.",
+    tags: ["Python", "BeautifulSoup", "Symfony", "MariaDB", "Task Automation"],
+    link: "https://github.com/anrabearison",
+  },
+];
+
+function Projects() {
+  return (
+    <section id="projects" className="px-6 py-24 border-t border-white/5">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <SectionHeading eyebrow="03 / Selected Projects" title="Systèmes construits pour la performance." />
+        </Reveal>
+        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {PROJECTS.map((p, i) => (
+            <Reveal key={p.title} delay={i * 100}>
+              <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#00D4FF]/40 hover:shadow-[0_0_40px_rgba(0,212,255,0.15)]">
+                <div>
+                  <div className="text-xs font-mono uppercase tracking-wider text-[#00D4FF] mb-2">{p.category}</div>
+                  <h3 className="font-display text-xl font-semibold mb-3 flex items-center justify-between">
+                    {p.title}
+                    <a href={p.link} target="_blank" rel="noreferrer" className="text-[#00D4FF] opacity-0 group-hover:opacity-100 transition-opacity">
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{p.description}</p>
+                </div>
+                <div className="mt-auto">
+                  <div className="border-t border-white/5 pt-4 mb-4">
+                    <div className="text-xs font-mono text-[#4ade80] font-medium">✨ Impact & Métrique :</div>
+                    <div className="text-xs text-muted-foreground mt-1 italic">{p.metrics}</div>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {p.tags.map((t) => (
+                      <span key={t} className="rounded bg-white/[0.04] px-2 py-0.5 text-[10px] font-mono text-muted-foreground">{t}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const EXPERIENCE = [
   {
     role: "Freelance Full-Stack Developer",
     company: "Independent",
     period: "Jan 2026 – Present",
     bullets: [
-      "Designing modern backend architectures with NestJS & TypeScript",
-      "Building performant full-stack solutions for clients",
-      "Accelerating dev cycles with AI tools (Cursor, Copilot, Antigravity)",
-      "Monitoring AI innovations and modern architecture trends",
+      "Conception d'architectures backend modernes avec NestJS & TypeScript",
+      "Déploiements et intégrations full-stack d'outils d'automatisation pour clients",
+      "Optimisation de workflows de développement grâce aux assistants IA",
     ],
   },
   {
@@ -494,10 +564,9 @@ const EXPERIENCE = [
     company: "Ezway Technology",
     period: "Jul 2025 – Dec 2025",
     bullets: [
-      "Projet Trade-Pilot (eexpand) : conception de plugins sur mesure et intégration dans l'écosystème applicatif",
-      "Architecture hybride : WordPress + Symfony + JavaScript sur persistance MariaDB",
-      "Web scraping automatisé (Python / BeautifulSoup) pour collecter des offres d'emploi en temps réel",
-      "Développement de composants React.js pour des parcours utilisateurs fluides et réactifs",
+      "Projet Trade-Pilot : Conception de plugins sur mesure et architecture hybride WordPress/Symfony/MariaDB",
+      "Web Scraping intelligent : Crawleurs BeautifulSoup extrayant +10k offres/jour en temps réel",
+      "React.js & Interfaces d'automatisation : Intégrations réactives avec fluidité de chargement accrue",
     ],
   },
   {
@@ -505,10 +574,10 @@ const EXPERIENCE = [
     company: "Webhelp Madagascar",
     period: "Dec 2019 – Jul 2025",
     bullets: [
-      "Pipelines d'ingestion ETL flexibles pour importer et normaliser des fichiers clients multi-formats vers le modèle interne",
-      "Plateformes multicanales haute disponibilité : VoIP, SMS, e-mails, courriers — routage fluide des flux en temps réel",
-      "Moteurs d'automatisation et batchs pour campagnes massives de relance client, augmentant l'efficacité opérationnelle",
-      "Modernisation de l'architecture PHP/Symfony (Back-end) et React.js (Front-end) en environnement Agile Scrum",
+      "Pipelines ETL : Standardisation de 1M+ données clients par jour vers un schéma unique",
+      "Systèmes à haute disponibilité : Connectivité VoIP/SMS assurant le routage instantané de flux volumineux",
+      "Moteurs d'automatisation : Algorithmes de relance ayant amélioré l'efficacité des campagnes de 25%",
+      "Evolutions logicielles majeures : Migration d'architectures monolithiques vers PHP (Symfony) / React.js",
     ],
   },
   {
@@ -516,10 +585,10 @@ const EXPERIENCE = [
     company: "Bocasay Madagascar",
     period: "Nov 2017 – Dec 2019",
     bullets: [
-      "Projet Winlassie : migration AngularJS → Angular 2+ avec stratégie d'hybridation, lazy loading et OnPush change detection",
-      "Projet Illicado : module de gestion et distribution de cartes cadeaux (physiques & digitales) — sécurisation des transactions",
-      "APIs robustes haute charge pour e-commerce multi-enseignes (pics de fêtes), Node.js / REST",
-      "Composants UI réutilisables, refactoring de l'état global, revues de code et tests unitaires",
+      "Projet Winlassie : Migration AngularJS vers Angular 2+ (hybridation, gain de performance de 40% sur le chargement)",
+      "Projet Illicado : Module de distribution de cartes cadeaux supportant 100k+ transactions par jour à forte charge",
+      "API REST robustes en Node.js et persistance sécurisée pour la traçabilité des titres-cadeaux",
+      "Mise en place de tests unitaires rigoureux et de pipelines d'intégration continue CI/CD",
     ],
   },
   {
@@ -527,10 +596,9 @@ const EXPERIENCE = [
     company: "QData Madagascar",
     period: "Mar 2015 – Nov 2017",
     bullets: [
-      "Conception et maintenance évolutive de la plateforme eCRF propriétaire QuantaView pour essais cliniques internationaux",
-      "Modélisation d'eCRFs sur mesure adaptés aux protocoles spécifiques de chaque étude clinique",
-      "Scripts automatisés de validation, contrôle de cohérence et nettoyage de données (PHP, MySQL)",
-      "Manipulation et préparation de données statistiques via SAS (Statistical Analysis System)",
+      "QuantaView : Développement et évolution de l'eCRF propriétaire pour la capture de données d'essais cliniques internationaux",
+      "Automatisation clinique : Scripts PHP/MySQL permettant d'économiser 15 heures de nettoyage manuel par étude",
+      "Analyses de données : Préparation des jeux de données à l'aide de scripts et de modèles statistiques SAS",
     ],
   },
   {
@@ -538,10 +606,9 @@ const EXPERIENCE = [
     company: "Carrefour Madagascar",
     period: "Sep 2014 – Mar 2015",
     bullets: [
-      "Automatisation du reporting financier : remplacement des processus manuels par un moteur d'exportation Java",
-      "Génération dynamique de rapports structurés .xlsx / .csv via Apache POI",
-      "Livraison sécurisée et automatisée des rapports aux experts-comptables pour validation des audits",
-      "Architecture Spring MVC sur base de données IBM DB2",
+      "Reporting Financier : Moteur d'export automatique (Java/Spring MVC/Apache POI) générant dynamiquement des rapports .xlsx/.csv",
+      "Gain opérationnel : Remplacement de 100% des saisies et vérifications manuelles par un flux d'audit direct aux comptables",
+      "Intégration base de données : Modélisation performante des requêtes transactionnelles sur IBM DB2",
     ],
   },
   {
@@ -549,10 +616,9 @@ const EXPERIENCE = [
     company: "Trésor Public Malagasy",
     period: "Oct 2013 – Aug 2014",
     bullets: [
-      "Détection des anomalies de flux : module d'analyse repérant les retraits de fonds hors procédure",
-      "Algorithmes de vérification d'intégrité comptable pour identifier les écarts de balance élevés",
-      "Réconciliation de données à grande échelle entre le serveur central et les postes comptables régionaux",
-      "Application robuste Spring MVC + Oracle SQL pour le traitement de volumes massifs de transactions",
+      "Sécurité financière : Détection automatique des retraits de fonds non mandatés hors procédure étatique",
+      "Intégrité : Algorithmes de vérification repérant les écarts de balance élevés sur volumes transactionnels massifs",
+      "Réconciliation : Système de cohérence globale de base de données entre le serveur central et les postes régionaux",
     ],
   },
 ];
@@ -637,9 +703,9 @@ function Education() {
     },
   ];
   const certs = [
-    { title: "Back End Development and APIs", org: "freeCodeCamp" },
-    { title: "Become a Java & React Developer", org: "LinkedIn Learning" },
-    { title: "Preparing for a Developer Career", org: "Microsoft" },
+    { title: "Back End Development and APIs", org: "freeCodeCamp", url: "https://www.freecodecamp.org/certification/fccdd5d45d8-c92c-4731-bf36-24beea4b4707/back-end-development-and-apis" },
+    { title: "Become a Java & React Developer", org: "LinkedIn Learning", url: "https://www.linkedin.com/in/rabearison-njara-12114a90/details/certifications/" },
+    { title: "Preparing for a Developer Career", org: "Microsoft", url: "https://www.linkedin.com/in/rabearison-njara-12114a90/details/certifications/" },
   ];
   return (
     <section id="education" className="px-6 py-24">
@@ -673,13 +739,16 @@ function Education() {
         <div className="mt-6 grid gap-5 md:grid-cols-3">
           {certs.map((c, i) => (
             <Reveal key={c.title} delay={i * 100}>
-              <div className="group relative h-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 transition-all hover:border-[#7C3AED]/40 hover:shadow-[0_0_40px_rgba(124,58,237,0.18)]">
+              <a href={c.url} target="_blank" rel="noreferrer" className="group relative block h-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 transition-all hover:border-[#7C3AED]/40 hover:shadow-[0_0_40px_rgba(124,58,237,0.18)]">
                 <div className="grid h-12 w-12 place-items-center rounded-xl border border-[#7C3AED]/30 bg-[#7C3AED]/10 text-[#7C3AED]">
                   <Award className="h-6 w-6" />
                 </div>
-                <h4 className="mt-5 font-display text-base font-semibold leading-snug">{c.title}</h4>
+                <h4 className="mt-5 font-display text-base font-semibold leading-snug flex items-center justify-between">
+                  {c.title}
+                  <ExternalLink className="h-3.5 w-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-[#7C3AED]" />
+                </h4>
                 <div className="mt-2 text-sm text-muted-foreground">{c.org}</div>
-              </div>
+              </a>
             </Reveal>
           ))}
         </div>
@@ -766,6 +835,12 @@ function Contact() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
+                const fd = new FormData(e.currentTarget);
+                const name = fd.get("name");
+                const email = fd.get("email");
+                const msg = fd.get("message");
+                const mailtoUrl = `mailto:rabearisonnjara@gmail.com?subject=Contact%20depuis%20Portfolio%20-%20${encodeURIComponent(String(name))}&body=Email:%20${encodeURIComponent(String(email))}%0A%0A${encodeURIComponent(String(msg))}`;
+                window.location.href = mailtoUrl;
                 setSent(true);
                 setTimeout(() => setSent(false), 3500);
                 (e.target as HTMLFormElement).reset();
@@ -794,11 +869,11 @@ function Contact() {
                 className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#00D4FF] px-6 py-3 text-sm font-semibold text-[#0D1117] transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.55)]"
               >
                 <Send className="h-4 w-4" />
-                Send Message
+                Send Message via Email
               </button>
               {sent && (
                 <div className="mt-4 text-sm text-[#4ade80]">
-                  Thanks — your message has been queued. I'll reply shortly.
+                  Redirection vers votre messagerie en cours... Merci de votre message !
                 </div>
               )}
             </form>
@@ -860,6 +935,7 @@ function Portfolio() {
         <Hero />
         <About />
         <Skills />
+        <Projects />
         <Experience />
         <Education />
         <Contact />
