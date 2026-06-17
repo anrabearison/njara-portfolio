@@ -516,12 +516,13 @@ const PROJECTS = [
 
 function Projects() {
   return (
-    <section id="projects" className="px-6 py-24 border-t border-white/5">
+    <section id="projects" className="px-4 py-20 sm:px-6 sm:py-24 border-t border-white/5">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeading eyebrow="03 / Selected Projects" title="Systèmes construits pour la performance." />
         </Reveal>
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:mt-12 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+
           {PROJECTS.map((p, i) => (
             <Reveal key={p.title} delay={i * 100}>
               <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#00D4FF]/40 hover:shadow-[0_0_40px_rgba(0,212,255,0.15)]">
