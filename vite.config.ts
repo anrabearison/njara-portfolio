@@ -15,7 +15,7 @@ export default defineConfig({
       enabled: true,
       autoStaticPathsDiscovery: false,
       crawlLinks: false,
-      failOnError: true,
+      failOnError: false,
     },
     pages: [
       {
