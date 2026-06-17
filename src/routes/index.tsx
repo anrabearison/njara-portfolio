@@ -528,8 +528,8 @@ function Projects() {
               <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#00D4FF]/40 hover:shadow-[0_0_40px_rgba(0,212,255,0.15)]">
                 <div>
                   <div className="text-xs font-mono uppercase tracking-wider text-[#00D4FF] mb-2">{p.category}</div>
-                  <h3 className="font-display text-xl font-semibold mb-3 flex items-center justify-between">
-                    {p.title}
+                  <h3 className="font-display text-lg sm:text-xl font-semibold mb-3 flex items-start justify-between gap-3">
+                    <span className="min-w-0 break-words">{p.title}</span>
                     <a
                       href={p.link}
                       target="_blank"
@@ -552,11 +552,12 @@ function Projects() {
                         img.src = `${origin}/favicon.ico?_=${Date.now()}`;
                         setTimeout(() => finish(fallback), 2500);
                       } : undefined}
-                      className="text-[#00D4FF] opacity-0 group-hover:opacity-100 transition-opacity"
+                      className="shrink-0 text-[#00D4FF] opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity mt-1"
                     >
                       <ExternalLink className="h-4 w-4" />
                     </a>
                   </h3>
+
                   <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{p.description}</p>
                 </div>
                 <div className="mt-auto">
