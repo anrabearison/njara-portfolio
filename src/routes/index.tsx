@@ -490,7 +490,7 @@ const PROJECTS = [
     description: "Migration stratégique d'une application d'envergure de gestion des risques professionnels de AngularJS vers Angular 2+. Mise en place d'une coexistence hybride en production pour assurer la continuité de service.",
     metrics: "Réduction de 40% de la taille du bundle global et gain de réactivité grâce au Lazy Loading et au OnPush Change Detection.",
     tags: ["Angular", "AngularJS", "TypeScript", "Webpack", "Performance Optimization"],
-    link: "https://github.com/anrabearison",
+    link: "https://www.winlassie.com/",
   },
   {
     title: "Illicado Gift Card Engine",
@@ -498,7 +498,7 @@ const PROJECTS = [
     description: "Conception et développement d'APIs transactionnelles robustes et modulaires pour le leader de la carte cadeau multi-enseignes (E-commerce et Retail).",
     metrics: "Architecture conçue pour supporter des pics à 100k+ requêtes/jour pendant les fêtes de fin d'année sans perte d'intégrité financière.",
     tags: ["Node.js", "Express", "REST API", "Database Security", "High Load"],
-    link: "https://github/anrabearison",
+    link: "https://illicado.com",
   },
   {
     title: "Trade-Pilot Scraping Engine",
