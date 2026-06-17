@@ -241,9 +241,9 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section id="home" className="relative flex min-h-screen items-center px-6 pt-32 pb-20">
-      <div className="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-center">
-        <div className="space-y-7">
+    <section id="home" className="relative flex min-h-screen items-center px-4 pt-28 pb-16 sm:px-6 sm:pt-32 sm:pb-20">
+      <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-12">
+        <div className="space-y-6 sm:space-y-7">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#22c55e]/30 bg-[#22c55e]/10 px-3 py-1.5 text-xs font-medium text-[#4ade80]">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#22c55e] opacity-75" />
@@ -252,13 +252,13 @@ function Hero() {
             Available for freelance
           </div>
 
-          <h1 className="font-display text-5xl font-bold leading-[1.05] sm:text-6xl lg:text-7xl">
+          <h1 className="font-display text-4xl font-bold leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl">
             Njara
             <br />
             Rabearison
           </h1>
 
-          <div className="font-display text-2xl font-semibold sm:text-3xl lg:text-4xl min-h-[1.4em]">
+          <div className="font-display text-xl font-semibold sm:text-2xl md:text-3xl lg:text-4xl min-h-[1.4em]">
             <Typewriter
               words={[
                 "Senior Full-Stack Developer",
@@ -270,7 +270,8 @@ function Hero() {
             />
           </div>
 
-          <p className="max-w-xl text-base text-muted-foreground sm:text-lg">
+          <p className="max-w-xl text-sm text-muted-foreground sm:text-base md:text-lg">
+
             12+ ans de conception de plateformes robustes et scalables — fintech, e-commerce, santé & CRM.
           </p>
 
