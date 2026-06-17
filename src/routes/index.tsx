@@ -950,7 +950,7 @@ function Field({
 function Footer() {
   return (
     <footer
-      className="border-t px-6 py-8 text-center text-sm text-muted-foreground"
+      className="border-t px-4 py-8 text-center text-xs sm:text-sm text-muted-foreground sm:px-6"
       style={{ borderImage: "linear-gradient(90deg, transparent, #00D4FF66, transparent) 1" }}
     >
       © 2026 Njara Rabearison · Senior Full-Stack Developer · Antananarivo, Madagascar
