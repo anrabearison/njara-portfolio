@@ -29,12 +29,12 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Senior Full-Stack Developer in Antananarivo. NestJS, TypeScript, microservices and clean architecture. 10+ years of experience.",
+          "Développeur Full-Stack Senior basé à Antananarivo. 12+ ans d'expérience : NestJS, TypeScript, PHP/Symfony, React.js, Angular, microservices, ETL, eCRF cliniques et automatisation.",
       },
       { property: "og:title", content: "Njara Rabearison — Senior Full-Stack Developer" },
       {
         property: "og:description",
-        content: "10+ years crafting robust, scalable APIs and modern web applications.",
+        content: "12+ years crafting robust, scalable platforms across fintech, e-commerce, healthcare and CRM.",
       },
     ],
   }),
@@ -257,6 +257,7 @@ function Hero() {
               words={[
                 "Senior Full-Stack Developer",
                 "NestJS & TypeScript Expert",
+                "Angular & React Specialist",
                 "Microservices Architect",
                 "AI-Powered Developer",
               ]}
@@ -264,7 +265,7 @@ function Hero() {
           </div>
 
           <p className="max-w-xl text-base text-muted-foreground sm:text-lg">
-            10+ years crafting robust, scalable APIs and modern web applications.
+            12+ ans de conception de plateformes robustes et scalables — fintech, e-commerce, santé & CRM.
           </p>
 
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm text-muted-foreground">
@@ -326,9 +327,9 @@ export class `}<span className="text-[#00D4FF]">{`OrderModule`}</span>{` {
 
 function About() {
   const stats = [
-    { value: "10+", label: "Years of Experience" },
-    { value: "7", label: "Companies & Projects" },
-    { value: "3", label: "Core Tech Stacks" },
+    { value: "12+", label: "Years of Experience" },
+    { value: "7", label: "Companies & Sectors" },
+    { value: "4", label: "Flagship Projects" },
   ];
   return (
     <section id="about" className="px-6 py-24">
@@ -339,13 +340,14 @@ function About() {
         <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-center">
           <Reveal>
             <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Senior Full-Stack Developer with over 10 years of experience, specialized in
-              microservices architecture and high-performance REST APIs. Expert in the
-              Node.js/TypeScript ecosystem with NestJS, with solid experience in Java
-              (Spring Boot) and PHP (Symfony). I design robust, scalable architectures
-              applying Clean Architecture and TDD principles. I actively leverage AI
-              tools like Cursor and GitHub Copilot to accelerate delivery and maintain
-              top code quality.
+              Développeur Full-Stack Senior avec plus de 12 ans d'expérience, spécialisé dans
+              les architectures microservices et les APIs REST haute performance. Expert de
+              l'écosystème Node.js/TypeScript (NestJS), avec une solide expérience Java (Spring MVC)
+              et PHP (Symfony). J'ai conçu des plateformes critiques dans des secteurs variés :
+              gestion de risques professionnels (Winlassie), cartes cadeaux e-commerce (Illicado),
+              CRM multicanal (Webhelp), données cliniques (QuantaView) et extraction de données
+              (Trade-Pilot). J'applique les principes Clean Architecture et TDD, et j'accélère la
+              livraison grâce aux outils IA (Cursor, GitHub Copilot, Antigravity).
             </p>
             <div className="mt-8 flex flex-wrap gap-3 text-sm">
               {[
@@ -400,12 +402,12 @@ const SKILL_GROUPS = [
   {
     title: "Backend",
     icon: Server,
-    items: ["NestJS", "Node.js", "TypeScript", "Java (Spring Boot)", "PHP (Symfony)", "REST API", "Microservices"],
+    items: ["NestJS", "Node.js", "TypeScript", "Java (Spring Boot)", "PHP (Symfony)", "Spring MVC", "REST API", "Microservices"],
   },
   {
     title: "Frontend",
     icon: Code2,
-    items: ["React.js", "Angular", "JavaScript (ES6+)", "HTML5", "CSS3"],
+    items: ["React.js", "Angular", "AngularJS", "JavaScript (ES6+)", "HTML5", "CSS3"],
   },
   {
     title: "AI & Productivity",
@@ -415,17 +417,17 @@ const SKILL_GROUPS = [
   {
     title: "Databases",
     icon: Database,
-    items: ["PostgreSQL", "MongoDB", "MySQL", "MariaDB", "Oracle", "DB2"],
+    items: ["PostgreSQL", "MongoDB", "MySQL", "MariaDB", "Oracle SQL", "IBM DB2"],
   },
   {
     title: "DevOps & Tools",
     icon: Wrench,
-    items: ["Docker", "Git", "Jenkins", "GitLab CI/CD", "Postman"],
+    items: ["Docker", "Git", "Jenkins", "GitLab CI/CD", "Apache POI", "Postman", "Python (BeautifulSoup)"],
   },
   {
     title: "Methodologies",
     icon: Layers,
-    items: ["Agile Scrum", "TDD", "Clean Architecture", "UML"],
+    items: ["Agile Scrum", "TDD", "Clean Architecture", "SAS", "ETL / Data Mapping", "UML"],
   },
 ];
 
@@ -483,7 +485,7 @@ const EXPERIENCE = [
     bullets: [
       "Designing modern backend architectures with NestJS & TypeScript",
       "Building performant full-stack solutions for clients",
-      "Accelerating dev cycles with AI tools (Cursor, Copilot)",
+      "Accelerating dev cycles with AI tools (Cursor, Copilot, Antigravity)",
       "Monitoring AI innovations and modern architecture trends",
     ],
   },
@@ -492,8 +494,10 @@ const EXPERIENCE = [
     company: "Ezway Technology",
     period: "Jul 2025 – Dec 2025",
     bullets: [
-      "Web application development and maintenance",
-      "Backend feature design and React.js frontend integration",
+      "Projet Trade-Pilot (eexpand) : conception de plugins sur mesure et intégration dans l'écosystème applicatif",
+      "Architecture hybride : WordPress + Symfony + JavaScript sur persistance MariaDB",
+      "Web scraping automatisé (Python / BeautifulSoup) pour collecter des offres d'emploi en temps réel",
+      "Développement de composants React.js pour des parcours utilisateurs fluides et réactifs",
     ],
   },
   {
@@ -501,43 +505,55 @@ const EXPERIENCE = [
     company: "Webhelp Madagascar",
     period: "Dec 2019 – Jul 2025",
     bullets: [
-      "Developed multichannel systems (SMS, calls, emails, postal mail)",
-      "Automated client follow-up and reminder campaigns",
-      "Maintained and evolved PHP/Symfony + React.js platforms",
-      "Agile collaboration with technical and business teams",
+      "Pipelines d'ingestion ETL flexibles pour importer et normaliser des fichiers clients multi-formats vers le modèle interne",
+      "Plateformes multicanales haute disponibilité : VoIP, SMS, e-mails, courriers — routage fluide des flux en temps réel",
+      "Moteurs d'automatisation et batchs pour campagnes massives de relance client, augmentant l'efficacité opérationnelle",
+      "Modernisation de l'architecture PHP/Symfony (Back-end) et React.js (Front-end) en environnement Agile Scrum",
     ],
   },
   {
-    role: "Full-Stack Developer",
+    role: "Senior Full-Stack Developer",
     company: "Bocasay Madagascar",
     period: "Nov 2017 – Dec 2019",
     bullets: [
-      "Designed and built REST APIs and microservices",
-      "Frontend development with Angular and React",
-      "Set up Jenkins CI/CD pipelines",
-      "Code reviews and unit testing",
+      "Projet Winlassie : migration AngularJS → Angular 2+ avec stratégie d'hybridation, lazy loading et OnPush change detection",
+      "Projet Illicado : module de gestion et distribution de cartes cadeaux (physiques & digitales) — sécurisation des transactions",
+      "APIs robustes haute charge pour e-commerce multi-enseignes (pics de fêtes), Node.js / REST",
+      "Composants UI réutilisables, refactoring de l'état global, revues de code et tests unitaires",
     ],
   },
   {
-    role: "Data Manager",
+    role: "Data Manager / Web Developer",
     company: "QData Madagascar",
     period: "Mar 2015 – Nov 2017",
     bullets: [
-      "Designed eCRF systems for clinical trials",
-      "Built PHP/Symfony data validation and cleaning scripts",
+      "Conception et maintenance évolutive de la plateforme eCRF propriétaire QuantaView pour essais cliniques internationaux",
+      "Modélisation d'eCRFs sur mesure adaptés aux protocoles spécifiques de chaque étude clinique",
+      "Scripts automatisés de validation, contrôle de cohérence et nettoyage de données (PHP, MySQL)",
+      "Manipulation et préparation de données statistiques via SAS (Statistical Analysis System)",
     ],
   },
   {
     role: "Web Developer",
     company: "Carrefour Madagascar",
     period: "Sep 2014 – Mar 2015",
-    bullets: ["Built a financial reporting tool (Java, Spring MVC, Apache POI)"],
+    bullets: [
+      "Automatisation du reporting financier : remplacement des processus manuels par un moteur d'exportation Java",
+      "Génération dynamique de rapports structurés .xlsx / .csv via Apache POI",
+      "Livraison sécurisée et automatisée des rapports aux experts-comptables pour validation des audits",
+      "Architecture Spring MVC sur base de données IBM DB2",
+    ],
   },
   {
     role: "Java/JEE Developer (Internship)",
     company: "Trésor Public Malagasy",
     period: "Oct 2013 – Aug 2014",
-    bullets: ["Developed an accounting post evaluation and control tool"],
+    bullets: [
+      "Détection des anomalies de flux : module d'analyse repérant les retraits de fonds hors procédure",
+      "Algorithmes de vérification d'intégrité comptable pour identifier les écarts de balance élevés",
+      "Réconciliation de données à grande échelle entre le serveur central et les postes comptables régionaux",
+      "Application robuste Spring MVC + Oracle SQL pour le traitement de volumes massifs de transactions",
+    ],
   },
 ];
 
@@ -716,7 +732,7 @@ function Contact() {
             <Reveal delay={240}>
               <div className="flex gap-3 pt-2">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/anrabearison"
                   target="_blank"
                   rel="noreferrer"
                   className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.02] text-muted-foreground transition-colors hover:border-[#00D4FF]/40 hover:text-[#00D4FF]"
