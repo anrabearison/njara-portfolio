@@ -526,7 +526,30 @@ function Projects() {
                   <div className="text-xs font-mono uppercase tracking-wider text-[#00D4FF] mb-2">{p.category}</div>
                   <h3 className="font-display text-xl font-semibold mb-3 flex items-center justify-between">
                     {p.title}
-                    <a href={p.link} target="_blank" rel="noreferrer" className="text-[#00D4FF] opacity-0 group-hover:opacity-100 transition-opacity">
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={(p as { fallbackLink?: string }).fallbackLink ? (e) => {
+                        e.preventDefault();
+                        const primary = p.link;
+                        const fallback = (p as { fallbackLink?: string }).fallbackLink!;
+                        const win = window.open("about:blank", "_blank");
+                        const img = new Image();
+                        let done = false;
+                        const finish = (url: string) => {
+                          if (done) return;
+                          done = true;
+                          if (win) win.location.href = url;
+                        };
+                        const origin = new URL(primary).origin;
+                        img.onload = () => finish(primary);
+                        img.onerror = () => finish(fallback);
+                        img.src = `${origin}/favicon.ico?_=${Date.now()}`;
+                        setTimeout(() => finish(fallback), 2500);
+                      } : undefined}
+                      className="text-[#00D4FF] opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
                       <ExternalLink className="h-4 w-4" />
                     </a>
                   </h3>
