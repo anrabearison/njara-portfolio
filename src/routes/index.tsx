@@ -206,11 +206,11 @@ function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#home" className="font-display text-lg font-bold tracking-tight">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:px-6">
+        <a href="#home" className="font-display text-lg font-bold tracking-tight shrink-0">
           <span className="text-gradient">NR.</span>
         </a>
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-6 md:flex lg:gap-8">
           {NAV.map((n) => {
             const isActive = active === n.href.slice(1);
             return (
@@ -229,20 +229,21 @@ function Navbar() {
         </ul>
         <a
           href="#contact"
-          className="rounded-full bg-[#00D4FF] px-5 py-2 text-sm font-semibold text-[#0D1117] transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.6)]"
+          className="shrink-0 rounded-full bg-[#00D4FF] px-4 py-2 text-xs font-semibold text-[#0D1117] transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.6)] sm:px-5 sm:text-sm"
         >
           Hire Me
         </a>
       </nav>
+
     </header>
   );
 }
 
 function Hero() {
   return (
-    <section id="home" className="relative flex min-h-screen items-center px-6 pt-32 pb-20">
-      <div className="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-center">
-        <div className="space-y-7">
+    <section id="home" className="relative flex min-h-screen items-center px-4 pt-28 pb-16 sm:px-6 sm:pt-32 sm:pb-20">
+      <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-12">
+        <div className="space-y-6 sm:space-y-7">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#22c55e]/30 bg-[#22c55e]/10 px-3 py-1.5 text-xs font-medium text-[#4ade80]">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#22c55e] opacity-75" />
@@ -251,13 +252,13 @@ function Hero() {
             Available for freelance
           </div>
 
-          <h1 className="font-display text-5xl font-bold leading-[1.05] sm:text-6xl lg:text-7xl">
+          <h1 className="font-display text-4xl font-bold leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl">
             Njara
             <br />
             Rabearison
           </h1>
 
-          <div className="font-display text-2xl font-semibold sm:text-3xl lg:text-4xl min-h-[1.4em]">
+          <div className="font-display text-xl font-semibold sm:text-2xl md:text-3xl lg:text-4xl min-h-[1.4em]">
             <Typewriter
               words={[
                 "Senior Full-Stack Developer",
@@ -269,7 +270,8 @@ function Hero() {
             />
           </div>
 
-          <p className="max-w-xl text-base text-muted-foreground sm:text-lg">
+          <p className="max-w-xl text-sm text-muted-foreground sm:text-base md:text-lg">
+
             12+ ans de conception de plateformes robustes et scalables — fintech, e-commerce, santé & CRM.
           </p>
 
@@ -338,7 +340,7 @@ function About() {
     { value: "4", label: "Flagship Projects" },
   ];
   return (
-    <section id="about" className="px-6 py-24">
+    <section id="about" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeading eyebrow="01 / About" title="A decade of building things that scale." />
@@ -398,11 +400,12 @@ function SectionHeading({ eyebrow, title, subtitle }: { eyebrow: string; title: 
   return (
     <div className="max-w-2xl">
       <div className="font-mono text-xs uppercase tracking-[0.2em] text-[#00D4FF]">{eyebrow}</div>
-      <h2 className="mt-3 font-display text-4xl font-bold sm:text-5xl">{title}</h2>
-      {subtitle && <p className="mt-3 text-muted-foreground">{subtitle}</p>}
+      <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl lg:text-5xl">{title}</h2>
+      {subtitle && <p className="mt-3 text-sm text-muted-foreground sm:text-base">{subtitle}</p>}
     </div>
   );
 }
+
 
 const SKILL_GROUPS = [
   {
@@ -439,7 +442,7 @@ const SKILL_GROUPS = [
 
 function Skills() {
   return (
-    <section id="skills" className="px-6 py-24">
+    <section id="skills" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeading eyebrow="02 / Skills" title="Tools & stacks I work with." />
@@ -513,19 +516,20 @@ const PROJECTS = [
 
 function Projects() {
   return (
-    <section id="projects" className="px-6 py-24 border-t border-white/5">
+    <section id="projects" className="px-4 py-20 sm:px-6 sm:py-24 border-t border-white/5">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeading eyebrow="03 / Selected Projects" title="Systèmes construits pour la performance." />
         </Reveal>
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:mt-12 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+
           {PROJECTS.map((p, i) => (
             <Reveal key={p.title} delay={i * 100}>
               <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#00D4FF]/40 hover:shadow-[0_0_40px_rgba(0,212,255,0.15)]">
                 <div>
                   <div className="text-xs font-mono uppercase tracking-wider text-[#00D4FF] mb-2">{p.category}</div>
-                  <h3 className="font-display text-xl font-semibold mb-3 flex items-center justify-between">
-                    {p.title}
+                  <h3 className="font-display text-lg sm:text-xl font-semibold mb-3 flex items-start justify-between gap-3">
+                    <span className="min-w-0 break-words">{p.title}</span>
                     <a
                       href={p.link}
                       target="_blank"
@@ -548,11 +552,12 @@ function Projects() {
                         img.src = `${origin}/favicon.ico?_=${Date.now()}`;
                         setTimeout(() => finish(fallback), 2500);
                       } : undefined}
-                      className="text-[#00D4FF] opacity-0 group-hover:opacity-100 transition-opacity"
+                      className="shrink-0 text-[#00D4FF] opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity mt-1"
                     >
                       <ExternalLink className="h-4 w-4" />
                     </a>
                   </h3>
+
                   <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{p.description}</p>
                 </div>
                 <div className="mt-auto">
@@ -652,7 +657,7 @@ const EXPERIENCE = [
 
 function Experience() {
   return (
-    <section id="experience" className="px-6 py-24">
+    <section id="experience" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeading eyebrow="03 / Experience" title="A timeline of building." />
@@ -737,7 +742,7 @@ function Education() {
     { title: "Preparing for a Developer Career", org: "Microsoft", url: "https://www.linkedin.com/in/rabearison-njara-12114a90/details/certifications/" },
   ];
   return (
-    <section id="education" className="px-6 py-24">
+    <section id="education" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeading eyebrow="05 / Education" title="Foundations & continuous learning." />
@@ -789,7 +794,7 @@ function Education() {
 function Contact() {
   const [sent, setSent] = useState(false);
   return (
-    <section id="contact" className="px-6 py-24">
+    <section id="contact" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeading
@@ -945,7 +950,7 @@ function Field({
 function Footer() {
   return (
     <footer
-      className="border-t px-6 py-8 text-center text-sm text-muted-foreground"
+      className="border-t px-4 py-8 text-center text-xs sm:text-sm text-muted-foreground sm:px-6"
       style={{ borderImage: "linear-gradient(90deg, transparent, #00D4FF66, transparent) 1" }}
     >
       © 2026 Njara Rabearison · Senior Full-Stack Developer · Antananarivo, Madagascar
