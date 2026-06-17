@@ -206,11 +206,11 @@ function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#home" className="font-display text-lg font-bold tracking-tight">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:px-6">
+        <a href="#home" className="font-display text-lg font-bold tracking-tight shrink-0">
           <span className="text-gradient">NR.</span>
         </a>
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-6 md:flex lg:gap-8">
           {NAV.map((n) => {
             const isActive = active === n.href.slice(1);
             return (
@@ -229,11 +229,12 @@ function Navbar() {
         </ul>
         <a
           href="#contact"
-          className="rounded-full bg-[#00D4FF] px-5 py-2 text-sm font-semibold text-[#0D1117] transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.6)]"
+          className="shrink-0 rounded-full bg-[#00D4FF] px-4 py-2 text-xs font-semibold text-[#0D1117] transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.6)] sm:px-5 sm:text-sm"
         >
           Hire Me
         </a>
       </nav>
+
     </header>
   );
 }
