@@ -777,7 +777,7 @@ function Education() {
     <section id="education" className="px-6 py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <SectionHeading eyebrow="04 / Education" title="Foundations & continuous learning." />
+          <SectionHeading eyebrow="05 / Education" title="Foundations & continuous learning." />
         </Reveal>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2">
