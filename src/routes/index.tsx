@@ -400,11 +400,12 @@ function SectionHeading({ eyebrow, title, subtitle }: { eyebrow: string; title: 
   return (
     <div className="max-w-2xl">
       <div className="font-mono text-xs uppercase tracking-[0.2em] text-[#00D4FF]">{eyebrow}</div>
-      <h2 className="mt-3 font-display text-4xl font-bold sm:text-5xl">{title}</h2>
-      {subtitle && <p className="mt-3 text-muted-foreground">{subtitle}</p>}
+      <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl lg:text-5xl">{title}</h2>
+      {subtitle && <p className="mt-3 text-sm text-muted-foreground sm:text-base">{subtitle}</p>}
     </div>
   );
 }
+
 
 const SKILL_GROUPS = [
   {
