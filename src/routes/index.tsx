@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   Github,
   Linkedin,
@@ -78,9 +78,12 @@ function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; 
 }
 
 function Particles() {
-  const particles = useMemo(
-    () =>
-      Array.from({ length: 28 }).map((_, i) => ({
+  const [particles, setParticles] = useState<
+    { left: number; top: number; size: number; delay: number; duration: number; cyan: boolean }[]
+  >([]);
+  useEffect(() => {
+    setParticles(
+      Array.from({ length: 28 }).map(() => ({
         left: Math.random() * 100,
         top: Math.random() * 100,
         size: Math.random() * 3 + 1,
@@ -88,8 +91,8 @@ function Particles() {
         duration: 6 + Math.random() * 8,
         cyan: Math.random() > 0.4,
       })),
-    [],
-  );
+    );
+  }, []);
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-60" />
@@ -163,6 +166,7 @@ const NAV = [
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
   { href: "#education", label: "Education" },
   { href: "#contact", label: "Contact" },
 ];
@@ -689,6 +693,137 @@ function Experience() {
   );
 }
 
+const PROJECTS = [
+  {
+    title: "Clinical eCRF Platform",
+    domain: "Healthcare · Clinical Research",
+    description:
+      "Electronic Case Report Form platform for multi-center clinical trials. Dynamic form engine, role-based workflows, full audit trail and HL7/FHIR data exports for regulatory submissions.",
+    stack: ["NestJS", "PostgreSQL", "React", "TypeScript", "Docker"],
+    highlights: ["20+ active trials", "GDPR & 21 CFR Part 11 ready", "Sub-second form rendering"],
+    accent: "cyan",
+  },
+  {
+    title: "Microservices Payment Gateway",
+    domain: "Fintech · High-volume Transactions",
+    description:
+      "Event-driven payment orchestration handling card, mobile money and bank transfers. Idempotent ledger, retry & circuit-breaker layer, real-time fraud signals streamed to risk engine.",
+    stack: ["NestJS", "Kafka", "Redis", "PostgreSQL", "Kubernetes"],
+    highlights: ["3M+ tx / month", "99.98% uptime", "< 120ms p95 latency"],
+    accent: "violet",
+  },
+  {
+    title: "ETL & Data Sync Engine",
+    domain: "Data Engineering · CRM Integration",
+    description:
+      "Pluggable ETL framework synchronizing Salesforce, HubSpot and internal warehouses. Incremental CDC, schema-drift detection and a visual mapping UI for non-technical ops teams.",
+    stack: ["Node.js", "TypeScript", "BullMQ", "PostgreSQL", "Airflow"],
+    highlights: ["50+ connectors", "10M rows/day", "Zero-downtime migrations"],
+    accent: "cyan",
+  },
+  {
+    title: "Headless E-commerce Backend",
+    domain: "E-commerce · B2B SaaS",
+    description:
+      "Multi-tenant commerce API powering storefronts across West Africa. Cart, catalog, promo engine and shipping orchestration exposed through GraphQL with per-tenant theming.",
+    stack: ["Symfony", "PHP 8", "GraphQL", "MySQL", "Redis"],
+    highlights: ["40+ tenants", "Multi-currency", "Headless CMS integration"],
+    accent: "violet",
+  },
+];
+
+function Projects() {
+  return (
+    <section id="projects" className="px-6 py-24">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <SectionHeading
+            eyebrow="04 / Projects"
+            title="Selected Projects"
+            subtitle="A handful of flagship platforms I've architected and shipped end-to-end."
+          />
+        </Reveal>
+
+        <div className="mt-14 grid gap-6 md:grid-cols-2">
+          {PROJECTS.map((p, i) => {
+            const isCyan = p.accent === "cyan";
+            const ring = isCyan ? "#00D4FF" : "#7C3AED";
+            return (
+              <Reveal key={p.title} delay={i * 80}>
+                <article
+                  className="group relative h-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-7 transition-all hover:-translate-y-1"
+                  style={{ boxShadow: "0 0 0 1px transparent" }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.boxShadow = `0 0 0 1px ${ring}55, 0 0 50px ${ring}25`)
+                  }
+                  onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "0 0 0 1px transparent")}
+                >
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full opacity-20 blur-3xl transition-opacity group-hover:opacity-40"
+                    style={{ background: ring }}
+                  />
+
+                  <div className="flex items-start justify-between gap-4">
+                    <div
+                      className="grid h-11 w-11 place-items-center rounded-xl border"
+                      style={{ borderColor: `${ring}55`, background: `${ring}1a`, color: ring }}
+                    >
+                      <Layers className="h-5 w-5" />
+                    </div>
+                    <span
+                      className="font-mono text-[10px] uppercase tracking-widest"
+                      style={{ color: ring }}
+                    >
+                      {String(i + 1).padStart(2, "0")} / Case Study
+                    </span>
+                  </div>
+
+                  <h3 className="mt-5 font-display text-xl font-semibold leading-tight">{p.title}</h3>
+                  <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
+                    {p.domain}
+                  </div>
+
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
+
+                  <ul className="mt-5 space-y-1.5">
+                    {p.highlights.map((h) => (
+                      <li key={h} className="flex items-center gap-2 text-xs text-foreground/80">
+                        <span
+                          className="h-1.5 w-1.5 shrink-0 rounded-full"
+                          style={{ background: ring }}
+                        />
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {p.stack.map((s) => (
+                      <span
+                        key={s}
+                        className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground"
+                      >
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              </Reveal>
+            );
+          })}
+        </div>
+
+        <Reveal>
+          <p className="mt-10 text-center text-sm text-muted-foreground">
+            Several projects are under NDA — happy to walk through architecture and trade-offs on a call.
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function Education() {
   const items = [
     {
@@ -711,7 +846,7 @@ function Education() {
     <section id="education" className="px-6 py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <SectionHeading eyebrow="04 / Education" title="Foundations & continuous learning." />
+          <SectionHeading eyebrow="05 / Education" title="Foundations & continuous learning." />
         </Reveal>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2">
@@ -764,7 +899,7 @@ function Contact() {
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeading
-            eyebrow="05 / Contact"
+            eyebrow="06 / Contact"
             title="Let's Work Together"
             subtitle="Open to freelance missions and exciting projects."
           />
@@ -937,6 +1072,7 @@ function Portfolio() {
         <Skills />
         <Projects />
         <Experience />
+        <Projects />
         <Education />
         <Contact />
       </main>
