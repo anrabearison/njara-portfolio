@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   Github,
   Linkedin,
@@ -77,9 +77,12 @@ function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; 
 }
 
 function Particles() {
-  const particles = useMemo(
-    () =>
-      Array.from({ length: 28 }).map((_, i) => ({
+  const [particles, setParticles] = useState<
+    { left: number; top: number; size: number; delay: number; duration: number; cyan: boolean }[]
+  >([]);
+  useEffect(() => {
+    setParticles(
+      Array.from({ length: 28 }).map(() => ({
         left: Math.random() * 100,
         top: Math.random() * 100,
         size: Math.random() * 3 + 1,
@@ -87,8 +90,8 @@ function Particles() {
         duration: 6 + Math.random() * 8,
         cyan: Math.random() > 0.4,
       })),
-    [],
-  );
+    );
+  }, []);
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-60" />
