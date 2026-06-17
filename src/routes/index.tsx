@@ -827,7 +827,7 @@ function Contact() {
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeading
-            eyebrow="05 / Contact"
+            eyebrow="06 / Contact"
             title="Let's Work Together"
             subtitle="Open to freelance missions and exciting projects."
           />
