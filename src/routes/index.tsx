@@ -340,7 +340,7 @@ function About() {
     { value: "4", label: "Flagship Projects" },
   ];
   return (
-    <section id="about" className="px-6 py-24">
+    <section id="about" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeading eyebrow="01 / About" title="A decade of building things that scale." />
@@ -442,7 +442,7 @@ const SKILL_GROUPS = [
 
 function Skills() {
   return (
-    <section id="skills" className="px-6 py-24">
+    <section id="skills" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeading eyebrow="02 / Skills" title="Tools & stacks I work with." />
@@ -657,7 +657,7 @@ const EXPERIENCE = [
 
 function Experience() {
   return (
-    <section id="experience" className="px-6 py-24">
+    <section id="experience" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeading eyebrow="03 / Experience" title="A timeline of building." />
@@ -742,7 +742,7 @@ function Education() {
     { title: "Preparing for a Developer Career", org: "Microsoft", url: "https://www.linkedin.com/in/rabearison-njara-12114a90/details/certifications/" },
   ];
   return (
-    <section id="education" className="px-6 py-24">
+    <section id="education" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeading eyebrow="05 / Education" title="Foundations & continuous learning." />
@@ -794,7 +794,7 @@ function Education() {
 function Contact() {
   const [sent, setSent] = useState(false);
   return (
-    <section id="contact" className="px-6 py-24">
+    <section id="contact" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeading
