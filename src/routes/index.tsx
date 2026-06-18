@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { Menu, X } from "lucide-react";
 import {
   Github,
   Linkedin,
@@ -198,11 +199,20 @@ function Navbar() {
     return () => io.disconnect();
   }, []);
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMenuOpen(false);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [menuOpen]);
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "backdrop-blur-xl bg-[#0D1117]/80 border-b border-white/5"
+        scrolled || menuOpen
+          ? "backdrop-blur-xl bg-[#0D1117]/90 border-b border-white/5"
           : "bg-transparent"
       }`}
     >
@@ -227,14 +237,47 @@ function Navbar() {
             );
           })}
         </ul>
-        <a
-          href="#contact"
-          className="shrink-0 rounded-full bg-[#00D4FF] px-4 py-2 text-xs font-semibold text-[#0D1117] transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.6)] sm:px-5 sm:text-sm"
-        >
-          Hire Me
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href="#contact"
+            className="shrink-0 rounded-full bg-[#00D4FF] px-4 py-2 text-xs font-semibold text-[#0D1117] transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.6)] sm:px-5 sm:text-sm"
+          >
+            Hire Me
+          </a>
+          <button
+            type="button"
+            aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+            className="shrink-0 rounded-full border border-white/10 p-2 text-foreground transition-colors hover:bg-white/5 md:hidden"
+          >
+            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </nav>
 
+      {menuOpen && (
+        <div className="border-t border-white/5 md:hidden">
+          <ul className="mx-auto flex max-w-7xl flex-col px-4 py-2 sm:px-6">
+            {NAV.map((n) => {
+              const isActive = active === n.href.slice(1);
+              return (
+                <li key={n.href}>
+                  <a
+                    href={n.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`block rounded-lg px-3 py-3 text-sm font-medium transition-colors ${
+                      isActive ? "text-[#00D4FF] bg-white/5" : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                    }`}
+                  >
+                    {n.label}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
     </header>
   );
 }
