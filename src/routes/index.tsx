@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { Menu, X } from "lucide-react";
 import {
+  Menu,
+  X,
   Github,
   Linkedin,
   MessageCircle,
@@ -15,14 +16,15 @@ import {
   Sparkles,
   Server,
   Wrench,
-  GitBranch,
   Layers,
   GraduationCap,
   Award,
   Briefcase,
   Send,
   ExternalLink,
+  Languages,
 } from "lucide-react";
+import { LanguageProvider, useI18n, EXPERIENCE_I18N, type Lang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,7 +33,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Développeur Full-Stack Senior basé à Antananarivo. 12+ ans d'expérience : NestJS, TypeScript, PHP/Symfony, React.js, Angular, microservices, ETL, eCRF cliniques et automatisation.",
+          "Senior Full-Stack Developer based in Antananarivo. 12+ years of experience: NestJS, TypeScript, PHP/Symfony, React.js, Angular, microservices, ETL, clinical eCRF and automation.",
       },
       { property: "og:title", content: "Njara Rabearison — Senior Full-Stack Developer" },
       {
@@ -40,7 +42,7 @@ export const Route = createFileRoute("/")({
       },
     ],
   }),
-  component: Portfolio,
+  component: PortfolioRoot,
 });
 
 /* ---------------- Helpers ---------------- */
@@ -131,8 +133,15 @@ function Typewriter({ words }: { words: string[] }) {
   const [sub, setSub] = useState("");
   const [del, setDel] = useState(false);
 
+  // Reset when words list changes (e.g. language switch)
   useEffect(() => {
-    const word = words[idx];
+    setIdx(0);
+    setSub("");
+    setDel(false);
+  }, [words]);
+
+  useEffect(() => {
+    const word = words[idx] ?? "";
     if (!del && sub === word) {
       const t = setTimeout(() => setDel(true), 1600);
       return () => clearTimeout(t);
@@ -159,21 +168,43 @@ function Typewriter({ words }: { words: string[] }) {
   );
 }
 
+/* ---------------- Language Toggle ---------------- */
+
+function LangToggle({ className = "" }: { className?: string }) {
+  const { lang, setLang } = useI18n();
+  const next: Lang = lang === "en" ? "fr" : "en";
+  return (
+    <button
+      type="button"
+      onClick={() => setLang(next)}
+      aria-label={`Switch language to ${next.toUpperCase()}`}
+      className={`inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-3 py-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground transition-colors hover:border-[#00D4FF]/40 hover:text-[#00D4FF] ${className}`}
+    >
+      <Languages className="h-3.5 w-3.5" />
+      <span className={lang === "en" ? "text-[#00D4FF]" : ""}>EN</span>
+      <span className="text-white/20">/</span>
+      <span className={lang === "fr" ? "text-[#00D4FF]" : ""}>FR</span>
+    </button>
+  );
+}
+
 /* ---------------- Sections ---------------- */
 
-const NAV = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#education", label: "Education" },
-  { href: "#contact", label: "Contact" },
+const NAV_KEYS: { href: string; key: string }[] = [
+  { href: "#home", key: "nav.home" },
+  { href: "#about", key: "nav.about" },
+  { href: "#skills", key: "nav.skills" },
+  { href: "#projects", key: "nav.projects" },
+  { href: "#experience", key: "nav.experience" },
+  { href: "#education", key: "nav.education" },
+  { href: "#contact", key: "nav.contact" },
 ];
 
 function Navbar() {
+  const { t } = useI18n();
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -183,7 +214,7 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    const ids = NAV.map((n) => n.href.slice(1));
+    const ids = NAV_KEYS.map((n) => n.href.slice(1));
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -198,8 +229,6 @@ function Navbar() {
     });
     return () => io.disconnect();
   }, []);
-
-  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -221,7 +250,7 @@ function Navbar() {
           <span className="text-gradient">NR.</span>
         </a>
         <ul className="hidden items-center gap-6 md:flex lg:gap-8">
-          {NAV.map((n) => {
+          {NAV_KEYS.map((n) => {
             const isActive = active === n.href.slice(1);
             return (
               <li key={n.href}>
@@ -231,22 +260,23 @@ function Navbar() {
                     isActive ? "text-[#00D4FF]" : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  {n.label}
+                  {t(n.key)}
                 </a>
               </li>
             );
           })}
         </ul>
         <div className="flex items-center gap-2">
+          <LangToggle className="hidden sm:inline-flex" />
           <a
             href="#contact"
             className="shrink-0 rounded-full bg-[#00D4FF] px-4 py-2 text-xs font-semibold text-[#0D1117] transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.6)] sm:px-5 sm:text-sm"
           >
-            Hire Me
+            {t("nav.hireMe")}
           </a>
           <button
             type="button"
-            aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-label={menuOpen ? t("nav.closeMenu") : t("nav.openMenu")}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
             className="shrink-0 rounded-full border border-white/10 p-2 text-foreground transition-colors hover:bg-white/5 md:hidden"
@@ -259,7 +289,7 @@ function Navbar() {
       {menuOpen && (
         <div className="border-t border-white/5 md:hidden">
           <ul className="mx-auto flex max-w-7xl flex-col px-4 py-2 sm:px-6">
-            {NAV.map((n) => {
+            {NAV_KEYS.map((n) => {
               const isActive = active === n.href.slice(1);
               return (
                 <li key={n.href}>
@@ -270,11 +300,14 @@ function Navbar() {
                       isActive ? "text-[#00D4FF] bg-white/5" : "text-muted-foreground hover:text-foreground hover:bg-white/5"
                     }`}
                   >
-                    {n.label}
+                    {t(n.key)}
                   </a>
                 </li>
               );
             })}
+            <li className="px-3 py-3 sm:hidden">
+              <LangToggle />
+            </li>
           </ul>
         </div>
       )}
@@ -283,6 +316,7 @@ function Navbar() {
 }
 
 function Hero() {
+  const { t, tArr } = useI18n();
   return (
     <section id="home" className="relative flex min-h-screen items-center px-4 pt-28 pb-16 sm:px-6 sm:pt-32 sm:pb-20">
       <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-12">
@@ -292,7 +326,7 @@ function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#22c55e] opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[#22c55e]" />
             </span>
-            Available for freelance
+            {t("hero.available")}
           </div>
 
           <h1 className="font-display text-4xl font-bold leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl">
@@ -302,25 +336,16 @@ function Hero() {
           </h1>
 
           <div className="font-display text-xl font-semibold sm:text-2xl md:text-3xl lg:text-4xl min-h-[1.4em]">
-            <Typewriter
-              words={[
-                "Senior Full-Stack Developer",
-                "NestJS & TypeScript Expert",
-                "Angular & React Specialist",
-                "Microservices Architect",
-                "AI-Powered Developer",
-              ]}
-            />
+            <Typewriter words={tArr("hero.typewriter")} />
           </div>
 
           <p className="max-w-xl text-sm text-muted-foreground sm:text-base md:text-lg">
-
-            12+ ans de conception de plateformes robustes et scalables — fintech, e-commerce, santé & CRM.
+            {t("hero.tagline")}
           </p>
 
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm text-muted-foreground">
             <MapPin className="h-4 w-4 text-[#00D4FF]" />
-            Antananarivo, Madagascar
+            {t("hero.location")}
           </div>
 
           <div className="flex flex-wrap gap-3 pt-2">
@@ -328,7 +353,7 @@ function Hero() {
               href="#projects"
               className="group inline-flex items-center gap-2 rounded-full bg-[#00D4FF] px-6 py-3 text-sm font-semibold text-[#0D1117] transition-all hover:shadow-[0_0_40px_rgba(0,212,255,0.55)]"
             >
-              View My Work
+              {t("hero.cta.work")}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
@@ -337,7 +362,7 @@ function Hero() {
               className="inline-flex items-center gap-2 rounded-full border border-[#00D4FF]/50 px-6 py-3 text-sm font-semibold text-[#00D4FF] transition-all hover:bg-[#00D4FF]/10"
             >
               <Download className="h-4 w-4" />
-              Download CV
+              {t("hero.cta.cv")}
             </a>
           </div>
         </div>
@@ -377,42 +402,37 @@ export class `}<span className="text-[#00D4FF]">{`OrderModule`}</span>{` {
 }
 
 function About() {
+  const { t } = useI18n();
   const stats = [
-    { value: "12+", label: "Years of Experience" },
-    { value: "7", label: "Companies & Sectors" },
-    { value: "4", label: "Flagship Projects" },
+    { value: "12+", labelKey: "about.stat.years" },
+    { value: "7", labelKey: "about.stat.companies" },
+    { value: "4", labelKey: "about.stat.projects" },
+  ];
+  const langs = [
+    { flag: "🇫🇷", nameKey: "about.lang.french", levelKey: "about.lang.fluent" },
+    { flag: "🇬🇧", nameKey: "about.lang.english", levelKey: "about.lang.technical" },
+    { flag: "🇲🇬", nameKey: "about.lang.malagasy", levelKey: "about.lang.native" },
   ];
   return (
     <section id="about" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <SectionHeading eyebrow="01 / About" title="A decade of building things that scale." />
+          <SectionHeading eyebrow={t("about.eyebrow")} title={t("about.title")} />
         </Reveal>
         <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-center">
           <Reveal>
             <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Développeur Full-Stack Senior avec plus de 12 ans d'expérience, spécialisé dans
-              les architectures microservices et les APIs REST haute performance. Expert de
-              l'écosystème Node.js/TypeScript (NestJS), avec une solide expérience Java (Spring MVC)
-              et PHP (Symfony). J'ai conçu des plateformes critiques dans des secteurs variés :
-              gestion de risques professionnels (Winlassie), cartes cadeaux e-commerce (Illicado),
-              CRM multicanal (Webhelp), données cliniques (QuantaView) et extraction de données
-              (Trade-Pilot). J'applique les principes Clean Architecture et TDD, et j'accélère la
-              livraison grâce aux outils IA (Cursor, GitHub Copilot, Antigravity).
+              {t("about.body")}
             </p>
             <div className="mt-8 flex flex-wrap gap-3 text-sm">
-              {[
-                { flag: "🇫🇷", name: "French", level: "fluent" },
-                { flag: "🇬🇧", name: "English", level: "technical" },
-                { flag: "🇲🇬", name: "Malagasy", level: "native" },
-              ].map((l) => (
+              {langs.map((l) => (
                 <span
-                  key={l.name}
+                  key={l.nameKey}
                   className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2"
                 >
                   <span className="mr-2">{l.flag}</span>
-                  <span className="font-medium">{l.name}</span>
-                  <span className="ml-1 text-muted-foreground">— {l.level}</span>
+                  <span className="font-medium">{t(l.nameKey)}</span>
+                  <span className="ml-1 text-muted-foreground">— {t(l.levelKey)}</span>
                 </span>
               ))}
             </div>
@@ -420,14 +440,14 @@ function About() {
 
           <div className="grid gap-4">
             {stats.map((s, i) => (
-              <Reveal key={s.label} delay={i * 120}>
+              <Reveal key={s.labelKey} delay={i * 120}>
                 <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all hover:border-[#00D4FF]/40 hover:bg-white/[0.04]">
                   <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#00D4FF]/10 blur-2xl transition-opacity group-hover:opacity-100" />
                   <div className="flex items-baseline gap-4">
                     <div className="font-display text-5xl font-bold text-gradient">
                       {s.value}
                     </div>
-                    <div className="text-sm text-muted-foreground">{s.label}</div>
+                    <div className="text-sm text-muted-foreground">{t(s.labelKey)}</div>
                   </div>
                 </div>
               </Reveal>
@@ -449,52 +469,52 @@ function SectionHeading({ eyebrow, title, subtitle }: { eyebrow: string; title: 
   );
 }
 
-
 const SKILL_GROUPS = [
   {
-    title: "Backend",
+    titleKey: "skills.group.backend",
     icon: Server,
     items: ["NestJS", "Node.js", "TypeScript", "Java (Spring Boot)", "PHP (Symfony)", "Spring MVC", "REST API", "Microservices"],
   },
   {
-    title: "Frontend",
+    titleKey: "skills.group.frontend",
     icon: Code2,
     items: ["React.js", "Angular", "AngularJS", "JavaScript (ES6+)", "HTML5", "CSS3"],
   },
   {
-    title: "AI & Productivity",
+    titleKey: "skills.group.ai",
     icon: Sparkles,
     items: ["Cursor", "GitHub Copilot", "Antigravity", "AI-assisted development"],
   },
   {
-    title: "Databases",
+    titleKey: "skills.group.db",
     icon: Database,
     items: ["PostgreSQL", "MongoDB", "MySQL", "MariaDB", "Oracle SQL", "IBM DB2"],
   },
   {
-    title: "DevOps & Tools",
+    titleKey: "skills.group.devops",
     icon: Wrench,
     items: ["Docker", "Git", "Jenkins", "GitLab CI/CD", "Apache POI", "Postman", "Python (BeautifulSoup)"],
   },
   {
-    title: "Methodologies",
+    titleKey: "skills.group.methods",
     icon: Layers,
     items: ["Agile Scrum", "TDD", "Clean Architecture", "SAS", "ETL / Data Mapping", "UML"],
   },
 ];
 
 function Skills() {
+  const { t } = useI18n();
   return (
     <section id="skills" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <SectionHeading eyebrow="02 / Skills" title="Tools & stacks I work with." />
+          <SectionHeading eyebrow={t("skills.eyebrow")} title={t("skills.title")} />
         </Reveal>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {SKILL_GROUPS.map((g, i) => {
             const Icon = g.icon;
             return (
-              <Reveal key={g.title} delay={i * 80}>
+              <Reveal key={g.titleKey} delay={i * 80}>
                 <div className="group relative h-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#00D4FF]/40 hover:shadow-[0_0_40px_rgba(0,212,255,0.18)]">
                   <div
                     className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -507,7 +527,7 @@ function Skills() {
                     <div className="grid h-10 w-10 place-items-center rounded-lg border border-[#00D4FF]/30 bg-[#00D4FF]/10 text-[#00D4FF]">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="font-display text-lg font-semibold">{g.title}</h3>
+                    <h3 className="font-display text-lg font-semibold">{t(g.titleKey)}</h3>
                   </div>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {g.items.map((s) => (
@@ -531,48 +551,41 @@ function Skills() {
 
 const PROJECTS = [
   {
-    title: "Winlassie Risk Management Migration",
-    category: "Migration & Frontend Architecture",
-    description: "Migration stratégique d'une application d'envergure de gestion des risques professionnels de AngularJS vers Angular 2+. Mise en place d'une coexistence hybride en production pour assurer la continuité de service.",
-    metrics: "Réduction de 40% de la taille du bundle global et gain de réactivité grâce au Lazy Loading et au OnPush Change Detection.",
+    id: "winlassie",
     tags: ["Angular", "AngularJS", "TypeScript", "Webpack", "Performance Optimization"],
     link: "https://www.winlassie.com/",
   },
   {
-    title: "Illicado Gift Card Engine",
-    category: "Fintech & API Design",
-    description: "Conception et développement d'APIs transactionnelles robustes et modulaires pour le leader de la carte cadeau multi-enseignes (E-commerce et Retail).",
-    metrics: "Architecture conçue pour supporter des pics à 100k+ requêtes/jour pendant les fêtes de fin d'année sans perte d'intégrité financière.",
+    id: "illicado",
     tags: ["Node.js", "Express", "REST API", "Database Security", "High Load"],
     link: "https://illicado.com",
     fallbackLink: "https://www.linkedin.com/company/illicado/",
   },
   {
-    title: "Trade-Pilot Scraping Engine",
-    category: "Web Scraping & Automation",
-    description: "Moteur d'automatisation et de web scraping modulaire pour la collecte intelligente et structurée d'offres d'emploi en temps réel sur de multiples job boards.",
-    metrics: "Extraction et structuration de plus de 10 000 entrées/jour avec BeautifulSoup et synchronisation Symfony/MariaDB.",
+    id: "tradepilot",
     tags: ["Python", "BeautifulSoup", "Symfony", "MariaDB", "Task Automation"],
     link: "https://github.com/anrabearison",
   },
 ];
 
 function Projects() {
+  const { t } = useI18n();
   return (
     <section id="projects" className="px-4 py-20 sm:px-6 sm:py-24 border-t border-white/5">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <SectionHeading eyebrow="03 / Selected Projects" title="Systèmes construits pour la performance." />
+          <SectionHeading eyebrow={t("projects.eyebrow")} title={t("projects.title")} />
         </Reveal>
         <div className="mt-10 grid gap-6 sm:mt-12 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-
           {PROJECTS.map((p, i) => (
-            <Reveal key={p.title} delay={i * 100}>
+            <Reveal key={p.id} delay={i * 100}>
               <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#00D4FF]/40 hover:shadow-[0_0_40px_rgba(0,212,255,0.15)]">
                 <div>
-                  <div className="text-xs font-mono uppercase tracking-wider text-[#00D4FF] mb-2">{p.category}</div>
+                  <div className="text-xs font-mono uppercase tracking-wider text-[#00D4FF] mb-2">
+                    {t(`projects.${p.id}.category`)}
+                  </div>
                   <h3 className="font-display text-lg sm:text-xl font-semibold mb-3 flex items-start justify-between gap-3">
-                    <span className="min-w-0 break-words">{p.title}</span>
+                    <span className="min-w-0 break-words">{t(`projects.${p.id}.title`)}</span>
                     <a
                       href={p.link}
                       target="_blank"
@@ -601,16 +614,20 @@ function Projects() {
                     </a>
                   </h3>
 
-                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{p.description}</p>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                    {t(`projects.${p.id}.description`)}
+                  </p>
                 </div>
                 <div className="mt-auto">
                   <div className="border-t border-white/5 pt-4 mb-4">
-                    <div className="text-xs font-mono text-[#4ade80] font-medium">✨ Impact & Métrique :</div>
-                    <div className="text-xs text-muted-foreground mt-1 italic">{p.metrics}</div>
+                    <div className="text-xs font-mono text-[#4ade80] font-medium">{t("projects.impact")}</div>
+                    <div className="text-xs text-muted-foreground mt-1 italic">
+                      {t(`projects.${p.id}.metrics`)}
+                    </div>
                   </div>
                   <div className="flex flex-wrap gap-1.5">
-                    {p.tags.map((t) => (
-                      <span key={t} className="rounded bg-white/[0.04] px-2 py-0.5 text-[10px] font-mono text-muted-foreground">{t}</span>
+                    {p.tags.map((tag) => (
+                      <span key={tag} className="rounded bg-white/[0.04] px-2 py-0.5 text-[10px] font-mono text-muted-foreground">{tag}</span>
                     ))}
                   </div>
                 </div>
@@ -623,87 +640,14 @@ function Projects() {
   );
 }
 
-const EXPERIENCE = [
-  {
-    role: "Freelance Full-Stack Developer",
-    company: "Independent",
-    period: "Jan 2026 – Present",
-    bullets: [
-      "Conception d'architectures backend modernes avec NestJS & TypeScript",
-      "Déploiements et intégrations full-stack d'outils d'automatisation pour clients",
-      "Optimisation de workflows de développement grâce aux assistants IA",
-    ],
-  },
-  {
-    role: "Full-Stack Developer",
-    company: "Ezway Technology",
-    period: "Jul 2025 – Dec 2025",
-    bullets: [
-      "Projet Trade-Pilot : Conception de plugins sur mesure et architecture hybride WordPress/Symfony/MariaDB",
-      "Web Scraping intelligent : Crawleurs BeautifulSoup extrayant +10k offres/jour en temps réel",
-      "React.js & Interfaces d'automatisation : Intégrations réactives avec fluidité de chargement accrue",
-    ],
-  },
-  {
-    role: "Full-Stack Software Engineer",
-    company: "Webhelp Madagascar",
-    period: "Dec 2019 – Jul 2025",
-    bullets: [
-      "Pipelines ETL : Standardisation de 1M+ données clients par jour vers un schéma unique",
-      "Systèmes à haute disponibilité : Connectivité VoIP/SMS assurant le routage instantané de flux volumineux",
-      "Moteurs d'automatisation : Algorithmes de relance ayant amélioré l'efficacité des campagnes de 25%",
-      "Evolutions logicielles majeures : Migration d'architectures monolithiques vers PHP (Symfony) / React.js",
-    ],
-  },
-  {
-    role: "Senior Full-Stack Developer",
-    company: "Bocasay Madagascar",
-    period: "Nov 2017 – Dec 2019",
-    bullets: [
-      "Projet Winlassie : Migration AngularJS vers Angular 2+ (hybridation, gain de performance de 40% sur le chargement)",
-      "Projet Illicado : Module de distribution de cartes cadeaux supportant 100k+ transactions par jour à forte charge",
-      "API REST robustes en Node.js et persistance sécurisée pour la traçabilité des titres-cadeaux",
-      "Mise en place de tests unitaires rigoureux et de pipelines d'intégration continue CI/CD",
-    ],
-  },
-  {
-    role: "Data Manager / Web Developer",
-    company: "QData Madagascar",
-    period: "Mar 2015 – Nov 2017",
-    bullets: [
-      "QuantaView : Développement et évolution de l'eCRF propriétaire pour la capture de données d'essais cliniques internationaux",
-      "Automatisation clinique : Scripts PHP/MySQL permettant d'économiser 15 heures de nettoyage manuel par étude",
-      "Analyses de données : Préparation des jeux de données à l'aide de scripts et de modèles statistiques SAS",
-    ],
-  },
-  {
-    role: "Web Developer",
-    company: "Carrefour Madagascar",
-    period: "Sep 2014 – Mar 2015",
-    bullets: [
-      "Reporting Financier : Moteur d'export automatique (Java/Spring MVC/Apache POI) générant dynamiquement des rapports .xlsx/.csv",
-      "Gain opérationnel : Remplacement de 100% des saisies et vérifications manuelles par un flux d'audit direct aux comptables",
-      "Intégration base de données : Modélisation performante des requêtes transactionnelles sur IBM DB2",
-    ],
-  },
-  {
-    role: "Java/JEE Developer (Internship)",
-    company: "Trésor Public Malagasy",
-    period: "Oct 2013 – Aug 2014",
-    bullets: [
-      "Sécurité financière : Détection automatique des retraits de fonds non mandatés hors procédure étatique",
-      "Intégrité : Algorithmes de vérification repérant les écarts de balance élevés sur volumes transactionnels massifs",
-      "Réconciliation : Système de cohérence globale de base de données entre le serveur central et les postes régionaux",
-    ],
-  },
-];
-
 function Experience() {
+  const { t, lang } = useI18n();
+  const items = EXPERIENCE_I18N[lang];
   return (
     <section id="experience" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <SectionHeading eyebrow="03 / Experience" title="A timeline of building." />
+          <SectionHeading eyebrow={t("exp.eyebrow")} title={t("exp.title")} />
         </Reveal>
         <div className="relative mt-14">
           <div
@@ -715,7 +659,7 @@ function Experience() {
             }}
           />
           <ol className="space-y-10">
-            {EXPERIENCE.map((e, i) => (
+            {items.map((e, i) => (
               <li key={i} className="relative md:grid md:grid-cols-2 md:gap-12">
                 <Reveal
                   delay={60}
@@ -725,7 +669,6 @@ function Experience() {
                       : "md:col-start-2 md:pl-8"
                   }
                 >
-
                   <div className="relative ml-12 md:ml-0">
                     <span
                       aria-hidden
@@ -764,20 +707,11 @@ function Experience() {
   );
 }
 
-
-
 function Education() {
+  const { t } = useI18n();
   const items = [
-    {
-      degree: "Master's in Computer Science",
-      school: "ENI Fianarantsoa",
-      detail: "Software Engineering & Databases",
-    },
-    {
-      degree: "Bachelor's in Mathematics",
-      school: "University of Antananarivo",
-      detail: "Probabilities & Statistics",
-    },
+    { degreeKey: "edu.master.degree", schoolKey: "edu.master.school", detailKey: "edu.master.detail" },
+    { degreeKey: "edu.bachelor.degree", schoolKey: "edu.bachelor.school", detailKey: "edu.bachelor.detail" },
   ];
   const certs = [
     { title: "Back End Development and APIs", org: "freeCodeCamp", url: "https://www.freecodecamp.org/certification/fccdd5d45d8-c92c-4731-bf36-24beea4b4707/back-end-development-and-apis" },
@@ -788,19 +722,19 @@ function Education() {
     <section id="education" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <SectionHeading eyebrow="05 / Education" title="Foundations & continuous learning." />
+          <SectionHeading eyebrow={t("edu.eyebrow")} title={t("edu.title")} />
         </Reveal>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {items.map((e, i) => (
-            <Reveal key={e.degree} delay={i * 100}>
+            <Reveal key={e.degreeKey} delay={i * 100}>
               <div className="group h-full rounded-2xl border border-white/10 bg-white/[0.02] p-7 transition-all hover:border-[#00D4FF]/40">
                 <div className="grid h-12 w-12 place-items-center rounded-xl border border-[#00D4FF]/30 bg-[#00D4FF]/10 text-[#00D4FF]">
                   <GraduationCap className="h-6 w-6" />
                 </div>
-                <h3 className="mt-5 font-display text-xl font-semibold">{e.degree}</h3>
-                <div className="mt-1 text-sm text-[#00D4FF]">{e.school}</div>
-                <div className="mt-2 text-sm text-muted-foreground">{e.detail}</div>
+                <h3 className="mt-5 font-display text-xl font-semibold">{t(e.degreeKey)}</h3>
+                <div className="mt-1 text-sm text-[#00D4FF]">{t(e.schoolKey)}</div>
+                <div className="mt-2 text-sm text-muted-foreground">{t(e.detailKey)}</div>
               </div>
             </Reveal>
           ))}
@@ -808,7 +742,7 @@ function Education() {
 
         <Reveal>
           <div className="mt-16 flex items-baseline gap-3">
-            <h3 className="font-display text-2xl font-bold">Certifications</h3>
+            <h3 className="font-display text-2xl font-bold">{t("edu.certifications")}</h3>
             <span className="font-mono text-xs uppercase tracking-widest text-[#7C3AED]">2024</span>
           </div>
         </Reveal>
@@ -835,25 +769,27 @@ function Education() {
 }
 
 function Contact() {
+  const { t } = useI18n();
   const [sent, setSent] = useState(false);
+  const cards = [
+    { icon: Mail, labelKey: "contact.email", value: "rabearisonnjara@gmail.com", href: "mailto:rabearisonnjara@gmail.com" },
+    { icon: Phone, labelKey: "contact.phone", value: "+261 34 74 370 44", href: "tel:+261347437044" },
+    { icon: MapPin, labelKey: "contact.location", value: t("hero.location") },
+  ];
   return (
     <section id="contact" className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeading
-            eyebrow="06 / Contact"
-            title="Let's Work Together"
-            subtitle="Open to freelance missions and exciting projects."
+            eyebrow={t("contact.eyebrow")}
+            title={t("contact.title")}
+            subtitle={t("contact.subtitle")}
           />
         </Reveal>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.2fr]">
           <div className="space-y-4">
-            {[
-              { icon: Mail, label: "Email", value: "rabearisonnjara@gmail.com", href: "mailto:rabearisonnjara@gmail.com" },
-              { icon: Phone, label: "Phone", value: "+261 34 74 370 44", href: "tel:+261347437044" },
-              { icon: MapPin, label: "Location", value: "Antananarivo, Madagascar" },
-            ].map((c, i) => {
+            {cards.map((c, i) => {
               const Icon = c.icon;
               const inner = (
                 <div className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.02] p-5 transition-all hover:border-[#00D4FF]/40 hover:bg-white/[0.04]">
@@ -862,14 +798,14 @@ function Contact() {
                   </div>
                   <div className="min-w-0">
                     <div className="text-xs uppercase tracking-wider text-muted-foreground">
-                      {c.label}
+                      {t(c.labelKey)}
                     </div>
                     <div className="truncate font-medium">{c.value}</div>
                   </div>
                 </div>
               );
               return (
-                <Reveal key={c.label} delay={i * 80}>
+                <Reveal key={c.labelKey} delay={i * 80}>
                   {c.href ? <a href={c.href}>{inner}</a> : inner}
                 </Reveal>
               );
@@ -916,7 +852,8 @@ function Contact() {
                 const name = fd.get("name");
                 const email = fd.get("email");
                 const msg = fd.get("message");
-                const mailtoUrl = `mailto:rabearisonnjara@gmail.com?subject=Contact%20depuis%20Portfolio%20-%20${encodeURIComponent(String(name))}&body=Email:%20${encodeURIComponent(String(email))}%0A%0A${encodeURIComponent(String(msg))}`;
+                const subject = `${t("contact.subject")} - ${String(name)}`;
+                const mailtoUrl = `mailto:rabearisonnjara@gmail.com?subject=${encodeURIComponent(subject)}&body=Email:%20${encodeURIComponent(String(email))}%0A%0A${encodeURIComponent(String(msg))}`;
                 window.location.href = mailtoUrl;
                 setSent(true);
                 setTimeout(() => setSent(false), 3500);
@@ -925,12 +862,12 @@ function Contact() {
               className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8"
             >
               <div className="grid gap-4 sm:grid-cols-2">
-                <Field label="Name" name="name" type="text" required maxLength={100} />
-                <Field label="Email" name="email" type="email" required maxLength={255} />
+                <Field label={t("contact.form.name")} name="name" type="text" required maxLength={100} />
+                <Field label={t("contact.form.email")} name="email" type="email" required maxLength={255} />
               </div>
               <div className="mt-4">
                 <label className="mb-2 block text-xs uppercase tracking-wider text-muted-foreground">
-                  Message
+                  {t("contact.form.message")}
                 </label>
                 <textarea
                   name="message"
@@ -938,7 +875,7 @@ function Contact() {
                   maxLength={2000}
                   rows={5}
                   className="w-full resize-none rounded-xl border border-white/10 bg-[#0D1117] px-4 py-3 text-sm outline-none transition-colors focus:border-[#00D4FF]/60 focus:shadow-[0_0_0_3px_rgba(0,212,255,0.15)]"
-                  placeholder="Tell me about your project..."
+                  placeholder={t("contact.form.placeholder")}
                 />
               </div>
               <button
@@ -946,11 +883,11 @@ function Contact() {
                 className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#00D4FF] px-6 py-3 text-sm font-semibold text-[#0D1117] transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.55)]"
               >
                 <Send className="h-4 w-4" />
-                Send Message via Email
+                {t("contact.form.send")}
               </button>
               {sent && (
                 <div className="mt-4 text-sm text-[#4ade80]">
-                  Redirection vers votre messagerie en cours... Merci de votre message !
+                  {t("contact.form.sent")}
                 </div>
               )}
             </form>
@@ -991,12 +928,13 @@ function Field({
 }
 
 function Footer() {
+  const { t } = useI18n();
   return (
     <footer
       className="border-t px-4 py-8 text-center text-xs sm:text-sm text-muted-foreground sm:px-6"
       style={{ borderImage: "linear-gradient(90deg, transparent, #00D4FF66, transparent) 1" }}
     >
-      © 2026 Njara Rabearison · Senior Full-Stack Developer · Antananarivo, Madagascar
+      {t("footer.text")}
     </footer>
   );
 }
@@ -1019,5 +957,13 @@ function Portfolio() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+function PortfolioRoot() {
+  return (
+    <LanguageProvider>
+      <Portfolio />
+    </LanguageProvider>
   );
 }
