@@ -17,7 +17,6 @@ import {
   Server,
   Wrench,
   Layers,
-  GraduationCap,
   Briefcase,
   Send,
   ExternalLink,
@@ -709,8 +708,22 @@ function Experience() {
 function Education() {
   const { t } = useI18n();
   const items = [
-    { degreeKey: "edu.master.degree", schoolKey: "edu.master.school", detailKey: "edu.master.detail" },
-    { degreeKey: "edu.bachelor.degree", schoolKey: "edu.bachelor.school", detailKey: "edu.bachelor.detail" },
+    {
+      degreeKey: "edu.master.degree",
+      schoolKey: "edu.master.school",
+      detailKey: "edu.master.detail",
+      schoolUrl: "https://www.linkedin.com/school/14840876/",
+      logo: "https://media.licdn.com/dms/image/v2/C4D0BAQH_ZFqxEro0nQ/company-logo_100_100/company-logo_100_100/0/1630566834015/eni_fianarantsoa_logo?e=1783555200&v=beta&t=du5lSnAdpYClHwusf5IAqBow7QpEpQTxF2tWuKD02yE",
+      logoAlt: "Logo de Ecole Nationale d'Informatique (ENI) Fianarantsoa",
+    },
+    {
+      degreeKey: "edu.bachelor.degree",
+      schoolKey: "edu.bachelor.school",
+      detailKey: "edu.bachelor.detail",
+      schoolUrl: "https://www.linkedin.com/school/27100964/",
+      logo: "https://media.licdn.com/dms/image/v2/C560BAQEPXgyqifsTzA/company-logo_100_100/company-logo_100_100/0/1630581310690/university_of_antananarivo_mg_logo?e=1783555200&v=beta&t=Z7J5VuEIXQQeWFlNM8FXVSPiCee2BuDQpIWoavVHNDw",
+      logoAlt: "Logo de Université d'Antananarivo",
+    },
   ];
   const certs = [
     {
@@ -739,9 +752,19 @@ function Education() {
           {items.map((e, i) => (
             <Reveal key={e.degreeKey} delay={i * 100}>
               <div className="group h-full rounded-2xl border border-white/10 bg-white/[0.02] p-7 transition-all hover:border-[#00D4FF]/40">
-                <div className="grid h-12 w-12 place-items-center rounded-xl border border-[#00D4FF]/30 bg-[#00D4FF]/10 text-[#00D4FF]">
-                  <GraduationCap className="h-6 w-6" />
-                </div>
+                <a
+                  href={e.schoolUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="grid h-12 w-12 place-items-center overflow-hidden rounded-xl border border-[#00D4FF]/30 bg-white transition-transform hover:scale-105"
+                >
+                  <img
+                    src={e.logo}
+                    alt={e.logoAlt}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </a>
                 <h3 className="mt-5 font-display text-xl font-semibold">{t(e.degreeKey)}</h3>
                 <div className="mt-1 text-sm text-[#00D4FF]">{t(e.schoolKey)}</div>
                 <div className="mt-2 text-sm text-muted-foreground">{t(e.detailKey)}</div>
