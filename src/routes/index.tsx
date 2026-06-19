@@ -407,9 +407,9 @@ function About() {
     { value: "4", labelKey: "about.stat.projects" },
   ];
   const langs = [
-    { flag: "🇫🇷", nameKey: "about.lang.french", levelKey: "about.lang.fluent" },
-    { flag: "🇬🇧", nameKey: "about.lang.english", levelKey: "about.lang.technical" },
-    { flag: "🇲🇬", nameKey: "about.lang.malagasy", levelKey: "about.lang.native" },
+    { code: "fr", nameKey: "about.lang.french", levelKey: "about.lang.fluent" },
+    { code: "gb", nameKey: "about.lang.english", levelKey: "about.lang.technical" },
+    { code: "mg", nameKey: "about.lang.malagasy", levelKey: "about.lang.native" },
   ];
   return (
     <section id="about" className="px-4 py-20 sm:px-6 sm:py-24">
@@ -426,11 +426,18 @@ function About() {
               {langs.map((l) => (
                 <span
                   key={l.nameKey}
-                  className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] py-1.5 pl-1.5 pr-4"
                 >
-                  <span className="mr-2">{l.flag}</span>
+                  <img
+                    src={`https://flagcdn.com/w40/${l.code}.png`}
+                    srcSet={`https://flagcdn.com/w80/${l.code}.png 2x`}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    className="h-6 w-6 rounded-full object-cover ring-1 ring-white/15"
+                  />
                   <span className="font-medium">{t(l.nameKey)}</span>
-                  <span className="ml-1 text-muted-foreground">— {t(l.levelKey)}</span>
+                  <span className="text-muted-foreground">— {t(l.levelKey)}</span>
                 </span>
               ))}
             </div>
@@ -712,17 +719,17 @@ function Education() {
       degreeKey: "edu.master.degree",
       schoolKey: "edu.master.school",
       detailKey: "edu.master.detail",
-      schoolUrl: "https://www.linkedin.com/school/14840876/",
-      logo: "https://media.licdn.com/dms/image/v2/C4D0BAQH_ZFqxEro0nQ/company-logo_100_100/company-logo_100_100/0/1630566834015/eni_fianarantsoa_logo?e=1783555200&v=beta&t=du5lSnAdpYClHwusf5IAqBow7QpEpQTxF2tWuKD02yE",
-      logoAlt: "Logo de Ecole Nationale d'Informatique (ENI) Fianarantsoa",
+      schoolUrl: "https://www.eni.mg/",
+      logo: "https://www.google.com/s2/favicons?domain=eni.mg&sz=128",
+      logoAlt: "Logo de l'École Nationale d'Informatique (ENI) Fianarantsoa",
     },
     {
       degreeKey: "edu.bachelor.degree",
       schoolKey: "edu.bachelor.school",
       detailKey: "edu.bachelor.detail",
-      schoolUrl: "https://www.linkedin.com/school/27100964/",
-      logo: "https://media.licdn.com/dms/image/v2/C560BAQEPXgyqifsTzA/company-logo_100_100/company-logo_100_100/0/1630581310690/university_of_antananarivo_mg_logo?e=1783555200&v=beta&t=Z7J5VuEIXQQeWFlNM8FXVSPiCee2BuDQpIWoavVHNDw",
-      logoAlt: "Logo de Université d'Antananarivo",
+      schoolUrl: "https://www.univ-antananarivo.mg/",
+      logo: "https://www.google.com/s2/favicons?domain=univ-antananarivo.mg&sz=128",
+      logoAlt: "Logo de l'Université d'Antananarivo",
     },
   ];
   const certs = [
@@ -730,15 +737,15 @@ function Education() {
       title: "Back End Development and APIs",
       org: "freeCodeCamp",
       url: "https://www.freecodecamp.org/certification/fcc9acfeb56-7d67-44b4-99b1-97956567058a/back-end-development-and-apis",
-      logo: "https://media.licdn.com/dms/image/v2/C4E0BAQGLKj3JHcof0w/company-logo_100_100/company-logo_100_100/0/1630639684997/free_code_camp_logo?e=1783555200&v=beta&t=eITMbWTSRe4gKZB6y6ooWoHAl1C25GF8tnTVTJ-XUww",
+      logo: "https://www.google.com/s2/favicons?domain=freecodecamp.org&sz=128",
       logoAlt: "Logo de freeCodeCamp",
     },
     {
-      titleKey: "edu.cert.react",
+      title: t("edu.cert.react"),
       org: "LinkedIn Learning",
       url: "https://www.linkedin.com/learning/certificates/3439a96a10c84d85848576c4a72e0a16c1e640af6aca7e73a4f8a2b41e674440?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BYKbJQBYSTOubUKT8Jpz1aw%3D%3D",
-      logo: "https://media.licdn.com/dms/image/v2/C560BAQHaVYd13rRz3A/company-logo_100_100/company-logo_100_100/0/1638831590218/linkedin_logo?e=1783555200&v=beta&t=CKqjKs4Bs-JoLKMknLOT3jE77QgO4uiSeKUNCHn8n3g",
-      logoAlt: "Logo de LinkedIn",
+      logo: "https://www.google.com/s2/favicons?domain=linkedin.com&sz=128",
+      logoAlt: "Logo de LinkedIn Learning",
     },
   ];
   return (
@@ -761,7 +768,7 @@ function Education() {
                   <img
                     src={e.logo}
                     alt={e.logoAlt}
-                    className="h-full w-full object-cover"
+                    className="h-8 w-8 object-contain"
                     loading="lazy"
                   />
                 </a>
@@ -782,7 +789,7 @@ function Education() {
 
         <div className="mt-6 grid gap-5 md:grid-cols-2">
           {certs.map((c, i) => (
-            <Reveal key={"titleKey" in c ? c.titleKey : c.title} delay={i * 100}>
+            <Reveal key={c.title} delay={i * 100}>
               <a
                 href={c.url}
                 target="_blank"
@@ -793,12 +800,12 @@ function Education() {
                   <img
                     src={c.logo}
                     alt={c.logoAlt}
-                    className="h-full w-full object-cover"
+                    className="h-8 w-8 object-contain"
                     loading="lazy"
                   />
                 </div>
                 <h4 className="mt-5 font-display text-base font-semibold leading-snug flex items-center justify-between">
-                  {"titleKey" in c ? t(c.titleKey) : c.title}
+                  {c.title}
                   <ExternalLink className="h-3.5 w-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-[#7C3AED]" />
                 </h4>
                 <div className="mt-2 text-sm text-muted-foreground">{c.org}</div>
