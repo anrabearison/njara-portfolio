@@ -719,17 +719,17 @@ function Education() {
       degreeKey: "edu.master.degree",
       schoolKey: "edu.master.school",
       detailKey: "edu.master.detail",
-      schoolUrl: "https://www.linkedin.com/school/14840876/",
-      logo: "https://media.licdn.com/dms/image/v2/C4D0BAQH_ZFqxEro0nQ/company-logo_100_100/company-logo_100_100/0/1630566834015/eni_fianarantsoa_logo?e=1783555200&v=beta&t=du5lSnAdpYClHwusf5IAqBow7QpEpQTxF2tWuKD02yE",
-      logoAlt: "Logo de Ecole Nationale d'Informatique (ENI) Fianarantsoa",
+      schoolUrl: "https://www.eni.mg/",
+      logo: "https://www.google.com/s2/favicons?domain=eni.mg&sz=128",
+      logoAlt: "Logo de l'École Nationale d'Informatique (ENI) Fianarantsoa",
     },
     {
       degreeKey: "edu.bachelor.degree",
       schoolKey: "edu.bachelor.school",
       detailKey: "edu.bachelor.detail",
-      schoolUrl: "https://www.linkedin.com/school/27100964/",
-      logo: "https://media.licdn.com/dms/image/v2/C560BAQEPXgyqifsTzA/company-logo_100_100/company-logo_100_100/0/1630581310690/university_of_antananarivo_mg_logo?e=1783555200&v=beta&t=Z7J5VuEIXQQeWFlNM8FXVSPiCee2BuDQpIWoavVHNDw",
-      logoAlt: "Logo de Université d'Antananarivo",
+      schoolUrl: "https://www.univ-antananarivo.mg/",
+      logo: "https://www.google.com/s2/favicons?domain=univ-antananarivo.mg&sz=128",
+      logoAlt: "Logo de l'Université d'Antananarivo",
     },
   ];
   const certs = [
@@ -737,15 +737,15 @@ function Education() {
       title: "Back End Development and APIs",
       org: "freeCodeCamp",
       url: "https://www.freecodecamp.org/certification/fcc9acfeb56-7d67-44b4-99b1-97956567058a/back-end-development-and-apis",
-      logo: "https://media.licdn.com/dms/image/v2/C4E0BAQGLKj3JHcof0w/company-logo_100_100/company-logo_100_100/0/1630639684997/free_code_camp_logo?e=1783555200&v=beta&t=eITMbWTSRe4gKZB6y6ooWoHAl1C25GF8tnTVTJ-XUww",
+      logo: "https://www.google.com/s2/favicons?domain=freecodecamp.org&sz=128",
       logoAlt: "Logo de freeCodeCamp",
     },
     {
-      titleKey: "edu.cert.react",
+      title: t("edu.cert.react"),
       org: "LinkedIn Learning",
       url: "https://www.linkedin.com/learning/certificates/3439a96a10c84d85848576c4a72e0a16c1e640af6aca7e73a4f8a2b41e674440?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BYKbJQBYSTOubUKT8Jpz1aw%3D%3D",
-      logo: "https://media.licdn.com/dms/image/v2/C560BAQHaVYd13rRz3A/company-logo_100_100/company-logo_100_100/0/1638831590218/linkedin_logo?e=1783555200&v=beta&t=CKqjKs4Bs-JoLKMknLOT3jE77QgO4uiSeKUNCHn8n3g",
-      logoAlt: "Logo de LinkedIn",
+      logo: "https://www.google.com/s2/favicons?domain=linkedin.com&sz=128",
+      logoAlt: "Logo de LinkedIn Learning",
     },
   ];
   return (
