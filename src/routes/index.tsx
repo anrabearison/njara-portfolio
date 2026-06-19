@@ -763,12 +763,12 @@ function Education() {
                   href={e.schoolUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="grid h-12 w-12 place-items-center overflow-hidden rounded-xl border border-[#00D4FF]/30 bg-white transition-transform hover:scale-105"
+                  className="grid h-12 w-12 place-items-center overflow-hidden rounded-full ring-1 ring-[#00D4FF]/30 bg-white/[0.04] transition-transform hover:scale-105"
                 >
                   <img
                     src={e.logo}
                     alt={e.logoAlt}
-                    className="h-8 w-8 object-contain"
+                    className="h-7 w-7 object-contain"
                     loading="lazy"
                   />
                 </a>
