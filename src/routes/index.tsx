@@ -407,9 +407,9 @@ function About() {
     { value: "4", labelKey: "about.stat.projects" },
   ];
   const langs = [
-    { flag: "🇫🇷", nameKey: "about.lang.french", levelKey: "about.lang.fluent" },
-    { flag: "🇬🇧", nameKey: "about.lang.english", levelKey: "about.lang.technical" },
-    { flag: "🇲🇬", nameKey: "about.lang.malagasy", levelKey: "about.lang.native" },
+    { code: "fr", nameKey: "about.lang.french", levelKey: "about.lang.fluent" },
+    { code: "gb", nameKey: "about.lang.english", levelKey: "about.lang.technical" },
+    { code: "mg", nameKey: "about.lang.malagasy", levelKey: "about.lang.native" },
   ];
   return (
     <section id="about" className="px-4 py-20 sm:px-6 sm:py-24">
@@ -426,11 +426,18 @@ function About() {
               {langs.map((l) => (
                 <span
                   key={l.nameKey}
-                  className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] py-1.5 pl-1.5 pr-4"
                 >
-                  <span className="mr-2">{l.flag}</span>
+                  <img
+                    src={`https://flagcdn.com/w40/${l.code}.png`}
+                    srcSet={`https://flagcdn.com/w80/${l.code}.png 2x`}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    className="h-6 w-6 rounded-full object-cover ring-1 ring-white/15"
+                  />
                   <span className="font-medium">{t(l.nameKey)}</span>
-                  <span className="ml-1 text-muted-foreground">— {t(l.levelKey)}</span>
+                  <span className="text-muted-foreground">— {t(l.levelKey)}</span>
                 </span>
               ))}
             </div>
