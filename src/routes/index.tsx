@@ -789,7 +789,7 @@ function Education() {
 
         <div className="mt-6 grid gap-5 md:grid-cols-2">
           {certs.map((c, i) => (
-            <Reveal key={"titleKey" in c ? c.titleKey : c.title} delay={i * 100}>
+            <Reveal key={c.title} delay={i * 100}>
               <a
                 href={c.url}
                 target="_blank"
