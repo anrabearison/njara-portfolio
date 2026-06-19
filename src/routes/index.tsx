@@ -768,7 +768,7 @@ function Education() {
                   <img
                     src={e.logo}
                     alt={e.logoAlt}
-                    className="h-full w-full object-cover"
+                    className="h-8 w-8 object-contain"
                     loading="lazy"
                   />
                 </a>
@@ -800,7 +800,7 @@ function Education() {
                   <img
                     src={c.logo}
                     alt={c.logoAlt}
-                    className="h-full w-full object-cover"
+                    className="h-8 w-8 object-contain"
                     loading="lazy"
                   />
                 </div>
