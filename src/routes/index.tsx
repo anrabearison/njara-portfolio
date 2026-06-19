@@ -805,7 +805,7 @@ function Education() {
                   />
                 </div>
                 <h4 className="mt-5 font-display text-base font-semibold leading-snug flex items-center justify-between">
-                  {"titleKey" in c ? t(c.titleKey) : c.title}
+                  {c.title}
                   <ExternalLink className="h-3.5 w-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-[#7C3AED]" />
                 </h4>
                 <div className="mt-2 text-sm text-muted-foreground">{c.org}</div>
