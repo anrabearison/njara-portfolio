@@ -763,12 +763,12 @@ function Education() {
                   href={e.schoolUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="grid h-12 w-12 place-items-center overflow-hidden rounded-xl border border-[#00D4FF]/30 bg-white transition-transform hover:scale-105"
+                  className="grid h-12 w-12 place-items-center overflow-hidden rounded-full ring-1 ring-[#00D4FF]/30 bg-white/[0.04] transition-transform hover:scale-105"
                 >
                   <img
                     src={e.logo}
                     alt={e.logoAlt}
-                    className="h-8 w-8 object-contain"
+                    className="h-7 w-7 object-contain"
                     loading="lazy"
                   />
                 </a>
@@ -796,11 +796,11 @@ function Education() {
                 rel="noreferrer"
                 className="group relative block h-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 transition-all hover:border-[#7C3AED]/40 hover:shadow-[0_0_40px_rgba(124,58,237,0.18)]"
               >
-                <div className="grid h-12 w-12 place-items-center overflow-hidden rounded-xl border border-[#7C3AED]/30 bg-white">
+                <div className="grid h-12 w-12 place-items-center overflow-hidden rounded-full ring-1 ring-[#7C3AED]/30 bg-white/[0.04]">
                   <img
                     src={c.logo}
                     alt={c.logoAlt}
-                    className="h-8 w-8 object-contain"
+                    className="h-7 w-7 object-contain"
                     loading="lazy"
                   />
                 </div>
