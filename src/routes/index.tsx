@@ -720,8 +720,7 @@ function Education() {
       schoolKey: "edu.master.school",
       detailKey: "edu.master.detail",
       schoolUrl: "https://www.eni.mg/",
-      monogram: "ENI",
-      gradient: "from-[#00D4FF] to-[#0891B2]",
+      logo: eniLogo.url,
       logoAlt: "Logo de l'École Nationale d'Informatique (ENI) Fianarantsoa",
     },
     {
@@ -729,11 +728,11 @@ function Education() {
       schoolKey: "edu.bachelor.school",
       detailKey: "edu.bachelor.detail",
       schoolUrl: "https://www.univ-antananarivo.mg/",
-      monogram: "UA",
-      gradient: "from-[#7C3AED] to-[#4C1D95]",
+      logo: uaLogo.url,
       logoAlt: "Logo de l'Université d'Antananarivo",
     },
   ];
+
   const certs = [
     {
       title: "Back End Development and APIs",
