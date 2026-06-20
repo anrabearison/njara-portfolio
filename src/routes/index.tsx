@@ -25,6 +25,8 @@ import {
 import { LanguageProvider, useI18n, EXPERIENCE_I18N, type Lang } from "@/lib/i18n";
 import eniLogo from "@/assets/eni-logo.png.asset.json";
 import uaLogo from "@/assets/ua-logo.png.asset.json";
+import fccLogo from "@/assets/fcc-logo.svg.asset.json";
+import linkedinLearningLogo from "@/assets/linkedin-learning-logo.png.asset.json";
 
 
 export const Route = createFileRoute("/")({
@@ -741,16 +743,14 @@ function Education() {
       title: "Back End Development and APIs",
       org: "freeCodeCamp",
       url: "https://www.freecodecamp.org/certification/fcc9acfeb56-7d67-44b4-99b1-97956567058a/back-end-development-and-apis",
-      icon: "https://cdn.simpleicons.org/freecodecamp/0A0A23",
-      iconBg: "bg-white",
+      icon: fccLogo.url,
       logoAlt: "Logo de freeCodeCamp",
     },
     {
       title: t("edu.cert.react"),
       org: "LinkedIn Learning",
       url: "https://www.linkedin.com/learning/certificates/3439a96a10c84d85848576c4a72e0a16c1e640af6aca7e73a4f8a2b41e674440?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BYKbJQBYSTOubUKT8Jpz1aw%3D%3D",
-      icon: "https://cdn.simpleicons.org/linkedin/ffffff",
-      iconBg: "bg-[#0A66C2]",
+      icon: linkedinLearningLogo.url,
       logoAlt: "Logo de LinkedIn Learning",
     },
   ];
@@ -799,11 +799,11 @@ function Education() {
                 rel="noreferrer"
                 className="group relative block h-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 transition-all hover:border-[#7C3AED]/40 hover:shadow-[0_0_40px_rgba(124,58,237,0.18)]"
               >
-                <div className={`grid h-12 w-12 place-items-center rounded-full ring-1 ring-white/10 ${c.iconBg} shadow-[0_4px_20px_rgba(0,0,0,0.3)]`}>
+                <div className="grid h-14 w-14 place-items-center rounded-full ring-1 ring-white/10 bg-white p-1.5 shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
                   <img
                     src={c.icon}
                     alt={c.logoAlt}
-                    className="h-6 w-6 object-contain"
+                    className="h-full w-full object-contain"
                     loading="lazy"
                   />
                 </div>
