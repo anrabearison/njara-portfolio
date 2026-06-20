@@ -23,6 +23,9 @@ import {
   Languages,
 } from "lucide-react";
 import { LanguageProvider, useI18n, EXPERIENCE_I18N, type Lang } from "@/lib/i18n";
+import eniLogo from "@/assets/eni-logo.png.asset.json";
+import uaLogo from "@/assets/ua-logo.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
