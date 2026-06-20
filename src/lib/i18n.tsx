@@ -92,7 +92,7 @@ const EN: Dict = {
   "edu.master.degree": "Master's in Computer Science",
   "edu.master.school": "ENI Fianarantsoa",
   "edu.master.detail": "Software Engineering & Databases",
-  "edu.bachelor.degree": "Bachelor's in Mathematics",
+  "edu.bachelor.degree": "Master's in Mathematics",
   "edu.bachelor.school": "University of Antananarivo",
   "edu.bachelor.detail": "Probabilities & Statistics",
 
@@ -203,7 +203,7 @@ const FR: Dict = {
   "edu.master.degree": "Master en Informatique",
   "edu.master.school": "ENI Fianarantsoa",
   "edu.master.detail": "Génie Logiciel & Bases de données",
-  "edu.bachelor.degree": "Licence en Mathématiques",
+  "edu.bachelor.degree": "Maîtrise en Mathématiques",
   "edu.bachelor.school": "Université d'Antananarivo",
   "edu.bachelor.detail": "Probabilités & Statistiques",
 
