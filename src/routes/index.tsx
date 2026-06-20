@@ -741,16 +741,14 @@ function Education() {
       title: "Back End Development and APIs",
       org: "freeCodeCamp",
       url: "https://www.freecodecamp.org/certification/fcc9acfeb56-7d67-44b4-99b1-97956567058a/back-end-development-and-apis",
-      icon: "https://cdn.simpleicons.org/freecodecamp/0A0A23",
-      iconBg: "bg-white",
+      icon: fccLogo.url,
       logoAlt: "Logo de freeCodeCamp",
     },
     {
       title: t("edu.cert.react"),
       org: "LinkedIn Learning",
       url: "https://www.linkedin.com/learning/certificates/3439a96a10c84d85848576c4a72e0a16c1e640af6aca7e73a4f8a2b41e674440?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BYKbJQBYSTOubUKT8Jpz1aw%3D%3D",
-      icon: "https://cdn.simpleicons.org/linkedin/ffffff",
-      iconBg: "bg-[#0A66C2]",
+      icon: linkedinLearningLogo.url,
       logoAlt: "Logo de LinkedIn Learning",
     },
   ];
