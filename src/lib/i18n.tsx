@@ -203,7 +203,7 @@ const FR: Dict = {
   "edu.master.degree": "Master en Informatique",
   "edu.master.school": "ENI Fianarantsoa",
   "edu.master.detail": "Génie Logiciel & Bases de données",
-  "edu.bachelor.degree": "Licence en Mathématiques",
+  "edu.bachelor.degree": "Maîtrise en Mathématiques",
   "edu.bachelor.school": "Université d'Antananarivo",
   "edu.bachelor.detail": "Probabilités & Statistiques",
 
