@@ -23,6 +23,9 @@ import {
   Languages,
 } from "lucide-react";
 import { LanguageProvider, useI18n, EXPERIENCE_I18N, type Lang } from "@/lib/i18n";
+import eniLogo from "@/assets/eni-logo.png.asset.json";
+import uaLogo from "@/assets/ua-logo.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -720,8 +723,7 @@ function Education() {
       schoolKey: "edu.master.school",
       detailKey: "edu.master.detail",
       schoolUrl: "https://www.eni.mg/",
-      monogram: "ENI",
-      gradient: "from-[#00D4FF] to-[#0891B2]",
+      logo: eniLogo.url,
       logoAlt: "Logo de l'École Nationale d'Informatique (ENI) Fianarantsoa",
     },
     {
@@ -729,11 +731,11 @@ function Education() {
       schoolKey: "edu.bachelor.school",
       detailKey: "edu.bachelor.detail",
       schoolUrl: "https://www.univ-antananarivo.mg/",
-      monogram: "UA",
-      gradient: "from-[#7C3AED] to-[#4C1D95]",
+      logo: uaLogo.url,
       logoAlt: "Logo de l'Université d'Antananarivo",
     },
   ];
+
   const certs = [
     {
       title: "Back End Development and APIs",
@@ -768,10 +770,11 @@ function Education() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={e.logoAlt}
-                  className={`grid h-12 w-12 place-items-center rounded-full ring-1 ring-white/10 bg-gradient-to-br ${e.gradient} font-display text-sm font-bold tracking-wide text-white shadow-[0_4px_20px_rgba(0,0,0,0.3)] transition-transform hover:scale-105`}
+                  className="grid h-14 w-14 place-items-center rounded-full ring-1 ring-white/10 bg-white p-1.5 shadow-[0_4px_20px_rgba(0,0,0,0.3)] transition-transform hover:scale-105"
                 >
-                  {e.monogram}
+                  <img src={e.logo} alt={e.logoAlt} className="h-full w-full object-contain" loading="lazy" />
                 </a>
+
                 <h3 className="mt-5 font-display text-xl font-semibold">{t(e.degreeKey)}</h3>
                 <div className="mt-1 text-sm text-[#00D4FF]">{t(e.schoolKey)}</div>
                 <div className="mt-2 text-sm text-muted-foreground">{t(e.detailKey)}</div>
