@@ -799,7 +799,7 @@ function Education() {
                 rel="noreferrer"
                 className="group relative block h-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-7 transition-all hover:border-[#7C3AED]/40 hover:shadow-[0_0_40px_rgba(124,58,237,0.18)]"
               >
-                <div className="grid h-14 w-14 shrink-0 place-items-center rounded-full ring-1 ring-white/10 bg-white p-2 shadow-[0_4px_20px_rgba(0,0,0,0.3)] transition-transform group-hover:scale-105">
+                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full ring-1 ring-white/15 bg-white/[0.04] p-1.5 transition-transform group-hover:scale-105">
                   <img
                     src={c.icon}
                     alt={c.logoAlt}
