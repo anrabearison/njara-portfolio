@@ -725,7 +725,7 @@ function Education() {
       schoolKey: "edu.master.school",
       detailKey: "edu.master.detail",
       schoolUrl: "https://www.eni.mg/",
-      logo: eniLogo.url,
+      logo: eniLogo,
       logoAlt: "Logo de l'École Nationale d'Informatique (ENI) Fianarantsoa",
     },
     {
@@ -733,7 +733,7 @@ function Education() {
       schoolKey: "edu.bachelor.school",
       detailKey: "edu.bachelor.detail",
       schoolUrl: "https://www.univ-antananarivo.mg/",
-      logo: uaLogo.url,
+      logo: uaLogo,
       logoAlt: "Logo de l'Université d'Antananarivo",
     },
   ];
@@ -743,14 +743,14 @@ function Education() {
       title: "Back End Development and APIs",
       org: "freeCodeCamp",
       url: "https://www.freecodecamp.org/certification/fcc9acfeb56-7d67-44b4-99b1-97956567058a/back-end-development-and-apis",
-      icon: fccLogo.url,
+      icon: fccLogo,
       logoAlt: "Logo de freeCodeCamp",
     },
     {
       title: t("edu.cert.react"),
       org: "LinkedIn Learning",
       url: "https://www.linkedin.com/learning/certificates/3439a96a10c84d85848576c4a72e0a16c1e640af6aca7e73a4f8a2b41e674440?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BYKbJQBYSTOubUKT8Jpz1aw%3D%3D",
-      icon: linkedinLearningLogo.url,
+      icon: linkedinLearningLogo,
       logoAlt: "Logo de LinkedIn Learning",
     },
   ];
