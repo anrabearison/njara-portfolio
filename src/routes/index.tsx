@@ -23,10 +23,10 @@ import {
   Languages,
 } from "lucide-react";
 import { LanguageProvider, useI18n, EXPERIENCE_I18N, type Lang } from "@/lib/i18n";
-import eniLogo from "@/assets/eni-logo.png.asset.json";
-import uaLogo from "@/assets/ua-logo.png.asset.json";
-import fccLogo from "@/assets/fcc-logo.svg.asset.json";
-import linkedinLearningLogo from "@/assets/linkedin-learning-logo.png.asset.json";
+import eniLogo from "@/assets/logos/eni.png";
+import uaLogo from "@/assets/logos/ua.png";
+import fccLogo from "@/assets/logos/freecodecamp.svg";
+import linkedinLearningLogo from "@/assets/logos/linkedin-learning.png";
 
 
 export const Route = createFileRoute("/")({
