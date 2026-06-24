@@ -770,9 +770,9 @@ function Education() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={e.logoAlt}
-                  className="grid h-12 w-12 shrink-0 place-items-center rounded-full ring-1 ring-white/15 bg-white p-1.5 transition-transform hover:scale-105"
+                  className="grid h-10 w-10 shrink-0 place-items-center rounded-full ring-1 ring-[#00D4FF]/30 bg-white/[0.04] transition-transform hover:scale-105"
                 >
-                  <img src={e.logo} alt={e.logoAlt} className="h-full w-full object-contain" loading="lazy" />
+                  <img src={e.logo} alt={e.logoAlt} className="h-7 w-7 object-contain" loading="lazy" />
                 </a>
 
                 <h3 className="mt-5 font-display text-xl font-semibold">{t(e.degreeKey)}</h3>
@@ -799,11 +799,11 @@ function Education() {
                 rel="noreferrer"
                 className="group relative block h-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-7 transition-all hover:border-[#7C3AED]/40 hover:shadow-[0_0_40px_rgba(124,58,237,0.18)]"
               >
-                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full ring-1 ring-white/15 bg-white p-1.5 transition-transform group-hover:scale-105">
+                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full ring-1 ring-[#7C3AED]/30 bg-white/[0.04] transition-transform group-hover:scale-105">
                   <img
                     src={c.icon}
                     alt={c.logoAlt}
-                    className="h-full w-full object-contain"
+                    className="h-7 w-7 object-contain"
                     loading="lazy"
                   />
                 </div>
