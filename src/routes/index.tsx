@@ -770,9 +770,14 @@ function Education() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={e.logoAlt}
-                  className="grid h-10 w-10 shrink-0 place-items-center rounded-full ring-1 ring-[#00D4FF]/30 bg-white/[0.04] transition-transform hover:scale-105"
+                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white p-2.5 shadow-sm ring-1 ring-white/10 transition-transform hover:scale-105 group-hover:ring-[#00D4FF]/40"
                 >
-                  <img src={e.logo} alt={e.logoAlt} className="h-7 w-7 object-contain" loading="lazy" />
+                  <img
+                    src={e.logo}
+                    alt={e.logoAlt}
+                    className="h-full w-full object-contain"
+                    loading="lazy"
+                  />
                 </a>
 
                 <h3 className="mt-5 font-display text-xl font-semibold">{t(e.degreeKey)}</h3>
@@ -799,11 +804,11 @@ function Education() {
                 rel="noreferrer"
                 className="group relative block h-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-7 transition-all hover:border-[#7C3AED]/40 hover:shadow-[0_0_40px_rgba(124,58,237,0.18)]"
               >
-                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full ring-1 ring-[#7C3AED]/30 bg-white/[0.04] transition-transform group-hover:scale-105">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white p-2.5 shadow-sm ring-1 ring-white/10 transition-transform group-hover:scale-105 group-hover:ring-[#7C3AED]/40">
                   <img
                     src={c.icon}
                     alt={c.logoAlt}
-                    className="h-7 w-7 object-contain"
+                    className="h-full w-full object-contain"
                     loading="lazy"
                   />
                 </div>
