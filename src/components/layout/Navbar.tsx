@@ -4,7 +4,7 @@ import { useI18n } from "@/lib/i18n";
 import { useScroll } from "@/hooks/useScroll";
 import { useEscapeKey } from "@/hooks/useEscapeKey";
 import { NAV_KEYS } from "@/constants/navigation";
-import { LangToggle } from "./LangToggle";
+import { LangToggle } from "../common/LangToggle";
 
 export function Navbar() {
   const { t } = useI18n();

@@ -1,7 +1,7 @@
 import { Briefcase } from "lucide-react";
 import { useI18n, EXPERIENCE_I18N } from "@/lib/i18n";
-import { Reveal } from "./Reveal";
-import { SectionHeading } from "./SectionHeading";
+import { Reveal } from "../animations/Reveal";
+import { SectionHeading } from "../common/SectionHeading";
 
 export function Experience() {
   const { t, lang } = useI18n();

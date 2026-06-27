@@ -1,7 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
-import { Reveal } from "./Reveal";
-import { SectionHeading } from "./SectionHeading";
+import { Reveal } from "../animations/Reveal";
+import { SectionHeading } from "../common/SectionHeading";
 import eniLogo from "@/assets/logos/eni.png";
 import uaLogo from "@/assets/logos/ua.png";
 import fccLogo from "@/assets/logos/freecodecamp.svg";

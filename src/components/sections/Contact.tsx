@@ -1,9 +1,9 @@
 import { useState, useCallback } from "react";
 import { Github, Linkedin, MessageCircle, Send } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
-import { Reveal } from "./Reveal";
-import { SectionHeading } from "./SectionHeading";
-import { Field } from "./Field";
+import { Reveal } from "../animations/Reveal";
+import { SectionHeading } from "../common/SectionHeading";
+import { Field } from "../common/Field";
 import { CONTACT_CARDS, SOCIAL_LINKS } from "@/constants/contact";
 
 export function Contact() {

@@ -1,6 +1,6 @@
 import { useI18n } from "@/lib/i18n";
-import { Reveal } from "./Reveal";
-import { SectionHeading } from "./SectionHeading";
+import { Reveal } from "../animations/Reveal";
+import { SectionHeading } from "../common/SectionHeading";
 
 export function About() {
   const { t } = useI18n();

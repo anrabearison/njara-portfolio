@@ -1,6 +1,6 @@
 import { MapPin, ArrowRight, Download } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
-import { Typewriter } from "./Typewriter";
+import { Typewriter } from "../animations/Typewriter";
 
 export function Hero() {
   const { t, tArr } = useI18n();

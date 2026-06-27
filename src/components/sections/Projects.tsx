@@ -1,7 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
-import { Reveal } from "./Reveal";
-import { SectionHeading } from "./SectionHeading";
+import { Reveal } from "../animations/Reveal";
+import { SectionHeading } from "../common/SectionHeading";
 import { PROJECTS } from "@/constants/projects";
 import { handleLinkWithFallback } from "@/utils/linkHandler";
 
