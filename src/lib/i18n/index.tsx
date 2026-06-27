@@ -73,12 +73,17 @@ const EN: Dict = {
     "Design and development of robust, modular transactional APIs for the leader of multi-brand gift cards (E-commerce and Retail).",
   "projects.illicado.metrics":
     "Architecture designed to handle peaks of 100k+ requests/day during the holiday season without compromising financial integrity.",
-  "projects.tradepilot.category": "Web Scraping & Automation",
-  "projects.tradepilot.title": "Trade-Pilot Scraping Engine",
+  "projects.tradepilot.category": "Plugin Development & System Integration",
+  "projects.tradepilot.title": "Trade-Pilot Integration — eexpand",
   "projects.tradepilot.description":
-    "Modular automation and web scraping engine for the intelligent, structured real-time collection of job postings across multiple job boards.",
-  "projects.tradepilot.metrics":
-    "Extraction and structuring of 10,000+ entries/day using BeautifulSoup with Symfony/MariaDB synchronization.",
+    "Development of custom plugins and backend integration for Trade-Pilot, eexpand's AI-powered platform for international trade intelligence. Built the WordPress/Symfony/MariaDB bridge connecting custom plugins to the core platform.",
+  "projects.tradepilot.metrics": "",
+  "projects.job-market-scraping.category": "Web Scraping & Automation",
+  "projects.job-market-scraping.title": "Job Market Scraping Engine — Ezway (Internal Tool)",
+  "projects.job-market-scraping.description":
+    "Modular automation and web scraping engine built for Ezway's internal use, enabling intelligent, structured real-time collection of job postings across multiple job boards.",
+  "projects.job-market-scraping.metrics":
+    "Extraction and structuring of 10,000+ entries/day using BeautifulSoup, synchronized with a Flask/MariaDB backend.",
 
   // Experience
   "exp.eyebrow": "04 / Experience",
@@ -184,12 +189,17 @@ const FR: Dict = {
     "Conception et développement d'APIs transactionnelles robustes et modulaires pour le leader de la carte cadeau multi-enseignes (E-commerce et Retail).",
   "projects.illicado.metrics":
     "Architecture conçue pour supporter des pics à 100k+ requêtes/jour pendant les fêtes de fin d'année sans perte d'intégrité financière.",
-  "projects.tradepilot.category": "Web Scraping & Automatisation",
-  "projects.tradepilot.title": "Moteur de Scraping Trade-Pilot",
+  "projects.tradepilot.category": "Développement de Plugins & Intégration Système",
+  "projects.tradepilot.title": "Intégration Trade-Pilot — eexpand",
   "projects.tradepilot.description":
-    "Moteur d'automatisation et de web scraping modulaire pour la collecte intelligente et structurée d'offres d'emploi en temps réel sur de multiples job boards.",
-  "projects.tradepilot.metrics":
-    "Extraction et structuration de plus de 10 000 entrées/jour avec BeautifulSoup et synchronisation Symfony/MariaDB.",
+    "Développement de plugins personnalisés et intégration backend pour Trade-Pilot, la plateforme propulsée par l'IA d'eexpand pour l'intelligence commerciale internationale. Construction du pont WordPress/Symfony/MariaDB connectant les plugins personnalisés à la plateforme centrale.",
+  "projects.tradepilot.metrics": "",
+  "projects.job-market-scraping.category": "Web Scraping & Automatisation",
+  "projects.job-market-scraping.title": "Moteur de Scraping du Marché de l'Emploi — Ezway (Outil Interne)",
+  "projects.job-market-scraping.description":
+    "Moteur d'automatisation et de web scraping modulaire construit pour l'usage interne d'Ezway, permettant la collecte intelligente et structurée en temps réel d'offres d'emploi sur plusieurs job boards.",
+  "projects.job-market-scraping.metrics":
+    "Extraction et structuration de 10 000+ entrées/jour avec BeautifulSoup, synchronisé avec un backend Flask/MariaDB.",
 
   // Experience
   "exp.eyebrow": "04 / Expérience",

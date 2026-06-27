@@ -19,6 +19,11 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "tradepilot",
-    tags: ["Python", "BeautifulSoup", "Symfony", "MariaDB", "Task Automation"],
+    tags: ["WordPress", "Symfony", "MariaDB", "Custom Plugins", "API Integration"],
+    link: "https://www.eexpand.com/discover-trade-pilot/",
+  },
+  {
+    id: "job-market-scraping",
+    tags: ["Python", "BeautifulSoup", "Flask", "MariaDB", "Task Automation"],
   },
 ];

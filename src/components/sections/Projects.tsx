@@ -44,12 +44,14 @@ export function Projects() {
                   </p>
                 </div>
                 <div className="mt-auto">
-                  <div className="border-t border-white/5 pt-4 mb-4">
-                    <div className="text-xs font-mono text-[#4ade80] font-medium">{t("projects.impact")}</div>
-                    <div className="text-xs text-muted-foreground mt-1 italic">
-                      {t(`projects.${p.id}.metrics`)}
+                  {t(`projects.${p.id}.metrics`) && (
+                    <div className="border-t border-white/5 pt-4 mb-4">
+                      <div className="text-xs font-mono text-[#4ade80] font-medium">{t("projects.impact")}</div>
+                      <div className="text-xs text-muted-foreground mt-1 italic">
+                        {t(`projects.${p.id}.metrics`)}
+                      </div>
                     </div>
-                  </div>
+                  )}
                   <div className="flex flex-wrap gap-1.5">
                     {p.tags.map((tag) => (
                       <span key={tag} className="rounded bg-white/[0.04] px-2 py-0.5 text-[10px] font-mono text-muted-foreground">{tag}</span>
