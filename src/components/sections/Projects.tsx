@@ -1,9 +1,9 @@
 import { ExternalLink } from "lucide-react";
-import { useI18n } from "@/lib/i18n";
+import { useI18n } from "@/lib/i18n/index";
 import { Reveal } from "../animations/Reveal";
 import { SectionHeading } from "../common/SectionHeading";
 import { PROJECTS } from "@/constants/projects";
-import { handleLinkWithFallback } from "@/utils/linkHandler";
+import { handleLinkWithFallback } from "@/lib/utils/linkHandler";
 
 export function Projects() {
   const { t } = useI18n();

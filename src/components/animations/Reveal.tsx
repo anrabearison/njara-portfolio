@@ -1,5 +1,5 @@
 import { type ReactNode, memo } from "react";
-import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useIntersectionObserver } from "@/hooks/scroll/useIntersectionObserver";
 
 interface RevealProps {
   children: ReactNode;

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { LanguageProvider } from "@/lib/i18n";
+import { LanguageProvider } from "@/lib/i18n/index";
 import Particles from "@/components/animations/Particles";
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/sections/Hero";

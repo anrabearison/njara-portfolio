@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { Menu, X } from "lucide-react";
-import { useI18n } from "@/lib/i18n";
-import { useScroll } from "@/hooks/useScroll";
-import { useEscapeKey } from "@/hooks/useEscapeKey";
+import { useI18n } from "@/lib/i18n/index";
+import { useScroll } from "@/hooks/scroll/useScroll";
+import { useEscapeKey } from "@/hooks/interaction/useEscapeKey";
 import { NAV_KEYS } from "@/constants/navigation";
 import { LangToggle } from "../common/LangToggle";
 

@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { useI18n } from "@/lib/i18n";
+import { useI18n } from "@/lib/i18n/index";
 
 export const Footer = memo(function Footer() {
   const { t } = useI18n();

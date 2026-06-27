@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Languages } from "lucide-react";
-import { useI18n, type Lang } from "@/lib/i18n";
+import { useI18n, type Lang } from "@/lib/i18n/index";
 
 interface LangToggleProps {
   className?: string;

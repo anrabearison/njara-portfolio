@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { Github, Linkedin, MessageCircle, Send } from "lucide-react";
-import { useI18n } from "@/lib/i18n";
+import { useI18n } from "@/lib/i18n/index";
 import { Reveal } from "../animations/Reveal";
 import { SectionHeading } from "../common/SectionHeading";
 import { Field } from "../common/Field";

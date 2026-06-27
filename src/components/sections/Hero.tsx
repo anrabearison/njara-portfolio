@@ -1,5 +1,5 @@
 import { MapPin, ArrowRight, Download } from "lucide-react";
-import { useI18n } from "@/lib/i18n";
+import { useI18n } from "@/lib/i18n/index";
 import { Typewriter } from "../animations/Typewriter";
 
 export function Hero() {

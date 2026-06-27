@@ -1,4 +1,4 @@
-import { useTypewriter } from "@/hooks/useTypewriter";
+import { useTypewriter } from "@/hooks/interaction/useTypewriter";
 
 interface TypewriterProps {
   words: string[];

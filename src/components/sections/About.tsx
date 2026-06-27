@@ -1,4 +1,4 @@
-import { useI18n } from "@/lib/i18n";
+import { useI18n } from "@/lib/i18n/index";
 import { Reveal } from "../animations/Reveal";
 import { SectionHeading } from "../common/SectionHeading";
 
