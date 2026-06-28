@@ -82,6 +82,66 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
+    const timestamp = new Date().toLocaleString("fr-FR", {
+      timeZone: "Indian/Antananarivo",
+      dateStyle: "long",
+      timeStyle: "short",
+    });
+
+    const html = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f5f5f5;">
+        <div style="background-color: #0D1117; padding: 20px; border-radius: 8px 8px 0 0;">
+          <h1 style="color: #00D4FF; margin: 0; font-size: 24px;">Nouveau message depuis votre portfolio</h1>
+        </div>
+        <div style="background-color: white; padding: 30px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+          <p style="color: #666; font-size: 14px; margin-bottom: 30px;">📅 ${timestamp}</p>
+          
+          <div style="margin-bottom: 20px;">
+            <p style="margin: 0 0 5px 0; color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Nom</p>
+            <p style="margin: 0; color: #0D1117; font-size: 16px; font-weight: 500;">${data.name}</p>
+          </div>
+          
+          <div style="margin-bottom: 20px;">
+            <p style="margin: 0 0 5px 0; color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Email</p>
+            <p style="margin: 0; color: #0D1117; font-size: 16px;">
+              <a href="mailto:${data.email}" style="color: #00D4FF; text-decoration: none;">${data.email}</a>
+            </p>
+          </div>
+          
+          <div style="margin-bottom: 30px;">
+            <p style="margin: 0 0 5px 0; color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Message</p>
+            <div style="background-color: #f9f9f9; padding: 15px; border-left: 3px solid #00D4FF; border-radius: 4px;">
+              <p style="margin: 0; color: #333; font-size: 15px; line-height: 1.6; white-space: pre-wrap;">${data.message}</p>
+            </div>
+          </div>
+          
+          <div style="border-top: 1px solid #eee; padding-top: 20px; text-align: center;">
+            <p style="margin: 0; color: #999; font-size: 12px;">
+              Envoyé depuis <a href="https://njara-rabearison.vercel.app" style="color: #00D4FF; text-decoration: none;">njara-rabearison.vercel.app</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    `;
+
+    const text = `
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  NOUVEAU MESSAGE DEPUIS VOTRE PORTFOLIO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📅 ${timestamp}
+
+Nom: ${data.name}
+Email: ${data.email}
+
+Message:
+${data.message}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Envoyé depuis njara-rabearison.vercel.app
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    `;
+
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -91,11 +151,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       body: JSON.stringify({
         from: "Portfolio Contact <onboarding@resend.dev>",
         to: "rabearisonnjara@gmail.com",
-        subject: `Contact from Portfolio - ${data.name}`,
+        subject: `📧 Nouveau message de ${data.name} - Portfolio`,
         reply_to: data.email,
-        text: [`Name: ${data.name}`, `Email: ${data.email}`, "", "Message:", data.message].join(
-          "\n",
-        ),
+        html,
+        text,
       }),
     });
 
