@@ -132,7 +132,7 @@ const EN: Dict = {
   "contact.form.placeholder": "Tell me about your project...",
   "contact.form.send": "Send Message",
   "contact.form.sending": "Sending...",
-  "contact.form.sent": "Message sent successfully! Thank you for reaching out.",
+  "contact.form.sent": "Your message has been sent successfully. I will get back to you as soon as possible.",
   "contact.form.error": "Failed to send. Please try again.",
   "contact.subject": "Contact from Portfolio",
 
@@ -268,7 +268,7 @@ const FR: Dict = {
   "contact.form.placeholder": "Parlez-moi de votre projet...",
   "contact.form.send": "Envoyer le message",
   "contact.form.sending": "Envoi en cours...",
-  "contact.form.sent": "Message envoyé avec succès ! Merci de m'avoir contacté.",
+  "contact.form.sent": "Votre message a bien été envoyé. Je vous répondrai dans les plus brefs délais.",
   "contact.form.error": "Échec de l'envoi. Veuillez réessayer.",
   "contact.subject": "Contact depuis Portfolio",
 
