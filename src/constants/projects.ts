@@ -26,4 +26,16 @@ export const PROJECTS: Project[] = [
     id: "job-market-scraping",
     tags: ["Python", "BeautifulSoup", "Flask", "MariaDB", "Task Automation"],
   },
+  {
+    id: "lean-contact",
+    tags: ["PHP", "Symfony", "React.js", "ETL", "VoIP/SMS Integration", "High Availability"],
+  },
+  {
+    id: "quantaview",
+    tags: ["PHP", "MySQL", "SAS", "Clinical Data Management"],
+  },
+  {
+    id: "financial-reporting-engine",
+    tags: ["Java", "Spring MVC", "Apache POI", "IBM DB2"],
+  },
 ];

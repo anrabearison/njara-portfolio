@@ -84,6 +84,24 @@ const EN: Dict = {
     "Modular automation and web scraping engine built for Ezway's internal use, enabling intelligent, structured real-time collection of job postings across multiple job boards.",
   "projects.job-market-scraping.metrics":
     "Extraction and structuring of 10,000+ entries/day using BeautifulSoup, synchronized with a Flask/MariaDB backend.",
+  "projects.lean-contact.category": "Data Engineering & ETL",
+  "projects.lean-contact.title": "Lean-Contact — Multichannel CRM Platform",
+  "projects.lean-contact.description":
+    "Designed and built Lean-Contact, a proprietary multichannel CRM platform for Webhelp, unifying customer interactions across VoIP, SMS, and Email into a single automated workflow.",
+  "projects.lean-contact.metrics":
+    "Standardized 1M+ customer records/day through dedicated ETL pipelines, with automated callback algorithms improving campaign efficiency by 25%.",
+  "projects.quantaview.category": "Clinical Data Systems",
+  "projects.quantaview.title": "QuantaView — Clinical Trial eCRF",
+  "projects.quantaview.description":
+    "Development of a proprietary electronic Case Report Form (eCRF) for capturing and managing international clinical trial data, deployed on intranet for pharmaceutical and clinical research clients.",
+  "projects.quantaview.metrics":
+    "Automation scripts (PHP/MySQL) saved 15+ hours of manual data cleanup per study; dataset preparation supported by SAS statistical models.",
+  "projects.financial-reporting-engine.category": "Backend & Reporting Automation",
+  "projects.financial-reporting-engine.title": "Automated Financial Reporting Engine",
+  "projects.financial-reporting-engine.description":
+    "Built an automatic export engine generating dynamic .xlsx/.csv financial reports for accounting teams, replacing manual data entry and verification workflows.",
+  "projects.financial-reporting-engine.metrics":
+    "100% replacement of manual data entry and verification with a direct audit flow to accountants, built on efficient IBM DB2 transactional modeling.",
 
   // Experience
   "exp.eyebrow": "04 / Experience",
@@ -200,6 +218,24 @@ const FR: Dict = {
     "Moteur d'automatisation et de web scraping modulaire construit pour l'usage interne d'Ezway, permettant la collecte intelligente et structurée en temps réel d'offres d'emploi sur plusieurs job boards.",
   "projects.job-market-scraping.metrics":
     "Extraction et structuration de 10 000+ entrées/jour avec BeautifulSoup, synchronisé avec un backend Flask/MariaDB.",
+  "projects.lean-contact.category": "Data Engineering & ETL",
+  "projects.lean-contact.title": "Lean-Contact — Plateforme CRM Multicanal",
+  "projects.lean-contact.description":
+    "Conception et développement de Lean-Contact, une plateforme CRM multicanal propriétaire pour Webhelp, unifiant les interactions clients via VoIP, SMS et Email dans un workflow automatisé unique.",
+  "projects.lean-contact.metrics":
+    "Standardisation de 1M+ enregistrements clients/jour via des pipelines ETL dédiés, avec des algorithmes de rappel automatisés améliorant l'efficacité des campagnes de 25%.",
+  "projects.quantaview.category": "Systèmes de Données Cliniques",
+  "projects.quantaview.title": "QuantaView — eCRF Essais Cliniques",
+  "projects.quantaview.description":
+    "Développement d'un eCRF (Case Report Form électronique) propriétaire pour la capture et la gestion de données d'essais cliniques internationaux, déployé sur intranet pour des clients pharmaceutiques et de recherche clinique.",
+  "projects.quantaview.metrics":
+    "Scripts d'automatisation (PHP/MySQL) économisant 15+ heures de nettoyage manuel par étude ; préparation des jeux de données supportée par des modèles statistiques SAS.",
+  "projects.financial-reporting-engine.category": "Backend & Automatisation de Reporting",
+  "projects.financial-reporting-engine.title": "Moteur de Reporting Financier Automatisé",
+  "projects.financial-reporting-engine.description":
+    "Construction d'un moteur d'export automatique générant des rapports financiers dynamiques .xlsx/.csv pour les équipes comptables, remplaçant les workflows de saisie et vérification manuelles.",
+  "projects.financial-reporting-engine.metrics":
+    "Remplacement de 100% des saisies et vérifications manuelles par un flux d'audit direct aux comptables, basé sur une modélisation transactionnelle performante sur IBM DB2.",
 
   // Experience
   "exp.eyebrow": "04 / Expérience",
@@ -263,7 +299,7 @@ export const EXPERIENCE_I18N: Record<Lang, ExpEntry[]> = {
     },
     {
       role: "Full-Stack Software Engineer",
-      company: "Webhelp Madagascar",
+      company: "Webhelp Madagascar — Solvencia",
       period: "Dec 2019 – Jul 2025",
       bullets: [
         "ETL pipelines: standardization of 1M+ customer records per day into a unified schema",
@@ -337,7 +373,7 @@ export const EXPERIENCE_I18N: Record<Lang, ExpEntry[]> = {
     },
     {
       role: "Ingénieur Full-Stack",
-      company: "Webhelp Madagascar",
+      company: "Webhelp Madagascar — Solvencia",
       period: "Déc 2019 – Juil 2025",
       bullets: [
         "Pipelines ETL : Standardisation de 1M+ données clients par jour vers un schéma unique",
