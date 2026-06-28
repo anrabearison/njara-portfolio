@@ -1,5 +1,3 @@
-import { contactSchema } from "../src/lib/api/contact.schema";
-
 type VercelRequest = {
   method?: string;
   body?: unknown;
@@ -11,6 +9,52 @@ type VercelResponse = {
   setHeader: (name: string, value: string) => void;
 };
 
+type ContactPayload = {
+  name: string;
+  email: string;
+  message: string;
+  honeypot: string;
+};
+
+function parseBody(body: unknown): unknown {
+  if (typeof body !== "string") return body;
+
+  try {
+    return JSON.parse(body);
+  } catch {
+    return undefined;
+  }
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function readString(value: unknown) {
+  return typeof value === "string" ? value.trim() : "";
+}
+
+function parseContactPayload(body: unknown): ContactPayload | undefined {
+  const parsedBody = parseBody(body);
+  if (!isRecord(parsedBody)) return undefined;
+
+  const payload = {
+    name: readString(parsedBody.name),
+    email: readString(parsedBody.email),
+    message: readString(parsedBody.message),
+    honeypot: readString(parsedBody.honeypot),
+  };
+
+  if (!payload.name || payload.name.length > 100) return undefined;
+  if (!payload.email || payload.email.length > 255 || !payload.email.includes("@")) {
+    return undefined;
+  }
+  if (!payload.message || payload.message.length > 2000) return undefined;
+  if (payload.honeypot.length > 0) return payload;
+
+  return payload;
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Content-Type", "application/json");
 
@@ -18,12 +62,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ success: false, error: "Method not allowed." });
   }
 
-  const parsed = contactSchema.safeParse(req.body);
-  if (!parsed.success) {
+  const data = parseContactPayload(req.body);
+  if (!data) {
     return res.status(400).json({ success: false, error: "Invalid contact form data." });
   }
-
-  const data = parsed.data;
 
   // Honeypot check: pretend success so bots do not get a useful signal.
   if (data.honeypot) {
