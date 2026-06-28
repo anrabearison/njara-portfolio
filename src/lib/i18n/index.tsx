@@ -130,8 +130,10 @@ const EN: Dict = {
   "contact.form.email": "Email",
   "contact.form.message": "Message",
   "contact.form.placeholder": "Tell me about your project...",
-  "contact.form.send": "Send Message via Email",
-  "contact.form.sent": "Opening your email client... Thanks for your message!",
+  "contact.form.send": "Send Message",
+  "contact.form.sending": "Sending...",
+  "contact.form.sent": "Message sent successfully! Thank you for reaching out.",
+  "contact.form.error": "Failed to send. Please try again.",
   "contact.subject": "Contact from Portfolio",
 
   // Footer
@@ -264,8 +266,10 @@ const FR: Dict = {
   "contact.form.email": "Email",
   "contact.form.message": "Message",
   "contact.form.placeholder": "Parlez-moi de votre projet...",
-  "contact.form.send": "Envoyer le message par email",
-  "contact.form.sent": "Redirection vers votre messagerie en cours... Merci de votre message !",
+  "contact.form.send": "Envoyer le message",
+  "contact.form.sending": "Envoi en cours...",
+  "contact.form.sent": "Message envoyé avec succès ! Merci de m'avoir contacté.",
+  "contact.form.error": "Échec de l'envoi. Veuillez réessayer.",
   "contact.subject": "Contact depuis Portfolio",
 
   // Footer

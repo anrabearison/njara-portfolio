@@ -1,28 +1,52 @@
 import { useState, useCallback } from "react";
-import { Github, Linkedin, MessageCircle, Send, Mail } from "lucide-react";
+import { Github, Linkedin, MessageCircle, Send, Mail, Loader2 } from "lucide-react";
 import { useI18n } from "@/lib/i18n/index";
 import { Reveal } from "../animations/Reveal";
 import { SectionHeading } from "../common/SectionHeading";
 import { Field } from "../common/Field";
 import { CONTACT_CARDS, SOCIAL_LINKS } from "@/constants/contact";
+import { sendContactEmail } from "@/lib/api/contact.functions";
+
+type FormStatus = "idle" | "sending" | "sent" | "error";
 
 export function Contact() {
   const { t } = useI18n();
-  const [sent, setSent] = useState(false);
-  
-  const handleSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setStatus("sending");
+    setErrorMsg(null);
+
     const fd = new FormData(e.currentTarget);
-    const name = fd.get("name");
-    const email = fd.get("email");
-    const msg = fd.get("message");
-    const subject = `${t("contact.subject")} - ${String(name)}`;
-    const mailtoUrl = `mailto:rabearisonnjara@gmail.com?subject=${encodeURIComponent(subject)}&body=Email:%20${encodeURIComponent(String(email))}%0A%0A${encodeURIComponent(String(msg))}`;
-    window.location.href = mailtoUrl;
-    setSent(true);
-    setTimeout(() => setSent(false), 3500);
-    (e.target as HTMLFormElement).reset();
+    const form = e.currentTarget;
+
+    try {
+      const result = await sendContactEmail({
+        data: {
+          name: String(fd.get("name") ?? ""),
+          email: String(fd.get("email") ?? ""),
+          message: String(fd.get("message") ?? ""),
+          honeypot: String(fd.get("honeypot") ?? ""),
+        },
+      });
+
+      if (result.success) {
+        setStatus("sent");
+        form.reset();
+        setTimeout(() => setStatus("idle"), 3500);
+      } else {
+        setStatus("error");
+        setErrorMsg(result.error ?? t("contact.form.error"));
+      }
+    } catch {
+      setStatus("error");
+      setErrorMsg(t("contact.form.error"));
+    }
   }, [t]);
+
+  const isSending = status === "sending";
 
   return (
     <section id="contact" className="px-4 py-20 sm:px-6 sm:py-24">
@@ -103,16 +127,43 @@ export function Contact() {
                   placeholder={t("contact.form.placeholder")}
                 />
               </div>
+
+              {/* Honeypot anti-spam field — visually hidden but accessible to bots */}
+              <div
+                aria-hidden="true"
+                style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0, overflow: "hidden" }}
+              >
+                <label htmlFor="honeypot">Do not fill this field</label>
+                <input
+                  type="text"
+                  id="honeypot"
+                  name="honeypot"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               <button
                 type="submit"
-                className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#00D4FF] px-6 py-3 text-sm font-semibold text-[#0D1117] transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.55)]"
+                disabled={isSending}
+                className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#00D4FF] px-6 py-3 text-sm font-semibold text-[#0D1117] transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.55)] disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                <Send className="h-4 w-4" />
-                {t("contact.form.send")}
+                {isSending ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <Send className="h-4 w-4" />
+                )}
+                {isSending ? t("contact.form.sending") : t("contact.form.send")}
               </button>
-              {sent && (
+
+              {status === "sent" && (
                 <div className="mt-4 text-sm text-[#4ade80]">
                   {t("contact.form.sent")}
+                </div>
+              )}
+              {status === "error" && (
+                <div className="mt-4 text-sm text-red-400">
+                  {errorMsg}
                 </div>
               )}
             </form>
