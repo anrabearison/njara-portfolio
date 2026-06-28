@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { Github, Linkedin, MessageCircle, Send } from "lucide-react";
+import { Github, Linkedin, MessageCircle, Send, Mail } from "lucide-react";
 import { useI18n } from "@/lib/i18n/index";
 import { Reveal } from "../animations/Reveal";
 import { SectionHeading } from "../common/SectionHeading";
@@ -63,13 +63,13 @@ export function Contact() {
             <Reveal delay={240}>
               <div className="flex gap-3 pt-2">
                 {SOCIAL_LINKS.map((social) => {
-                  const Icon = social.name === "GitHub" ? Github : social.name === "LinkedIn" ? Linkedin : MessageCircle;
+                  const Icon = social.name === "GitHub" ? Github : social.name === "LinkedIn" ? Linkedin : social.name === "Gmail" ? Mail : MessageCircle;
                   return (
                     <a
                       key={social.name}
                       href={social.href}
-                      target="_blank"
-                      rel="noreferrer"
+                      target={social.href.startsWith('mailto:') ? undefined : '_blank'}
+                      rel={social.href.startsWith('mailto:') ? undefined : 'noreferrer'}
                       className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.02] text-muted-foreground transition-colors hover:border-[#00D4FF]/40 hover:text-[#00D4FF]"
                       aria-label={social.ariaLabel}
                     >

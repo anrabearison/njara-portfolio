@@ -29,4 +29,9 @@ export const SOCIAL_LINKS = [
     href: "https://wa.me/261347437044",
     ariaLabel: "WhatsApp",
   },
+  {
+    name: "Gmail",
+    href: "mailto:rabearisonnjara@gmail.com",
+    ariaLabel: "Gmail",
+  },
 ] as const;
