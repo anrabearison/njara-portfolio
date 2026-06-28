@@ -5,7 +5,6 @@ import { Reveal } from "../animations/Reveal";
 import { SectionHeading } from "../common/SectionHeading";
 import { Field } from "../common/Field";
 import { CONTACT_CARDS, SOCIAL_LINKS } from "@/constants/contact";
-import { sendContactEmail } from "@/lib/api/contact.functions";
 
 type FormStatus = "idle" | "sending" | "sent" | "error";
 
@@ -14,37 +13,45 @@ export function Contact() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setStatus("sending");
-    setErrorMsg(null);
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      setStatus("sending");
+      setErrorMsg(null);
 
-    const fd = new FormData(e.currentTarget);
-    const form = e.currentTarget;
+      const fd = new FormData(e.currentTarget);
+      const form = e.currentTarget;
 
-    try {
-      const result = await sendContactEmail({
-        data: {
-          name: String(fd.get("name") ?? ""),
-          email: String(fd.get("email") ?? ""),
-          message: String(fd.get("message") ?? ""),
-          honeypot: String(fd.get("honeypot") ?? ""),
-        },
-      });
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: String(fd.get("name") ?? ""),
+            email: String(fd.get("email") ?? ""),
+            message: String(fd.get("message") ?? ""),
+            honeypot: String(fd.get("honeypot") ?? ""),
+          }),
+        });
+        const result = await response.json();
 
-      if (result.success) {
-        setStatus("sent");
-        form.reset();
-        setTimeout(() => setStatus("idle"), 3500);
-      } else {
+        if (response.ok && result.success) {
+          setStatus("sent");
+          form.reset();
+          setTimeout(() => setStatus("idle"), 3500);
+        } else {
+          setStatus("error");
+          setErrorMsg(result.error ?? t("contact.form.error"));
+        }
+      } catch {
         setStatus("error");
-        setErrorMsg(result.error ?? t("contact.form.error"));
+        setErrorMsg(t("contact.form.error"));
       }
-    } catch {
-      setStatus("error");
-      setErrorMsg(t("contact.form.error"));
-    }
-  }, [t]);
+    },
+    [t],
+  );
 
   const isSending = status === "sending";
 
@@ -87,13 +94,20 @@ export function Contact() {
             <Reveal delay={240}>
               <div className="flex gap-3 pt-2">
                 {SOCIAL_LINKS.map((social) => {
-                  const Icon = social.name === "GitHub" ? Github : social.name === "LinkedIn" ? Linkedin : social.name === "Gmail" ? Mail : MessageCircle;
+                  const Icon =
+                    social.name === "GitHub"
+                      ? Github
+                      : social.name === "LinkedIn"
+                        ? Linkedin
+                        : social.name === "Gmail"
+                          ? Mail
+                          : MessageCircle;
                   return (
                     <a
                       key={social.name}
                       href={social.href}
-                      target={social.href.startsWith('mailto:') ? undefined : '_blank'}
-                      rel={social.href.startsWith('mailto:') ? undefined : 'noreferrer'}
+                      target={social.href.startsWith("mailto:") ? undefined : "_blank"}
+                      rel={social.href.startsWith("mailto:") ? undefined : "noreferrer"}
                       className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.02] text-muted-foreground transition-colors hover:border-[#00D4FF]/40 hover:text-[#00D4FF]"
                       aria-label={social.ariaLabel}
                     >
@@ -111,8 +125,20 @@ export function Contact() {
               className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8"
             >
               <div className="grid gap-4 sm:grid-cols-2">
-                <Field label={t("contact.form.name")} name="name" type="text" required maxLength={100} />
-                <Field label={t("contact.form.email")} name="email" type="email" required maxLength={255} />
+                <Field
+                  label={t("contact.form.name")}
+                  name="name"
+                  type="text"
+                  required
+                  maxLength={100}
+                />
+                <Field
+                  label={t("contact.form.email")}
+                  name="email"
+                  type="email"
+                  required
+                  maxLength={255}
+                />
               </div>
               <div className="mt-4">
                 <label className="mb-2 block text-xs uppercase tracking-wider text-muted-foreground">
@@ -131,16 +157,16 @@ export function Contact() {
               {/* Honeypot anti-spam field — visually hidden but accessible to bots */}
               <div
                 aria-hidden="true"
-                style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0, overflow: "hidden" }}
+                style={{
+                  position: "absolute",
+                  left: "-9999px",
+                  opacity: 0,
+                  height: 0,
+                  overflow: "hidden",
+                }}
               >
                 <label htmlFor="honeypot">Do not fill this field</label>
-                <input
-                  type="text"
-                  id="honeypot"
-                  name="honeypot"
-                  tabIndex={-1}
-                  autoComplete="off"
-                />
+                <input type="text" id="honeypot" name="honeypot" tabIndex={-1} autoComplete="off" />
               </div>
 
               <button
@@ -157,15 +183,9 @@ export function Contact() {
               </button>
 
               {status === "sent" && (
-                <div className="mt-4 text-sm text-[#4ade80]">
-                  {t("contact.form.sent")}
-                </div>
+                <div className="mt-4 text-sm text-[#4ade80]">{t("contact.form.sent")}</div>
               )}
-              {status === "error" && (
-                <div className="mt-4 text-sm text-red-400">
-                  {errorMsg}
-                </div>
-              )}
+              {status === "error" && <div className="mt-4 text-sm text-red-400">{errorMsg}</div>}
             </form>
           </Reveal>
         </div>
