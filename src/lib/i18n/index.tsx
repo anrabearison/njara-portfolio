@@ -61,7 +61,9 @@ const EN: Dict = {
   "projects.title": "Systems built for performance.",
   "projects.impact": "✨ Impact & Metric:",
   "projects.showMore": "View more projects",
+  "projects.showMoreAria": "View more projects",
   "projects.showLess": "Show less",
+  "projects.showLessAria": "Show less projects",
   "projects.winlassie.category": "Fullstack Development & Frontend Migration",
   "projects.winlassie.title": "Winlassie Risk Management Platform",
   "projects.winlassie.description":
@@ -207,8 +209,10 @@ const FR: Dict = {
   "projects.eyebrow": "03 / Projets sélectionnés",
   "projects.title": "Des systèmes construits pour la performance.",
   "projects.impact": "✨ Impact & Métrique :",
-  "projects.showMore": "Afficher tous les projets",
-  "projects.showLess": "Afficher moins",
+  "projects.showMore": "View more projects",
+  "projects.showMoreAria": "View more projects",
+  "projects.showLess": "Show less",
+  "projects.showLessAria": "Show less projects",
   "projects.winlassie.category": "Développement Fullstack & Migration Frontend",
   "projects.winlassie.title": "Plateforme de gestion des risques Winlassie",
   "projects.winlassie.description":

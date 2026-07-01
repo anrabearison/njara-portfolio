@@ -102,7 +102,7 @@ export function Projects() {
               type="button"
               variant="outline"
               size="default"
-              aria-label={isExpanded ? t("projects.showLess") : t("projects.showMore")}
+              aria-label={isExpanded ? t("projects.showLessAria") : t("projects.showMoreAria")}
               aria-expanded={isExpanded}
               onClick={handleToggleMore}
               className="border-white/10 bg-white/[0.03] text-foreground hover:bg-white/[0.06]"
