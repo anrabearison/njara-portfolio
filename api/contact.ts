@@ -12,6 +12,8 @@ type VercelResponse = {
 type ContactPayload = {
   name: string;
   email: string;
+  subject: string;
+  subjectOther: string;
   message: string;
   honeypot: string;
 };
@@ -41,6 +43,8 @@ function parseContactPayload(body: unknown): ContactPayload | undefined {
   const payload = {
     name: readString(parsedBody.name),
     email: readString(parsedBody.email),
+    subject: readString(parsedBody.subject),
+    subjectOther: readString(parsedBody.subjectOther),
     message: readString(parsedBody.message),
     honeypot: readString(parsedBody.honeypot),
   };
@@ -49,6 +53,8 @@ function parseContactPayload(body: unknown): ContactPayload | undefined {
   if (!payload.email || payload.email.length > 255 || !payload.email.includes("@")) {
     return undefined;
   }
+  if (!payload.subject || payload.subject.length > 100) return undefined;
+  if (payload.subject === "other" && (!payload.subjectOther || payload.subjectOther.length > 100)) return undefined;
   if (!payload.message || payload.message.length > 2000) return undefined;
   if (payload.honeypot.length > 0) return payload;
 
@@ -108,6 +114,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             </p>
           </div>
           
+          <div style="margin-bottom: 20px;">
+            <p style="margin: 0 0 5px 0; color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Sujet</p>
+            <p style="margin: 0; color: #0D1117; font-size: 16px; font-weight: 500;">${data.subject}${data.subjectOther ? ` (${data.subjectOther})` : ""}</p>
+          </div>
+          
           <div style="margin-bottom: 30px;">
             <p style="margin: 0 0 5px 0; color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Message</p>
             <div style="background-color: #f9f9f9; padding: 15px; border-left: 3px solid #00D4FF; border-radius: 4px;">
@@ -133,6 +144,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
 Nom: ${data.name}
 Email: ${data.email}
+Sujet: ${data.subject}${data.subjectOther ? ` (${data.subjectOther})` : ""}
 
 Message:
 ${data.message}
@@ -151,7 +163,7 @@ Envoyé depuis njara-rabearison.vercel.app
       body: JSON.stringify({
         from: "Portfolio Contact <onboarding@resend.dev>",
         to: "rabearisonnjara@gmail.com",
-        subject: `📧 Nouveau message de ${data.name} - Portfolio`,
+        subject: `📧 ${data.subject}${data.subjectOther ? ` (${data.subjectOther})` : ""} - ${data.name} - Portfolio`,
         reply_to: data.email,
         html,
         text,

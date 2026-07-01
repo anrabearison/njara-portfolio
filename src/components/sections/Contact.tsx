@@ -12,6 +12,7 @@ export function Contact() {
   const { t } = useI18n();
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [selectedSubject, setSelectedSubject] = useState("");
 
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
@@ -31,6 +32,8 @@ export function Contact() {
           body: JSON.stringify({
             name: String(fd.get("name") ?? ""),
             email: String(fd.get("email") ?? ""),
+            subject: String(fd.get("subject") ?? ""),
+            subjectOther: String(fd.get("subjectOther") ?? ""),
             message: String(fd.get("message") ?? ""),
             honeypot: String(fd.get("honeypot") ?? ""),
           }),
@@ -40,6 +43,7 @@ export function Contact() {
         if (response.ok && result.success) {
           setStatus("sent");
           form.reset();
+          setSelectedSubject("");
           setTimeout(() => setStatus("idle"), 3500);
         } else {
           setStatus("error");
@@ -140,6 +144,41 @@ export function Contact() {
                   maxLength={255}
                 />
               </div>
+              <div className="mt-4">
+                <label className="mb-2 block text-xs uppercase tracking-wider text-muted-foreground">
+                  {t("contact.form.subject")}
+                </label>
+                <select
+                  name="subject"
+                  required
+                  value={selectedSubject}
+                  onChange={(e) => setSelectedSubject(e.target.value)}
+                  className="w-full rounded-xl border border-white/10 bg-[#0D1117] px-4 py-3 text-sm outline-none transition-colors focus:border-[#00D4FF]/60 focus:shadow-[0_0_0_3px_rgba(0,212,255,0.15)]"
+                >
+                  <option value="">{t("contact.form.subject.placeholder")}</option>
+                  <option value="freelance">{t("contact.form.subject.freelance")}</option>
+                  <option value="consulting">{t("contact.form.subject.consulting")}</option>
+                  <option value="fulltime">{t("contact.form.subject.fulltime")}</option>
+                  <option value="webapp">{t("contact.form.subject.webapp")}</option>
+                  <option value="ai">{t("contact.form.subject.ai")}</option>
+                  <option value="scraping">{t("contact.form.subject.scraping")}</option>
+                  <option value="other">{t("contact.form.subject.other")}</option>
+                </select>
+              </div>
+              {selectedSubject === "other" && (
+                <div className="mt-4">
+                  <label className="mb-2 block text-xs uppercase tracking-wider text-muted-foreground">
+                    {t("contact.form.subject.other.placeholder")}
+                  </label>
+                  <input
+                    name="subjectOther"
+                    type="text"
+                    required
+                    maxLength={100}
+                    className="w-full rounded-xl border border-white/10 bg-[#0D1117] px-4 py-3 text-sm outline-none transition-colors focus:border-[#00D4FF]/60 focus:shadow-[0_0_0_3px_rgba(0,212,255,0.15)]"
+                  />
+                </div>
+              )}
               <div className="mt-4">
                 <label className="mb-2 block text-xs uppercase tracking-wider text-muted-foreground">
                   {t("contact.form.message")}
