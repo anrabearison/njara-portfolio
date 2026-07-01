@@ -5,6 +5,13 @@ import { Reveal } from "../animations/Reveal";
 import { SectionHeading } from "../common/SectionHeading";
 import { Field } from "../common/Field";
 import { CONTACT_CARDS, SOCIAL_LINKS } from "@/constants/contact";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 type FormStatus = "idle" | "sending" | "sent" | "error";
 
@@ -32,7 +39,7 @@ export function Contact() {
           body: JSON.stringify({
             name: String(fd.get("name") ?? ""),
             email: String(fd.get("email") ?? ""),
-            subject: String(fd.get("subject") ?? ""),
+            subject: selectedSubject,
             subjectOther: String(fd.get("subjectOther") ?? ""),
             message: String(fd.get("message") ?? ""),
             honeypot: String(fd.get("honeypot") ?? ""),
@@ -148,22 +155,24 @@ export function Contact() {
                 <label className="mb-2 block text-xs uppercase tracking-wider text-muted-foreground">
                   {t("contact.form.subject")}
                 </label>
-                <select
-                  name="subject"
-                  required
+                <Select
                   value={selectedSubject}
-                  onChange={(e) => setSelectedSubject(e.target.value)}
-                  className="w-full rounded-xl border border-white/10 bg-[#0D1117] px-4 py-3 text-sm outline-none transition-colors focus:border-[#00D4FF]/60 focus:shadow-[0_0_0_3px_rgba(0,212,255,0.15)]"
+                  onValueChange={setSelectedSubject}
+                  required
                 >
-                  <option value="">{t("contact.form.subject.placeholder")}</option>
-                  <option value="freelance">{t("contact.form.subject.freelance")}</option>
-                  <option value="consulting">{t("contact.form.subject.consulting")}</option>
-                  <option value="fulltime">{t("contact.form.subject.fulltime")}</option>
-                  <option value="webapp">{t("contact.form.subject.webapp")}</option>
-                  <option value="ai">{t("contact.form.subject.ai")}</option>
-                  <option value="scraping">{t("contact.form.subject.scraping")}</option>
-                  <option value="other">{t("contact.form.subject.other")}</option>
-                </select>
+                  <SelectTrigger className="w-full rounded-xl border border-white/10 bg-[#0D1117] px-4 py-3 text-sm outline-none transition-colors focus:border-[#00D4FF]/60 focus:shadow-[0_0_0_3px_rgba(0,212,255,0.15)] text-foreground">
+                    <SelectValue placeholder={t("contact.form.subject.placeholder")} />
+                  </SelectTrigger>
+                  <SelectContent className="bg-[#0D1117] border border-white/10 text-foreground">
+                    <SelectItem value="freelance">{t("contact.form.subject.freelance")}</SelectItem>
+                    <SelectItem value="consulting">{t("contact.form.subject.consulting")}</SelectItem>
+                    <SelectItem value="fulltime">{t("contact.form.subject.fulltime")}</SelectItem>
+                    <SelectItem value="webapp">{t("contact.form.subject.webapp")}</SelectItem>
+                    <SelectItem value="ai">{t("contact.form.subject.ai")}</SelectItem>
+                    <SelectItem value="scraping">{t("contact.form.subject.scraping")}</SelectItem>
+                    <SelectItem value="other">{t("contact.form.subject.other")}</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               {selectedSubject === "other" && (
                 <div className="mt-4">
