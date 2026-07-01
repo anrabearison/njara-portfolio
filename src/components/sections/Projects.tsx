@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, type MouseEvent } from "react";
 import { ExternalLink } from "lucide-react";
 import { useI18n } from "@/lib/i18n/index";
 import { Reveal } from "../animations/Reveal";
@@ -9,15 +9,26 @@ import { handleLinkWithFallback } from "@/lib/utils/linkHandler";
 
 export function Projects() {
   const { t } = useI18n();
-  const [showAll, setShowAll] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(3);
 
   const orderedProjects = useMemo(
     () => [...PROJECTS].sort((a, b) => a.order - b.order),
     [],
   );
 
-  const visibleProjects = showAll ? orderedProjects : orderedProjects.filter((p) => p.featured);
-  const hasMoreProjects = orderedProjects.some((p) => !p.featured);
+  const visibleProjects = orderedProjects.slice(0, visibleCount);
+  const isExpanded = visibleCount >= orderedProjects.length;
+  const shouldShowButton = orderedProjects.length > 3;
+
+  const handleToggleMore = (_event: MouseEvent<HTMLButtonElement>) => {
+    if (isExpanded) {
+      setVisibleCount(3);
+      document.getElementById("projects")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    setVisibleCount((value) => Math.min(value + 3, orderedProjects.length));
+  };
 
   return (
     <section id="projects" className="border-t border-white/5 px-4 py-20 sm:px-6 sm:py-24">
@@ -85,18 +96,18 @@ export function Projects() {
             </Reveal>
           ))}
         </div>
-        {hasMoreProjects && (
+        {shouldShowButton && (
           <div className="mt-8 flex justify-center">
             <Button
               type="button"
               variant="outline"
               size="default"
-              aria-label={showAll ? t("projects.showLess") : t("projects.showMore")}
-              aria-expanded={showAll}
-              onClick={() => setShowAll((value) => !value)}
+              aria-label={isExpanded ? t("projects.showLess") : t("projects.showMore")}
+              aria-expanded={isExpanded}
+              onClick={handleToggleMore}
               className="border-white/10 bg-white/[0.03] text-foreground hover:bg-white/[0.06]"
             >
-              {showAll ? t("projects.showLess") : t("projects.showMore")}
+              {isExpanded ? t("projects.showLess") : t("projects.showMore")}
             </Button>
           </div>
         )}
