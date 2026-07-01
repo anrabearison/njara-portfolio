@@ -18,9 +18,9 @@ const EN: Dict = {
   "nav.closeMenu": "Close menu",
 
   // Hero
-  "hero.available": "Available for freelance",
+  "hero.available": "Freelance & Consulting — Remote / Hybrid",
   "hero.tagline":
-    "12+ years designing robust, scalable platforms — fintech, e-commerce, healthcare & CRM.",
+    "12+ years designing robust, scalable platforms — fintech, e-commerce, healthcare & CRM. Web, App & AI (RAG, machine learning) development, plus data scraping — available for freelance, consulting or full-time roles.",
   "hero.location": "Antananarivo, Madagascar",
   "hero.cta.work": "View My Work",
   "hero.cta.cv": "Download CV",
@@ -122,7 +122,7 @@ const EN: Dict = {
   // Contact
   "contact.eyebrow": "06 / Contact",
   "contact.title": "Let's Work Together",
-  "contact.subtitle": "Open to freelance missions and exciting projects.",
+  "contact.subtitle": "Open to new opportunities: freelance missions, consulting, or full-time (CDI) roles — web & app development, AI/RAG integrations, machine learning, data scraping/automation. Remote or hybrid, based on your needs.",
   "contact.email": "Email",
   "contact.phone": "Phone",
   "contact.location": "Location",
@@ -154,9 +154,9 @@ const FR: Dict = {
   "nav.closeMenu": "Fermer le menu",
 
   // Hero
-  "hero.available": "Disponible en freelance",
+  "hero.available": "Freelance & Consulting — Remote / Hybrid",
   "hero.tagline":
-    "12+ ans de conception de plateformes robustes et scalables — fintech, e-commerce, santé & CRM.",
+    "12+ ans de conception de plateformes robustes et scalables — fintech, e-commerce, santé & CRM. Web, App & IA (RAG, machine learning) development, plus data scraping — disponible en freelance, consulting ou CDI.",
   "hero.location": "Antananarivo, Madagascar",
   "hero.cta.work": "Voir mes projets",
   "hero.cta.cv": "Télécharger CV",
@@ -258,7 +258,7 @@ const FR: Dict = {
   // Contact
   "contact.eyebrow": "06 / Contact",
   "contact.title": "Travaillons ensemble",
-  "contact.subtitle": "Ouvert aux missions freelance et aux projets stimulants.",
+  "contact.subtitle": "Ouvert aux nouvelles opportunités : missions freelance, consulting ou CDI — développement web & app, intégrations IA/RAG, machine learning, data scraping/automatisation. Remote ou hybrid, selon vos besoins.",
   "contact.email": "Email",
   "contact.phone": "Téléphone",
   "contact.location": "Localisation",

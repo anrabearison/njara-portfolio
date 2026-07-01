@@ -14,7 +14,7 @@ export const SKILL_GROUPS = [
   {
     titleKey: "skills.group.ai",
     icon: Sparkles,
-    items: ["Cursor", "GitHub Copilot", "Antigravity", "AI-assisted development"],
+    items: ["Cursor", "GitHub Copilot", "Antigravity", "AI-assisted development", "RAG", "Machine Learning"],
   },
   {
     titleKey: "skills.group.db",
