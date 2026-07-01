@@ -76,10 +76,10 @@ const EN: Dict = {
     "Fullstack contribution within a team to a large-scale gift card distribution platform, including robust, modular transactional APIs and the presentation layer (frontend).",
   "projects.illicado.metrics":
     "Architecture designed to handle peaks of 100k+ requests/day during the holiday season without compromising financial integrity.",
-  "projects.tradepilot.category": "Plugin Development & System Integration",
+  "projects.tradepilot.category": "Widget Development & System Integration",
   "projects.tradepilot.title": "Trade-Pilot Integration — eexpand",
   "projects.tradepilot.description":
-    "Development of custom plugins and backend integration for Trade-Pilot, eexpand's AI-powered platform for international trade intelligence. Built the WordPress/Symfony/MariaDB bridge connecting custom plugins to the core platform.",
+    "Development of custom widgets and backend integration for Trade-Pilot, eexpand's AI-powered platform for international trade intelligence. Built the WordPress/Symfony/MariaDB bridge connecting custom widgets to the core platform.",
   "projects.tradepilot.metrics": "",
   "projects.job-market-scraping.category": "Web Scraping & Automation",
   "projects.job-market-scraping.title": "Job Market Scraping Engine — Ezway (Internal Tool)",
@@ -225,10 +225,10 @@ const FR: Dict = {
     "Contribution fullstack au sein d'une équipe à une plateforme de distribution de cartes cadeaux à grande échelle, incluant des APIs transactionnelles robustes et modulaires ainsi que la couche de présentation (frontend).",
   "projects.illicado.metrics":
     "Architecture conçue pour supporter des pics à 100k+ requêtes/jour pendant les fêtes de fin d'année sans perte d'intégrité financière.",
-  "projects.tradepilot.category": "Développement de Plugins & Intégration Système",
+  "projects.tradepilot.category": "Développement de Widgets & Intégration Système",
   "projects.tradepilot.title": "Intégration Trade-Pilot — eexpand",
   "projects.tradepilot.description":
-    "Développement de plugins personnalisés et intégration backend pour Trade-Pilot, la plateforme propulsée par l'IA d'eexpand pour l'intelligence commerciale internationale. Construction du pont WordPress/Symfony/MariaDB connectant les plugins personnalisés à la plateforme centrale.",
+    "Développement de widgets personnalisés et intégration backend pour Trade-Pilot, la plateforme propulsée par l'IA d'eexpand pour l'intelligence commerciale internationale. Construction du pont WordPress/Symfony/MariaDB connectant les widgets personnalisés à la plateforme centrale.",
   "projects.tradepilot.metrics": "",
   "projects.job-market-scraping.category": "Web Scraping & Automatisation",
   "projects.job-market-scraping.title": "Moteur de Scraping du Marché de l'Emploi — Ezway (Outil Interne)",
@@ -322,7 +322,7 @@ export const EXPERIENCE_I18N: Record<Lang, ExpEntry[]> = {
       company: "Ezway Technology",
       period: "Jul 2025 – Dec 2025",
       bullets: [
-        "Trade-Pilot project: custom plugin design and hybrid WordPress/Symfony/MariaDB architecture",
+        "Trade-Pilot project: custom widget design and hybrid WordPress/Symfony/MariaDB architecture",
         "Smart web scraping: BeautifulSoup crawlers extracting 10k+ job postings/day in real time",
         "React.js & automation UIs: reactive integrations with improved loading fluidity",
       ],
@@ -396,7 +396,7 @@ export const EXPERIENCE_I18N: Record<Lang, ExpEntry[]> = {
       company: "Ezway Technology",
       period: "Juil 2025 – Déc 2025",
       bullets: [
-        "Projet Trade-Pilot : Conception de plugins sur mesure et architecture hybride WordPress/Symfony/MariaDB",
+        "Projet Trade-Pilot : Conception de widgets sur mesure et architecture hybride WordPress/Symfony/MariaDB",
         "Web Scraping intelligent : Crawleurs BeautifulSoup extrayant +10k offres/jour en temps réel",
         "React.js & Interfaces d'automatisation : Intégrations réactives avec fluidité de chargement accrue",
       ],

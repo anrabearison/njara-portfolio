@@ -10,7 +10,7 @@ Senior Full-Stack Developer with 12+ years of experience, specialized in high-pe
 
 ### Core Projects
 1. **Trade-Pilot (eexpand) & Scraping Platform**
-   - Full-stack WordPress, Symfony, MariaDB integration and Custom Plugins.
+   - Full-stack WordPress, Symfony, MariaDB integration and Custom Widgets.
    - Built a high-frequency BeautifulSoup-based web scraping crawler processing 10,000+ jobs/day in real-time.
 2. **Winlassie Risk Management (Bocasay)**
    - Architected the migration of Winlassie's AngularJS codebase to Angular 2+.

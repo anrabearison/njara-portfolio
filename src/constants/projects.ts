@@ -25,7 +25,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "tradepilot",
-    tags: ["WordPress", "Symfony", "MariaDB", "Custom Plugins", "API Integration"],
+    tags: ["WordPress", "Symfony", "MariaDB", "Custom Widgets", "API Integration"],
     link: "https://www.eexpand.com/discover-trade-pilot/",
     featured: false,
     order: 4,
