@@ -1,13 +1,14 @@
 import { useI18n } from "@/lib/i18n/index";
 import { Reveal } from "../animations/Reveal";
 import { SectionHeading } from "../common/SectionHeading";
+import { PROJECTS } from "@/constants/projects";
 
 export function About() {
   const { t } = useI18n();
   const stats = [
     { value: "12+", labelKey: "about.stat.years" },
     { value: "7", labelKey: "about.stat.companies" },
-    { value: "4", labelKey: "about.stat.projects" },
+    { value: String(PROJECTS.length), labelKey: "about.stat.projects" },
   ];
   const langs = [
     { code: "fr", nameKey: "about.lang.french", levelKey: "about.lang.fluent" },
