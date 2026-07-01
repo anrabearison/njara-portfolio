@@ -17,6 +17,11 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Njara Rabearison — Senior Full-Stack Developer" },
       {
+        name: "viewport",
+        content:
+          "width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no",
+      },
+      {
         name: "description",
         content:
           "Senior Full-Stack Developer based in Antananarivo. 12+ years of experience: NestJS, TypeScript, PHP/Symfony, React.js, Angular, microservices, ETL, clinical eCRF and automation.",

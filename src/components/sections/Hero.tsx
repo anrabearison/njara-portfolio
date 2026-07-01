@@ -26,7 +26,7 @@ export function Hero() {
             <Typewriter words={tArr("hero.typewriter")} />
           </div>
 
-          <p className="max-w-xl text-sm text-muted-foreground sm:text-base md:text-lg">
+          <p className="max-w-xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7 md:text-lg">
             {t("hero.tagline")}
           </p>
 
@@ -38,7 +38,7 @@ export function Hero() {
           <div className="flex flex-wrap gap-3 pt-2">
             <a
               href="#projects"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#00D4FF] px-6 py-3 text-sm font-semibold text-[#0D1117] transition-all hover:shadow-[0_0_40px_rgba(0,212,255,0.55)]"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#00D4FF] px-5 py-3 text-sm font-semibold text-[#0D1117] transition-all hover:shadow-[0_0_40px_rgba(0,212,255,0.55)] sm:px-6"
             >
               {t("hero.cta.work")}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -46,7 +46,7 @@ export function Hero() {
             <a
               href="/cv-njara-rabearison.md"
               download="CV_Njara_Rabearison.md"
-              className="inline-flex items-center gap-2 rounded-full border border-[#00D4FF]/50 px-6 py-3 text-sm font-semibold text-[#00D4FF] transition-all hover:bg-[#00D4FF]/10"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#00D4FF]/50 px-5 py-3 text-sm font-semibold text-[#00D4FF] transition-all hover:bg-[#00D4FF]/10 sm:px-6"
             >
               <Download className="h-4 w-4" />
               {t("hero.cta.cv")}
@@ -56,8 +56,10 @@ export function Hero() {
 
         {/* Abstract code visual */}
         <div className="relative">
-          <div className="absolute -inset-8 -z-10 rounded-3xl opacity-60 blur-3xl"
-            style={{ background: "radial-gradient(circle at 50% 50%, rgba(0,212,255,0.35), transparent 60%)" }} />
+          <div
+            className="pointer-events-none absolute inset-0 -z-10 rounded-3xl opacity-60 blur-3xl sm:-inset-4"
+            style={{ background: "radial-gradient(circle at 50% 50%, rgba(0,212,255,0.35), transparent 60%)" }}
+          />
           <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0b1220]/80 shadow-2xl backdrop-blur">
             <div className="flex items-center gap-2 border-b border-white/5 px-4 py-3">
               <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
@@ -65,7 +67,7 @@ export function Hero() {
               <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
               <span className="ml-3 text-xs text-muted-foreground">~/njara/architecture.ts</span>
             </div>
-            <pre className="overflow-x-auto p-5 text-[13px] leading-relaxed">
+            <pre className="overflow-x-auto p-4 text-[11px] leading-relaxed sm:p-5 sm:text-[13px]">
               <code className="font-mono">
 {`import { Module } from '@nestjs/common';
 import { CQRS, EventBus } from '@nestjs/cqrs';
