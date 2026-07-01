@@ -29,6 +29,6 @@ export const SKILL_GROUPS = [
   {
     titleKey: "skills.group.methods",
     icon: Layers,
-    items: ["Agile Scrum", "TDD", "Clean Architecture", "SAS", "ETL / Data Mapping", "UML"],
+    items: ["Agile Scrum", "TDD", "Clean Architecture", "DDD", "ETL / Data Mapping", "UML"],
   },
 ] as const;
