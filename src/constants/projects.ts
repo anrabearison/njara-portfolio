@@ -8,7 +8,7 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     id: "winlassie",
-    tags: ["Angular", "AngularJS", "TypeScript", "Webpack", "Performance Optimization"],
+    tags: ["Angular", "AngularJS", "TypeScript", "Symfony", "RabbitMQ"],
     link: "https://www.winlassie.com/",
   },
   {

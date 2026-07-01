@@ -60,10 +60,10 @@ const EN: Dict = {
   "projects.eyebrow": "03 / Selected Projects",
   "projects.title": "Systems built for performance.",
   "projects.impact": "✨ Impact & Metric:",
-  "projects.winlassie.category": "Migration & Frontend Architecture",
-  "projects.winlassie.title": "Winlassie Risk Management Migration",
+  "projects.winlassie.category": "Fullstack Development & Frontend Migration",
+  "projects.winlassie.title": "Winlassie Risk Management Platform",
   "projects.winlassie.description":
-    "Strategic migration of a large-scale occupational risk management application from AngularJS to Angular 2+. Hybrid coexistence in production to ensure service continuity.",
+    "Fullstack contribution to a large-scale occupational risk management application. Led the strategic migration of the frontend from AngularJS to Angular 2+, with hybrid coexistence in production to ensure service continuity, while also developing backend features and services for the platform.",
   "projects.winlassie.metrics":
     "40% reduction in global bundle size and improved responsiveness through Lazy Loading and OnPush Change Detection.",
   "projects.illicado.category": "Fintech & API Design",
@@ -205,10 +205,10 @@ const FR: Dict = {
   "projects.eyebrow": "03 / Projets sélectionnés",
   "projects.title": "Des systèmes construits pour la performance.",
   "projects.impact": "✨ Impact & Métrique :",
-  "projects.winlassie.category": "Migration & Architecture Frontend",
-  "projects.winlassie.title": "Migration Winlassie Risk Management",
+  "projects.winlassie.category": "Développement Fullstack & Migration Frontend",
+  "projects.winlassie.title": "Plateforme de gestion des risques Winlassie",
   "projects.winlassie.description":
-    "Migration stratégique d'une application d'envergure de gestion des risques professionnels de AngularJS vers Angular 2+. Mise en place d'une coexistence hybride en production pour assurer la continuité de service.",
+    "Contribution fullstack à une application d'envergure de gestion des risques professionnels. J'ai dirigé la migration stratégique du frontend de AngularJS vers Angular 2+, avec coexistence hybride en production pour assurer la continuité de service, tout en développant des fonctionnalités et services backend pour la plateforme.",
   "projects.winlassie.metrics":
     "Réduction de 40% de la taille du bundle global et gain de réactivité grâce au Lazy Loading et au OnPush Change Detection.",
   "projects.illicado.category": "Fintech & Design d'API",
