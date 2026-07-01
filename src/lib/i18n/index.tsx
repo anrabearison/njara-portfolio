@@ -73,7 +73,7 @@ const EN: Dict = {
   "projects.illicado.category": "Fintech & API Design",
   "projects.illicado.title": "Illicado Gift Card Engine",
   "projects.illicado.description":
-    "Design and development of robust, modular transactional APIs for the leader of multi-brand gift cards (E-commerce and Retail).",
+    "Fullstack contribution within a team to a large-scale gift card distribution platform, including robust, modular transactional APIs and the presentation layer (frontend).",
   "projects.illicado.metrics":
     "Architecture designed to handle peaks of 100k+ requests/day during the holiday season without compromising financial integrity.",
   "projects.tradepilot.category": "Plugin Development & System Integration",
@@ -222,7 +222,7 @@ const FR: Dict = {
   "projects.illicado.category": "Fintech & Design d'API",
   "projects.illicado.title": "Moteur de Cartes Cadeaux Illicado",
   "projects.illicado.description":
-    "Conception et développement d'APIs transactionnelles robustes et modulaires pour le leader de la carte cadeau multi-enseignes (E-commerce et Retail).",
+    "Contribution fullstack au sein d'une équipe à une plateforme de distribution de cartes cadeaux à grande échelle, incluant des APIs transactionnelles robustes et modulaires ainsi que la couche de présentation (frontend).",
   "projects.illicado.metrics":
     "Architecture conçue pour supporter des pics à 100k+ requêtes/jour pendant les fêtes de fin d'année sans perte d'intégrité financière.",
   "projects.tradepilot.category": "Développement de Plugins & Intégration Système",
