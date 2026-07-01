@@ -26,10 +26,9 @@ const EN: Dict = {
   "hero.cta.cv": "Download CV",
   "hero.typewriter": [
     "Senior Full-Stack Developer",
-    "NestJS & TypeScript Expert",
-    "Angular & React Specialist",
+    "TypeScript Expert: NestJS & React/Angular",
     "Microservices Architect",
-    "AI-Powered Developer",
+    "AI Specialist: RAG, ML & Web Scraping",
   ],
 
   // About
@@ -172,10 +171,9 @@ const FR: Dict = {
   "hero.cta.cv": "Télécharger CV",
   "hero.typewriter": [
     "Développeur Full-Stack Senior",
-    "Expert NestJS & TypeScript",
-    "Spécialiste Angular & React",
+    "Expert TypeScript : NestJS & React/Angular",
     "Architecte Microservices",
-    "Développeur augmenté par l'IA",
+    "Spécialiste IA : RAG, ML & Web Scraping",
   ],
 
   // About
