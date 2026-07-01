@@ -70,7 +70,7 @@ const EN: Dict = {
     "Fullstack contribution to a large-scale occupational risk management application. Led the strategic migration of the frontend from AngularJS to Angular 2+, with hybrid coexistence in production to ensure service continuity, while also developing backend features and services for the platform.",
   "projects.winlassie.metrics":
     "40% reduction in global bundle size and improved responsiveness through Lazy Loading and OnPush Change Detection.",
-  "projects.illicado.category": "Fintech & API Design",
+  "projects.illicado.category": "Fintech & Fullstack Development",
   "projects.illicado.title": "Illicado Gift Card Engine",
   "projects.illicado.description":
     "Fullstack contribution within a team to a large-scale gift card distribution platform, including robust, modular transactional APIs and the presentation layer (frontend).",
@@ -219,7 +219,7 @@ const FR: Dict = {
     "Contribution fullstack à une application d'envergure de gestion des risques professionnels. J'ai dirigé la migration stratégique du frontend de AngularJS vers Angular 2+, avec coexistence hybride en production pour assurer la continuité de service, tout en développant des fonctionnalités et services backend pour la plateforme.",
   "projects.winlassie.metrics":
     "Réduction de 40% de la taille du bundle global et gain de réactivité grâce au Lazy Loading et au OnPush Change Detection.",
-  "projects.illicado.category": "Fintech & Design d'API",
+  "projects.illicado.category": "Fintech & Fullstack Development",
   "projects.illicado.title": "Moteur de Cartes Cadeaux Illicado",
   "projects.illicado.description":
     "Contribution fullstack au sein d'une équipe à une plateforme de distribution de cartes cadeaux à grande échelle, incluant des APIs transactionnelles robustes et modulaires ainsi que la couche de présentation (frontend).",
