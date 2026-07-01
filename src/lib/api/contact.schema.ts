@@ -8,6 +8,7 @@ export const contactSchema = z.object({
   name: z.string().min(1).max(100),
   email: z.string().email().max(255),
   subject: z.string().min(1).max(100),
+  subjectOther: z.string().max(100).optional(),
   message: z.string().min(1).max(2000),
   /** Honeypot field — must stay empty. Bots that fill it are silently rejected. */
   honeypot: z.string().max(0).optional().default(""),

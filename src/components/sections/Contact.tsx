@@ -1,10 +1,11 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { Github, Linkedin, MessageCircle, Send, Mail, Loader2 } from "lucide-react";
 import { useI18n } from "@/lib/i18n/index";
 import { Reveal } from "../animations/Reveal";
 import { SectionHeading } from "../common/SectionHeading";
 import { Field } from "../common/Field";
 import { CONTACT_CARDS, SOCIAL_LINKS } from "@/constants/contact";
+import { contactSchema, type ContactFormData } from "@/lib/api/contact.schema";
 import {
   Select,
   SelectContent,
@@ -13,6 +14,20 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+// Constants
+const FORM_RESET_DELAY = 3500;
+const REVEAL_DELAY_STEP = 80;
+const INPUT_CLASS_NAME =
+  "w-full rounded-xl border border-white/10 bg-[#0D1117] px-4 py-3 text-sm outline-none transition-colors focus:border-[#00D4FF]/60 focus:shadow-[0_0_0_3px_rgba(0,212,255,0.15)]";
+
+// Icon mapping for social links
+const SOCIAL_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  GitHub: Github,
+  LinkedIn: Linkedin,
+  Gmail: Mail,
+  WhatsApp: MessageCircle,
+};
+
 type FormStatus = "idle" | "sending" | "sent" | "error";
 
 export function Contact() {
@@ -20,6 +35,16 @@ export function Contact() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [selectedSubject, setSelectedSubject] = useState("");
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
@@ -30,6 +55,23 @@ export function Contact() {
       const fd = new FormData(e.currentTarget);
       const form = e.currentTarget;
 
+      // Build form data
+      const formData: ContactFormData = {
+        name: String(fd.get("name") ?? ""),
+        email: String(fd.get("email") ?? ""),
+        subject: selectedSubject,
+        message: String(fd.get("message") ?? ""),
+        honeypot: String(fd.get("honeypot") ?? ""),
+      };
+
+      // Client-side validation
+      const validationResult = contactSchema.safeParse(formData);
+      if (!validationResult.success) {
+        setStatus("error");
+        setErrorMsg(t("contact.form.error"));
+        return;
+      }
+
       try {
         const response = await fetch("/api/contact", {
           method: "POST",
@@ -37,12 +79,8 @@ export function Contact() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            name: String(fd.get("name") ?? ""),
-            email: String(fd.get("email") ?? ""),
-            subject: selectedSubject,
+            ...formData,
             subjectOther: String(fd.get("subjectOther") ?? ""),
-            message: String(fd.get("message") ?? ""),
-            honeypot: String(fd.get("honeypot") ?? ""),
           }),
         });
         const result = await response.json();
@@ -51,7 +89,7 @@ export function Contact() {
           setStatus("sent");
           form.reset();
           setSelectedSubject("");
-          setTimeout(() => setStatus("idle"), 3500);
+          timeoutRef.current = setTimeout(() => setStatus("idle"), FORM_RESET_DELAY);
         } else {
           setStatus("error");
           setErrorMsg(result.error ?? t("contact.form.error"));
@@ -61,7 +99,7 @@ export function Contact() {
         setErrorMsg(t("contact.form.error"));
       }
     },
-    [t],
+    [t, selectedSubject],
   );
 
   const isSending = status === "sending";
@@ -96,23 +134,16 @@ export function Contact() {
                 </div>
               );
               return (
-                <Reveal key={c.labelKey} delay={i * 80}>
+                <Reveal key={c.labelKey} delay={i * REVEAL_DELAY_STEP}>
                   {c.href ? <a href={c.href}>{inner}</a> : inner}
                 </Reveal>
               );
             })}
 
-            <Reveal delay={240}>
+            <Reveal delay={3 * REVEAL_DELAY_STEP}>
               <div className="flex gap-3 pt-2">
                 {SOCIAL_LINKS.map((social) => {
-                  const Icon =
-                    social.name === "GitHub"
-                      ? Github
-                      : social.name === "LinkedIn"
-                        ? Linkedin
-                        : social.name === "Gmail"
-                          ? Mail
-                          : MessageCircle;
+                  const Icon = SOCIAL_ICONS[social.name] || MessageCircle;
                   return (
                     <a
                       key={social.name}
@@ -184,7 +215,7 @@ export function Contact() {
                     type="text"
                     required
                     maxLength={100}
-                    className="w-full rounded-xl border border-white/10 bg-[#0D1117] px-4 py-3 text-sm outline-none transition-colors focus:border-[#00D4FF]/60 focus:shadow-[0_0_0_3px_rgba(0,212,255,0.15)]"
+                    className={INPUT_CLASS_NAME}
                   />
                 </div>
               )}
@@ -197,22 +228,13 @@ export function Contact() {
                   required
                   maxLength={2000}
                   rows={5}
-                  className="w-full resize-none rounded-xl border border-white/10 bg-[#0D1117] px-4 py-3 text-sm outline-none transition-colors focus:border-[#00D4FF]/60 focus:shadow-[0_0_0_3px_rgba(0,212,255,0.15)]"
+                  className={`${INPUT_CLASS_NAME} resize-none`}
                   placeholder={t("contact.form.placeholder")}
                 />
               </div>
 
               {/* Honeypot anti-spam field — visually hidden but accessible to bots */}
-              <div
-                aria-hidden="true"
-                style={{
-                  position: "absolute",
-                  left: "-9999px",
-                  opacity: 0,
-                  height: 0,
-                  overflow: "hidden",
-                }}
-              >
+              <div className="sr-only" aria-hidden="true">
                 <label htmlFor="honeypot">Do not fill this field</label>
                 <input type="text" id="honeypot" name="honeypot" tabIndex={-1} autoComplete="off" />
               </div>
