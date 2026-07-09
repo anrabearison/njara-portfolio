@@ -31,10 +31,11 @@ Développeur Full-Stack Senior avec plus de 12 ans d'expérience, spécialisé d
 
 ### Développeur Full-Stack Indépendant (Freelance)
 *Janvier 2026 – Présent*
-- Conception d'architectures backend modernes avec NestJS et TypeScript
-- Développement de solutions full-stack performantes
-- Optimisation du cycle de développement via outils IA (Cursor, GitHub Copilot)
-- Veille technologique sur les innovations IA et architectures modernes
+- Conception et développement d'Ombiko (Ankijaniko) — application fullstack de gestion de troupeaux bovins avec assistant santé IA intégré utilisant l'architecture RAG — NestJS, React, PostgreSQL, Supabase pgvector, Gemini API, Voyage AI
+- Construction d'un pipeline RAG intégrant une base de connaissances vétérinaires (12 maladies bovines, 71 sections) pour des diagnostics de santé animale structurés spécifiques à Madagascar
+- Génération PDF de documents vétérinaires réglementaires et administratifs
+- Optimisation des workflows de développement avec les outils IA : Cursor, Copilot, Windsurf
+- Veille technologique active sur les innovations IA et les architectures modernes
 
 ### Développeur Full-Stack — Ezway Technology
 *Juillet 2025 – Décembre 2025*

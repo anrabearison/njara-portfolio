@@ -328,7 +328,7 @@ export const EXPERIENCE_I18N: Record<Lang, ExpEntry[]> = {
       bullets: [
         "Designed and built Ombiko (Ankijaniko) — a full-stack cattle herd management app with an embedded AI health assistant using RAG architecture — NestJS, React, PostgreSQL, Supabase pgvector, Gemini API, Voyage AI",
         "Built a RAG pipeline integrating a veterinary knowledge base (12 bovine diseases, 71 sections) for structured animal health diagnostics specific to Madagascar",
-        "Generated PDF sanitary passports — a mandatory administrative document for cattle movement between communes in Madagascar",
+        "PDF generation of regulatory and administrative veterinary documents",
         "Optimized development workflows with AI tools: Cursor, Copilot, Windsurf",
         "Active technology watch on AI innovations and modern architectures",
       ],
@@ -404,7 +404,7 @@ export const EXPERIENCE_I18N: Record<Lang, ExpEntry[]> = {
       bullets: [
         "Conception et développement d'Ombiko (Ankijaniko) — application fullstack de gestion de troupeaux bovins avec assistant santé IA intégré utilisant l'architecture RAG — NestJS, React, PostgreSQL, Supabase pgvector, Gemini API, Voyage AI",
         "Construction d'un pipeline RAG intégrant une base de connaissances vétérinaires (12 maladies bovines, 71 sections) pour des diagnostics de santé animale structurés spécifiques à Madagascar",
-        "Génération de passeports sanitaires PDF — document administratif obligatoire pour le mouvement des bovins entre communes à Madagascar",
+        "Génération PDF de documents vétérinaires réglementaires et administratifs",
         "Optimisation des workflows de développement avec les outils IA : Cursor, Copilot, Windsurf",
         "Veille technologique active sur les innovations IA et les architectures modernes",
       ],
