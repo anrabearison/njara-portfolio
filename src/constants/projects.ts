@@ -10,9 +10,9 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    id: "winlassie",
-    tags: ["Angular", "AngularJS", "TypeScript", "Symfony", "RabbitMQ"],
-    link: "https://www.winlassie.com/",
+    id: "ombiko",
+    tags: ["NestJS", "React", "TypeScript", "PostgreSQL", "Supabase", "pgvector", "Gemini API", "Voyage AI", "Docker", "JWT", "Cloudinary"],
+    link: "https://ankijaniko.vercel.app",
     featured: true,
     order: 1,
   },
@@ -22,25 +22,20 @@ export const PROJECTS: Project[] = [
     link: "https://illicado.com",
     fallbackLink: "https://www.linkedin.com/company/illicado/",
     featured: true,
-    order: 2,
+    order: 4,
+  },
+  {
+    id: "winlassie",
+    tags: ["Angular", "AngularJS", "TypeScript", "Symfony", "RabbitMQ"],
+    link: "https://www.winlassie.com/",
+    featured: true,
+    order: 3,
   },
   {
     id: "lean-contact",
     tags: ["PHP", "Symfony", "React.js", "ETL", "VoIP/SMS Integration", "High Availability"],
     featured: true,
-    order: 3,
-  },
-  {
-    id: "ombiko",
-    tags: ["NestJS", "React", "TypeScript", "PostgreSQL", "Supabase", "pgvector", "Gemini API", "Voyage AI", "Docker", "JWT", "Cloudinary"],
-    link: "https://ankijaniko.vercel.app",
-    additionalLinks: [
-      { label: "⚙️ Backend GitHub", url: "https://github.com/anrabearison/cow-care-backend-nestjs" },
-      { label: "🖥️ Frontend GitHub", url: "https://github.com/anrabearison/cow-care-connect" },
-      { label: "🌐 Live Demo", url: "https://ankijaniko.vercel.app" },
-    ],
-    featured: true,
-    order: 4,
+    order: 2,
   },
   {
     id: "tradepilot",
