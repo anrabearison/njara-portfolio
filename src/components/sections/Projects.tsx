@@ -46,7 +46,7 @@ export function Projects() {
                   </div>
                   <h3 className="mb-3 flex items-start justify-between gap-3 font-display text-lg font-semibold sm:text-xl">
                     <span className="min-w-0 break-words">{t(`projects.${p.id}.title`)}</span>
-                    {p.link && (
+                    {p.link && !p.additionalLinks && (
                       <a
                         href={p.link}
                         target="_blank"
@@ -79,6 +79,21 @@ export function Projects() {
                       <div className="mt-1 text-xs italic text-muted-foreground">
                         {t(`projects.${p.id}.metrics`)}
                       </div>
+                    </div>
+                  )}
+                  {p.additionalLinks && (
+                    <div className="mb-4 flex flex-wrap gap-2">
+                      {p.additionalLinks.map((link) => (
+                        <a
+                          key={link.url}
+                          href={link.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-[#00D4FF] transition-colors hover:bg-white/[0.06] hover:border-[#00D4FF]/40"
+                        >
+                          {link.label}
+                        </a>
+                      ))}
                     </div>
                   )}
                   <div className="flex flex-wrap gap-1.5">

@@ -1,4 +1,4 @@
-import { Server, Code2, Sparkles, Database, Wrench, Layers } from "lucide-react";
+import { Server, Code2, Sparkles, Database, Wrench, Layers, Bot } from "lucide-react";
 
 export const SKILL_GROUPS = [
   {
@@ -14,7 +14,12 @@ export const SKILL_GROUPS = [
   {
     titleKey: "skills.group.ai",
     icon: Sparkles,
-    items: ["Cursor", "GitHub Copilot", "Antigravity", "AI-assisted development", "RAG", "Machine Learning"],
+    items: ["Cursor", "GitHub Copilot", "Antigravity", "AI-assisted development", "RAG", "Machine Learning", "Windsurf"],
+  },
+  {
+    titleKey: "skills.group.llm",
+    icon: Bot,
+    items: ["RAG Architecture", "Gemini API", "Voyage AI (embeddings)", "pgvector", "Supabase Vector", "LLM Integration"],
   },
   {
     titleKey: "skills.group.db",
@@ -24,7 +29,7 @@ export const SKILL_GROUPS = [
   {
     titleKey: "skills.group.devops",
     icon: Wrench,
-    items: ["Docker", "Git", "Jenkins", "GitLab CI/CD", "Apache POI", "Postman", "Python (BeautifulSoup)"],
+    items: ["Docker", "Git", "Jenkins", "GitLab CI/CD", "Apache POI", "Postman", "Python (BeautifulSoup)", "Vercel"],
   },
   {
     titleKey: "skills.group.methods",

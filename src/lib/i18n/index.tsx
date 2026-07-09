@@ -52,6 +52,7 @@ const EN: Dict = {
   "skills.group.backend": "Backend",
   "skills.group.frontend": "Frontend",
   "skills.group.ai": "AI & Productivity",
+  "skills.group.llm": "AI & LLM",
   "skills.group.db": "Databases",
   "skills.group.devops": "DevOps & Tools",
   "skills.group.methods": "Methodologies",
@@ -93,6 +94,12 @@ const EN: Dict = {
     "Designed and built Lean-Contact, a proprietary multichannel CRM platform for Webhelp, unifying customer interactions across VoIP, SMS, and Email into a single automated workflow.",
   "projects.lean-contact.metrics":
     "Standardized 1M+ customer records/day through dedicated ETL pipelines, with automated callback algorithms improving campaign efficiency by 25%.",
+  "projects.ombiko.category": "AI & Fullstack Development",
+  "projects.ombiko.title": "Ombiko — Cattle Herd Management & AI Health Assistant",
+  "projects.ombiko.description":
+    "Full-stack web application designed for Malagasy cattle farmers, combining complete herd management with an AI-powered animal health assistant. The RAG chatbot covers 12 bovine diseases specific to Madagascar and provides structured responses in 4 parts: urgency, observation, possible diagnosis, and consultation advice — without ever prescribing medication. Includes PDF sanitary passport generation, required for cattle movement between communes.",
+  "projects.ombiko.metrics":
+    "RAG pipeline processing 12 diseases and 71 veterinary knowledge sections, with PDF generation of regulatory and administrative veterinary documents.",
   "projects.quantaview.category": "Clinical Data Systems",
   "projects.quantaview.title": "QuantaView — Clinical Trial eCRF",
   "projects.quantaview.description":
@@ -201,6 +208,7 @@ const FR: Dict = {
   "skills.group.backend": "Backend",
   "skills.group.frontend": "Frontend",
   "skills.group.ai": "IA & Productivité",
+  "skills.group.llm": "IA & LLM",
   "skills.group.db": "Bases de données",
   "skills.group.devops": "DevOps & Outils",
   "skills.group.methods": "Méthodologies",
@@ -242,6 +250,12 @@ const FR: Dict = {
     "Conception et développement de Lean-Contact, une plateforme CRM multicanal propriétaire pour Webhelp, unifiant les interactions clients via VoIP, SMS et Email dans un workflow automatisé unique.",
   "projects.lean-contact.metrics":
     "Standardisation de 1M+ enregistrements clients/jour via des pipelines ETL dédiés, avec des algorithmes de rappel automatisés améliorant l'efficacité des campagnes de 25%.",
+  "projects.ombiko.category": "IA & Fullstack Development",
+  "projects.ombiko.title": "Ombiko — Gestion de Troupeaux & Assistant Santé IA",
+  "projects.ombiko.description":
+    "Application web fullstack conçue pour les éleveurs bovins malgaches, combinant une gestion complète de troupeaux avec un assistant santé animal propulsé par l'IA. Le chatbot RAG couvre 12 maladies bovines spécifiques à Madagascar et fournit des réponses structurées en 4 parties : urgence, observation, diagnostic possible et conseils de consultation — sans jamais prescrire de médicaments. Inclut la génération de passeports sanitaires PDF, obligatoires pour le mouvement des bovins entre communes.",
+  "projects.ombiko.metrics":
+    "Pipeline RAG traitant 12 maladies et 71 sections de connaissances vétérinaires, avec génération PDF de documents vétérinaires réglementaires et administratifs.",
   "projects.quantaview.category": "Systèmes de Données Cliniques",
   "projects.quantaview.title": "QuantaView — eCRF Essais Cliniques",
   "projects.quantaview.description":
@@ -312,9 +326,11 @@ export const EXPERIENCE_I18N: Record<Lang, ExpEntry[]> = {
       company: "Independent",
       period: "Jan 2026 – Present",
       bullets: [
-        "Designing modern backend architectures with NestJS & TypeScript",
-        "Full-stack delivery and integration of automation tools for clients",
-        "Optimizing development workflows with AI-powered assistants",
+        "Designed and built Ombiko (Ankijaniko) — a full-stack cattle herd management app with an embedded AI health assistant using RAG architecture — NestJS, React, PostgreSQL, Supabase pgvector, Gemini API, Voyage AI",
+        "Built a RAG pipeline integrating a veterinary knowledge base (12 bovine diseases, 71 sections) for structured animal health diagnostics specific to Madagascar",
+        "Generated PDF sanitary passports — a mandatory administrative document for cattle movement between communes in Madagascar",
+        "Optimized development workflows with AI tools: Cursor, Copilot, Windsurf",
+        "Active technology watch on AI innovations and modern architectures",
       ],
     },
     {
@@ -386,9 +402,11 @@ export const EXPERIENCE_I18N: Record<Lang, ExpEntry[]> = {
       company: "Indépendant",
       period: "Jan 2026 – Présent",
       bullets: [
-        "Conception d'architectures backend modernes avec NestJS & TypeScript",
-        "Déploiements et intégrations full-stack d'outils d'automatisation pour clients",
-        "Optimisation de workflows de développement grâce aux assistants IA",
+        "Conception et développement d'Ombiko (Ankijaniko) — application fullstack de gestion de troupeaux bovins avec assistant santé IA intégré utilisant l'architecture RAG — NestJS, React, PostgreSQL, Supabase pgvector, Gemini API, Voyage AI",
+        "Construction d'un pipeline RAG intégrant une base de connaissances vétérinaires (12 maladies bovines, 71 sections) pour des diagnostics de santé animale structurés spécifiques à Madagascar",
+        "Génération de passeports sanitaires PDF — document administratif obligatoire pour le mouvement des bovins entre communes à Madagascar",
+        "Optimisation des workflows de développement avec les outils IA : Cursor, Copilot, Windsurf",
+        "Veille technologique active sur les innovations IA et les architectures modernes",
       ],
     },
     {
