@@ -23,9 +23,21 @@ export function About() {
         </Reveal>
         <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-center">
           <Reveal>
-            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-              {t("about.body")}
-            </p>
+            <div className="flex flex-col items-center sm:items-start gap-6">
+              <div className="relative group">
+                <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-[#00D4FF]/20 to-[#00D4FF]/5 blur-xl transition-opacity group-hover:opacity-100 opacity-60" />
+                <img
+                  src="/images/profile.jpg"
+                  srcSet="/images/profile.jpg 1x, /images/profile@2x.jpg 2x"
+                  alt="Photo de profil de Njara Rabearison"
+                  className="relative h-48 w-48 rounded-full border-2 border-[#00D4FF]/30 object-cover shadow-2xl transition-all duration-300 group-hover:border-[#00D4FF]/50 group-hover:scale-[1.02]"
+                  loading="eager"
+                />
+              </div>
+              <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+                {t("about.body")}
+              </p>
+            </div>
             <div className="mt-8 flex flex-wrap gap-3 text-sm">
               {langs.map((l) => (
                 <span
