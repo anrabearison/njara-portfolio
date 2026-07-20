@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "lean-contact",
-    tags: ["PHP", "Symfony", "React.js", "ETL", "VoIP/SMS Integration", "High Availability"],
+    tags: ["PHP", "Symfony", "React.js", "REST API Integration", "ETL", "VoIP/SMS/Email Automation"],
     featured: true,
     order: 2,
   },

@@ -91,9 +91,9 @@ const EN: Dict = {
   "projects.lean-contact.category": "Data Engineering & ETL",
   "projects.lean-contact.title": "Lean-Contact — Multichannel CRM Platform",
   "projects.lean-contact.description":
-    "Designed and built Lean-Contact, a proprietary multichannel CRM platform for Webhelp, unifying customer interactions across VoIP, SMS, and Email into a single automated workflow.",
+    "Designed and developed the data integration system for Lean-Contact: importing customer data from various sources (files or databases) and automating multichannel campaign launches (automated calls, SMS, email, mail) for debt collection and satisfaction surveys.",
   "projects.lean-contact.metrics":
-    "Standardized 1M+ customer records/day through dedicated ETL pipelines, with automated callback algorithms improving campaign efficiency by 25%.",
+    "Full internalization of the pipeline (data integration → communication → flow management), previously dependent on several paid external platforms, through REST API orchestration across multiple providers.",
   "projects.ombiko.category": "AI & Fullstack Development",
   "projects.ombiko.title": "Ombiko — Cattle Herd Management & AI Health Assistant",
   "projects.ombiko.description":
@@ -247,9 +247,9 @@ const FR: Dict = {
   "projects.lean-contact.category": "Data Engineering & ETL",
   "projects.lean-contact.title": "Lean-Contact — Plateforme CRM Multicanal",
   "projects.lean-contact.description":
-    "Conception et développement de Lean-Contact, une plateforme CRM multicanal propriétaire pour Webhelp, unifiant les interactions clients via VoIP, SMS et Email dans un workflow automatisé unique.",
+    "Conception et développement du système d'intégration de données pour Lean-Contact : import de données clients depuis diverses sources (fichiers ou bases de données) et automatisation du lancement de campagnes multicanales (appels automatiques, SMS, email, courrier) pour le recouvrement de créances et les enquêtes de satisfaction.",
   "projects.lean-contact.metrics":
-    "Standardisation de 1M+ enregistrements clients/jour via des pipelines ETL dédiés, avec des algorithmes de rappel automatisés améliorant l'efficacité des campagnes de 25%.",
+    "Internalisation complète du pipeline (intégration → communication → gestion de flux), auparavant dépendant de plusieurs plateformes externes payantes, via l'orchestration d'API REST multi-prestataires.",
   "projects.ombiko.category": "IA & Fullstack Development",
   "projects.ombiko.title": "Ombiko — Gestion de Troupeaux & Assistant Santé IA",
   "projects.ombiko.description":
