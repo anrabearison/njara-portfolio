@@ -70,17 +70,17 @@ export function Hero() {
             <pre className="overflow-x-auto p-4 text-[11px] leading-relaxed sm:p-5 sm:text-[13px]">
               <code className="font-mono">
 {`import { Module } from '@nestjs/common';
-import { CQRS, EventBus } from '@nestjs/cqrs';
+import { CqrsModule } from '@nestjs/cqrs';
 
 `}<span className="text-[#7C3AED]">{`@Module`}</span>{`({
-  imports: [`}<span className="text-[#00D4FF]">{`CQRS`}</span>{`, `}<span className="text-[#00D4FF]">{`EventBus`}</span>{`],
-  providers: [`}<span className="text-[#facc15]">{`OrderService`}</span>{`],
+  imports: [`}<span className="text-[#00D4FF]">{`CqrsModule`}</span>{`],
+  providers: [`}<span className="text-[#facc15]">{`OrderService`}</span>{`, `}<span className="text-[#facc15]">{`CreateOrderHandler`}</span>{`],
 })
-export class `}<span className="text-[#00D4FF]">{`OrderModule`}</span>{` {
-  `}<span className="text-muted-foreground">{`// clean architecture · TDD · DDD`}</span>{`
-  scale = `}<span className="text-[#4ade80]">{`'horizontal'`}</span>{`;
-  uptime = `}<span className="text-[#4ade80]">{`99.99`}</span>{`;
-}`}
+export class `}<span className="text-[#00D4FF]">{`OrderModule`}</span>{` {}
+
+`}<span className="text-muted-foreground">{`// Clean Architecture · TDD · DDD`}</span>{`
+`}<span className="text-muted-foreground">{`// scale: horizontal · uptime: 99.99%`}</span>{`
+`}
               </code>
             </pre>
           </div>
