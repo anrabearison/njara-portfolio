@@ -74,9 +74,9 @@ const EN: Dict = {
   "projects.illicado.category": "Fintech & Fullstack Development",
   "projects.illicado.title": "Illicado Gift Card Engine",
   "projects.illicado.description":
-    "Fullstack contribution within a team to a large-scale gift card distribution platform, including robust, modular transactional APIs and the presentation layer (frontend).",
+    "Full-stack reinforcement within a team on Illicado, a large-scale gift card distribution platform, working on targeted tickets covering both transactional APIs and the frontend presentation layer.",
   "projects.illicado.metrics":
-    "Architecture designed to handle peaks of 100k+ requests/day during the holiday season without compromising financial integrity.",
+    "Contributed to a critical platform handling high-volume financial transactions, requiring rigor and reliability in a high-demand context.",
   "projects.tradepilot.category": "Widget Development & System Integration",
   "projects.tradepilot.title": "Trade-Pilot Integration — eexpand",
   "projects.tradepilot.description":
@@ -230,9 +230,9 @@ const FR: Dict = {
   "projects.illicado.category": "Fintech & Fullstack Development",
   "projects.illicado.title": "Moteur de Cartes Cadeaux Illicado",
   "projects.illicado.description":
-    "Contribution fullstack au sein d'une équipe à une plateforme de distribution de cartes cadeaux à grande échelle, incluant des APIs transactionnelles robustes et modulaires ainsi que la couche de présentation (frontend).",
+    "Renfort fullstack au sein d'une équipe sur Illicado, une plateforme de distribution de cartes cadeaux à grande échelle, intervenant sur des tickets ciblés couvrant à la fois les APIs transactionnelles et la couche de présentation (frontend).",
   "projects.illicado.metrics":
-    "Architecture conçue pour supporter des pics à 100k+ requêtes/jour pendant les fêtes de fin d'année sans perte d'intégrité financière.",
+    "Contribution à une plateforme critique traitant des transactions financières à fort volume, nécessitant rigueur et fiabilité dans un contexte de forte demande.",
   "projects.tradepilot.category": "Développement de Widgets & Intégration Système",
   "projects.tradepilot.title": "Intégration Trade-Pilot — eexpand",
   "projects.tradepilot.description":
