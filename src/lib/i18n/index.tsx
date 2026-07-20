@@ -80,7 +80,7 @@ const EN: Dict = {
   "projects.tradepilot.category": "Widget Development & System Integration",
   "projects.tradepilot.title": "Trade-Pilot Integration — eexpand",
   "projects.tradepilot.description":
-    "Development of custom widgets and backend integration for Trade-Pilot, eexpand's AI-powered platform for international trade intelligence. Built the WordPress/Symfony/MariaDB bridge connecting custom widgets to the core platform.",
+    "Development of custom widgets and backend integration for Trade-Pilot, eexpand's AI-powered platform for international business intelligence. Built the technical bridge between WordPress, Symfony, and MariaDB, ensuring communication between the widgets and the central platform.",
   "projects.tradepilot.metrics":
     "Developed and integrated 12 custom widgets on WordPress, interacting with the Symfony/MariaDB backend via API for real-time business data retrieval.",
   "projects.job-market-scraping.category": "Web Scraping & Automation",
@@ -237,7 +237,7 @@ const FR: Dict = {
   "projects.tradepilot.category": "Développement de Widgets & Intégration Système",
   "projects.tradepilot.title": "Intégration Trade-Pilot — eexpand",
   "projects.tradepilot.description":
-    "Développement de widgets personnalisés et intégration backend pour Trade-Pilot, la plateforme propulsée par l'IA d'eexpand pour l'intelligence commerciale internationale. Construction du pont WordPress/Symfony/MariaDB connectant les widgets personnalisés à la plateforme centrale.",
+    "Développement de widgets personnalisés et intégration backend pour Trade-Pilot, la plateforme propulsée par l'IA d'eexpand pour l'intelligence commerciale internationale. Construction du pont technique entre WordPress, Symfony et MariaDB, assurant la communication entre les widgets et la plateforme centrale.",
   "projects.tradepilot.metrics":
     "Développement et intégration de 12 widgets personnalisés sur WordPress, interagissant avec le backend Symfony/MariaDB via API pour la remontée de données commerciales en temps réel.",
   "projects.job-market-scraping.category": "Web Scraping & Automatisation",
