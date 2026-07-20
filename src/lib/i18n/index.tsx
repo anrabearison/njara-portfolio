@@ -97,7 +97,7 @@ const EN: Dict = {
   "projects.ombiko.category": "AI & Fullstack Development",
   "projects.ombiko.title": "Ombiko — Cattle Herd Management & AI Health Assistant",
   "projects.ombiko.description":
-    "Full-stack web application designed for Malagasy cattle farmers, combining complete herd management with an AI-powered animal health assistant. The RAG chatbot covers 12 bovine diseases specific to Madagascar and provides structured responses in 4 parts: urgency, observation, possible diagnosis, and consultation advice — without ever prescribing medication. Includes PDF sanitary passport generation, required for cattle movement between communes.",
+    "Full-stack web application designed for Malagasy cattle farmers, combining complete herd management with an AI-powered animal health assistant based on a RAG architecture. The system analyzes 12 bovine diseases common in Madagascar and guides the farmer through a structured diagnostic (urgency, observation, possible diagnosis, veterinary consultation recommendation). Includes a PDF report generation module (sanitary passport for cattle movement between communes, individual bovine record), with additional document types planned.",
   "projects.ombiko.metrics":
     "RAG pipeline processing 12 diseases and 71 veterinary knowledge sections, with PDF generation of regulatory and administrative veterinary documents.",
   "projects.quantaview.category": "Clinical Data Systems",
@@ -253,7 +253,7 @@ const FR: Dict = {
   "projects.ombiko.category": "IA & Fullstack Development",
   "projects.ombiko.title": "Ombiko — Gestion de Troupeaux & Assistant Santé IA",
   "projects.ombiko.description":
-    "Application web fullstack conçue pour les éleveurs bovins malgaches, combinant une gestion complète de troupeaux avec un assistant santé animal propulsé par l'IA. Le chatbot RAG couvre 12 maladies bovines spécifiques à Madagascar et fournit des réponses structurées en 4 parties : urgence, observation, diagnostic possible et conseils de consultation — sans jamais prescrire de médicaments. Inclut la génération de passeports sanitaires PDF, obligatoires pour le mouvement des bovins entre communes.",
+    "Application web full-stack destinée aux éleveurs malgaches, associant gestion de cheptel et assistant IA de santé animale basé sur une architecture RAG. Le système analyse 12 maladies bovines courantes à Madagascar et guide l'éleveur à travers un diagnostic structuré (urgence, observation, hypothèse diagnostique, recommandation de consultation vétérinaire). Inclut un module de génération de rapports PDF (passeport sanitaire pour le déplacement du bétail entre communes, fiche individuelle par bovin), avec d'autres types de documents prévus à venir.",
   "projects.ombiko.metrics":
     "Pipeline RAG traitant 12 maladies et 71 sections de connaissances vétérinaires, avec génération PDF de documents vétérinaires réglementaires et administratifs.",
   "projects.quantaview.category": "Systèmes de Données Cliniques",
