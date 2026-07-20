@@ -88,7 +88,7 @@ const EN: Dict = {
   "projects.job-market-scraping.description":
     "Modular automation and web scraping engine built for Ezway's internal use, enabling intelligent, structured real-time collection of job postings across multiple job boards.",
   "projects.job-market-scraping.metrics":
-    "Extraction and structuring of 10,000+ entries/day using BeautifulSoup, synchronized with a Flask/MariaDB backend.",
+    "Built an automation pipeline enabling structured data collection across multiple job boards simultaneously, with direct synchronization to the Flask/MariaDB backend.",
   "projects.lean-contact.category": "Data Engineering & ETL",
   "projects.lean-contact.title": "Lean-Contact — Multichannel CRM Platform",
   "projects.lean-contact.description":
@@ -245,7 +245,7 @@ const FR: Dict = {
   "projects.job-market-scraping.description":
     "Moteur d'automatisation et de web scraping modulaire construit pour l'usage interne d'Ezway, permettant la collecte intelligente et structurée en temps réel d'offres d'emploi sur plusieurs job boards.",
   "projects.job-market-scraping.metrics":
-    "Extraction et structuration de 10 000+ entrées/jour avec BeautifulSoup, synchronisé avec un backend Flask/MariaDB.",
+    "Mise en place d'un pipeline d'automatisation permettant la collecte structurée de données sur plusieurs job boards simultanément, avec synchronisation directe vers le backend Flask/MariaDB.",
   "projects.lean-contact.category": "Data Engineering & ETL",
   "projects.lean-contact.title": "Lean-Contact — Plateforme CRM Multicanal",
   "projects.lean-contact.description":
