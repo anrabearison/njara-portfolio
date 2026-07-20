@@ -68,9 +68,9 @@ const EN: Dict = {
   "projects.winlassie.category": "Fullstack Development & Frontend Migration",
   "projects.winlassie.title": "Winlassie Risk Management Platform",
   "projects.winlassie.description":
-    "Fullstack contribution to a large-scale occupational risk management application. Led the strategic migration of the frontend from AngularJS to Angular 2+, with hybrid coexistence in production to ensure service continuity, while also developing backend features and services for the platform.",
+    "Fullstack contribution to a large-scale occupational risk management application. Led approximately 70% of the frontend migration from AngularJS to Angular 2+, with hybrid coexistence in production via ngUpgrade to ensure service continuity. Backend development: view management, PDF report generation, and a Symfony bundle handling client data transformation and mapping, ensuring compliance with Winlassie's database schema.",
   "projects.winlassie.metrics":
-    "40% reduction in global bundle size and improved responsiveness through Lazy Loading and OnPush Change Detection.",
+    "Successful hybrid migration with zero service disruption, covering the majority of frontend components. Developed a Symfony transformation and mapping bundle, ensuring client data compliance with Winlassie's database schema.",
   "projects.illicado.category": "Fintech & Fullstack Development",
   "projects.illicado.title": "Illicado Gift Card Engine",
   "projects.illicado.description":
@@ -224,9 +224,9 @@ const FR: Dict = {
   "projects.winlassie.category": "Développement Fullstack & Migration Frontend",
   "projects.winlassie.title": "Plateforme de gestion des risques Winlassie",
   "projects.winlassie.description":
-    "Contribution fullstack à une application d'envergure de gestion des risques professionnels. J'ai dirigé la migration stratégique du frontend de AngularJS vers Angular 2+, avec coexistence hybride en production pour assurer la continuité de service, tout en développant des fonctionnalités et services backend pour la plateforme.",
+    "Contribution fullstack à une application de gestion des risques professionnels à grande échelle. Responsable de près de 70% de la migration du frontend d'AngularJS vers Angular 2+, avec coexistence hybride en production via ngUpgrade pour assurer la continuité de service. Développement backend : gestion des vues, génération de rapports PDF, et développement d'un bundle Symfony assurant la transformation et le mapping des données clients, garantissant leur conformité avec le schéma de la base Winlassie.",
   "projects.winlassie.metrics":
-    "Réduction de 40% de la taille du bundle global et gain de réactivité grâce au Lazy Loading et au OnPush Change Detection.",
+    "Migration hybride réussie sans interruption de service, couvrant la majorité des composants frontend. Développement d'un bundle Symfony de transformation et mapping, garantissant la conformité des données clients avec le schéma de la base Winlassie.",
   "projects.illicado.category": "Fintech & Fullstack Development",
   "projects.illicado.title": "Moteur de Cartes Cadeaux Illicado",
   "projects.illicado.description":
