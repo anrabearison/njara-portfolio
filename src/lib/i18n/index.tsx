@@ -68,36 +68,37 @@ const EN: Dict = {
   "projects.winlassie.category": "Fullstack Development & Frontend Migration",
   "projects.winlassie.title": "Winlassie Risk Management Platform",
   "projects.winlassie.description":
-    "Fullstack contribution to a large-scale occupational risk management application. Led the strategic migration of the frontend from AngularJS to Angular 2+, with hybrid coexistence in production to ensure service continuity, while also developing backend features and services for the platform.",
+    "Fullstack contribution to a large-scale occupational risk management application. Led approximately 70% of the frontend migration from AngularJS to Angular 2+, with hybrid coexistence in production via ngUpgrade to ensure service continuity. Backend development: view management, PDF report generation, and a Symfony bundle handling client data transformation and mapping, ensuring compliance with Winlassie's database schema.",
   "projects.winlassie.metrics":
-    "40% reduction in global bundle size and improved responsiveness through Lazy Loading and OnPush Change Detection.",
+    "Successful hybrid migration with zero service disruption, covering the majority of frontend components. Developed a Symfony transformation and mapping bundle, ensuring client data compliance with Winlassie's database schema.",
   "projects.illicado.category": "Fintech & Fullstack Development",
   "projects.illicado.title": "Illicado Gift Card Engine",
   "projects.illicado.description":
-    "Fullstack contribution within a team to a large-scale gift card distribution platform, including robust, modular transactional APIs and the presentation layer (frontend).",
+    "Full-stack reinforcement within a team on Illicado, a large-scale gift card distribution platform, working on targeted tickets covering both transactional APIs and the frontend presentation layer.",
   "projects.illicado.metrics":
-    "Architecture designed to handle peaks of 100k+ requests/day during the holiday season without compromising financial integrity.",
+    "Contributed to a critical platform handling high-volume financial transactions, requiring rigor and reliability in a high-demand context.",
   "projects.tradepilot.category": "Widget Development & System Integration",
   "projects.tradepilot.title": "Trade-Pilot Integration — eexpand",
   "projects.tradepilot.description":
-    "Development of custom widgets and backend integration for Trade-Pilot, eexpand's AI-powered platform for international trade intelligence. Built the WordPress/Symfony/MariaDB bridge connecting custom widgets to the core platform.",
-  "projects.tradepilot.metrics": "",
+    "Development of custom widgets and backend integration for Trade-Pilot, eexpand's AI-powered platform for international business intelligence. Built the technical bridge between WordPress, Symfony, and MariaDB, ensuring communication between the widgets and the central platform.",
+  "projects.tradepilot.metrics":
+    "Developed and integrated 12 custom widgets on WordPress, interacting with the Symfony/MariaDB backend via API for real-time business data retrieval.",
   "projects.job-market-scraping.category": "Web Scraping & Automation",
   "projects.job-market-scraping.title": "Job Market Scraping Engine — Ezway (Internal Tool)",
   "projects.job-market-scraping.description":
     "Modular automation and web scraping engine built for Ezway's internal use, enabling intelligent, structured real-time collection of job postings across multiple job boards.",
   "projects.job-market-scraping.metrics":
-    "Extraction and structuring of 10,000+ entries/day using BeautifulSoup, synchronized with a Flask/MariaDB backend.",
+    "Built an automation pipeline enabling structured data collection across multiple job boards simultaneously, with direct synchronization to the Flask/MariaDB backend.",
   "projects.lean-contact.category": "Data Engineering & ETL",
   "projects.lean-contact.title": "Lean-Contact — Multichannel CRM Platform",
   "projects.lean-contact.description":
-    "Designed and built Lean-Contact, a proprietary multichannel CRM platform for Webhelp, unifying customer interactions across VoIP, SMS, and Email into a single automated workflow.",
+    "Designed and developed the data integration system for Lean-Contact: importing customer data from various sources (files or databases) and automating multichannel campaign launches (automated calls, SMS, email, mail) for debt collection and satisfaction surveys.",
   "projects.lean-contact.metrics":
-    "Standardized 1M+ customer records/day through dedicated ETL pipelines, with automated callback algorithms improving campaign efficiency by 25%.",
+    "Full internalization of the pipeline (data integration → communication → flow management), previously dependent on several paid external platforms, through REST API orchestration across multiple providers.",
   "projects.ombiko.category": "AI & Fullstack Development",
   "projects.ombiko.title": "Ombiko — Cattle Herd Management & AI Health Assistant",
   "projects.ombiko.description":
-    "Full-stack web application designed for Malagasy cattle farmers, combining complete herd management with an AI-powered animal health assistant. The RAG chatbot covers 12 bovine diseases specific to Madagascar and provides structured responses in 4 parts: urgency, observation, possible diagnosis, and consultation advice — without ever prescribing medication. Includes PDF sanitary passport generation, required for cattle movement between communes.",
+    "Designed and built Ombiko, a full-stack application for Malagasy cattle farmers, combining herd management with an AI-powered animal health assistant based on a RAG architecture. The system guides farmers through a structured diagnostic covering 12 common bovine diseases in Madagascar, with PDF report generation (sanitary passport, individual bovine record).",
   "projects.ombiko.metrics":
     "RAG pipeline processing 12 diseases and 71 veterinary knowledge sections, with PDF generation of regulatory and administrative veterinary documents.",
   "projects.quantaview.category": "Clinical Data Systems",
@@ -224,36 +225,37 @@ const FR: Dict = {
   "projects.winlassie.category": "Développement Fullstack & Migration Frontend",
   "projects.winlassie.title": "Plateforme de gestion des risques Winlassie",
   "projects.winlassie.description":
-    "Contribution fullstack à une application d'envergure de gestion des risques professionnels. J'ai dirigé la migration stratégique du frontend de AngularJS vers Angular 2+, avec coexistence hybride en production pour assurer la continuité de service, tout en développant des fonctionnalités et services backend pour la plateforme.",
+    "Contribution fullstack à une application de gestion des risques professionnels à grande échelle. Responsable de près de 70% de la migration du frontend d'AngularJS vers Angular 2+, avec coexistence hybride en production via ngUpgrade pour assurer la continuité de service. Développement backend : gestion des vues, génération de rapports PDF, et développement d'un bundle Symfony assurant la transformation et le mapping des données clients, garantissant leur conformité avec le schéma de la base Winlassie.",
   "projects.winlassie.metrics":
-    "Réduction de 40% de la taille du bundle global et gain de réactivité grâce au Lazy Loading et au OnPush Change Detection.",
+    "Migration hybride réussie sans interruption de service, couvrant la majorité des composants frontend. Développement d'un bundle Symfony de transformation et mapping, garantissant la conformité des données clients avec le schéma de la base Winlassie.",
   "projects.illicado.category": "Fintech & Fullstack Development",
   "projects.illicado.title": "Moteur de Cartes Cadeaux Illicado",
   "projects.illicado.description":
-    "Contribution fullstack au sein d'une équipe à une plateforme de distribution de cartes cadeaux à grande échelle, incluant des APIs transactionnelles robustes et modulaires ainsi que la couche de présentation (frontend).",
+    "Renfort fullstack au sein d'une équipe sur Illicado, une plateforme de distribution de cartes cadeaux à grande échelle, intervenant sur des tickets ciblés couvrant à la fois les APIs transactionnelles et la couche de présentation (frontend).",
   "projects.illicado.metrics":
-    "Architecture conçue pour supporter des pics à 100k+ requêtes/jour pendant les fêtes de fin d'année sans perte d'intégrité financière.",
+    "Contribution à une plateforme critique traitant des transactions financières à fort volume, nécessitant rigueur et fiabilité dans un contexte de forte demande.",
   "projects.tradepilot.category": "Développement de Widgets & Intégration Système",
   "projects.tradepilot.title": "Intégration Trade-Pilot — eexpand",
   "projects.tradepilot.description":
-    "Développement de widgets personnalisés et intégration backend pour Trade-Pilot, la plateforme propulsée par l'IA d'eexpand pour l'intelligence commerciale internationale. Construction du pont WordPress/Symfony/MariaDB connectant les widgets personnalisés à la plateforme centrale.",
-  "projects.tradepilot.metrics": "",
+    "Développement de widgets personnalisés et intégration backend pour Trade-Pilot, la plateforme propulsée par l'IA d'eexpand pour l'intelligence commerciale internationale. Construction du pont technique entre WordPress, Symfony et MariaDB, assurant la communication entre les widgets et la plateforme centrale.",
+  "projects.tradepilot.metrics":
+    "Développement et intégration de 12 widgets personnalisés sur WordPress, interagissant avec le backend Symfony/MariaDB via API pour la remontée de données commerciales en temps réel.",
   "projects.job-market-scraping.category": "Web Scraping & Automatisation",
   "projects.job-market-scraping.title": "Moteur de Scraping du Marché de l'Emploi — Ezway (Outil Interne)",
   "projects.job-market-scraping.description":
     "Moteur d'automatisation et de web scraping modulaire construit pour l'usage interne d'Ezway, permettant la collecte intelligente et structurée en temps réel d'offres d'emploi sur plusieurs job boards.",
   "projects.job-market-scraping.metrics":
-    "Extraction et structuration de 10 000+ entrées/jour avec BeautifulSoup, synchronisé avec un backend Flask/MariaDB.",
+    "Mise en place d'un pipeline d'automatisation permettant la collecte structurée de données sur plusieurs job boards simultanément, avec synchronisation directe vers le backend Flask/MariaDB.",
   "projects.lean-contact.category": "Data Engineering & ETL",
   "projects.lean-contact.title": "Lean-Contact — Plateforme CRM Multicanal",
   "projects.lean-contact.description":
-    "Conception et développement de Lean-Contact, une plateforme CRM multicanal propriétaire pour Webhelp, unifiant les interactions clients via VoIP, SMS et Email dans un workflow automatisé unique.",
+    "Conception et développement du système d'intégration de données pour Lean-Contact : import de données clients depuis diverses sources (fichiers ou bases de données) et automatisation du lancement de campagnes multicanales (appels automatiques, SMS, email, courrier) pour le recouvrement de créances et les enquêtes de satisfaction.",
   "projects.lean-contact.metrics":
-    "Standardisation de 1M+ enregistrements clients/jour via des pipelines ETL dédiés, avec des algorithmes de rappel automatisés améliorant l'efficacité des campagnes de 25%.",
+    "Internalisation complète du pipeline (intégration → communication → gestion de flux), auparavant dépendant de plusieurs plateformes externes payantes, via l'orchestration d'API REST multi-prestataires.",
   "projects.ombiko.category": "IA & Fullstack Development",
   "projects.ombiko.title": "Ombiko — Gestion de Troupeaux & Assistant Santé IA",
   "projects.ombiko.description":
-    "Application web fullstack conçue pour les éleveurs bovins malgaches, combinant une gestion complète de troupeaux avec un assistant santé animal propulsé par l'IA. Le chatbot RAG couvre 12 maladies bovines spécifiques à Madagascar et fournit des réponses structurées en 4 parties : urgence, observation, diagnostic possible et conseils de consultation — sans jamais prescrire de médicaments. Inclut la génération de passeports sanitaires PDF, obligatoires pour le mouvement des bovins entre communes.",
+    "Conception et développement d'Ombiko, une application full-stack destinée aux éleveurs malgaches, associant gestion de cheptel et assistant IA de santé animale basé sur une architecture RAG. Le système guide l'éleveur à travers un diagnostic structuré sur 12 maladies bovines courantes à Madagascar, avec génération de rapports PDF (passeport sanitaire, fiche individuelle bovin).",
   "projects.ombiko.metrics":
     "Pipeline RAG traitant 12 maladies et 71 sections de connaissances vétérinaires, avec génération PDF de documents vétérinaires réglementaires et administratifs.",
   "projects.quantaview.category": "Systèmes de Données Cliniques",

@@ -18,7 +18,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "illicado",
-    tags: ["Node.js", "Express", "REST API", "Database Security", "High Load"],
+    tags: ["Symfony", "MySQL", "Express", "REST API"],
     link: "https://illicado.com",
     fallbackLink: "https://www.linkedin.com/company/illicado/",
     featured: true,
@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "lean-contact",
-    tags: ["PHP", "Symfony", "React.js", "ETL", "VoIP/SMS Integration", "High Availability"],
+    tags: ["PHP", "Symfony", "React.js", "REST API Integration", "ETL", "VoIP/SMS/Email Automation"],
     featured: true,
     order: 2,
   },
