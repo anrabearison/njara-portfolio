@@ -81,7 +81,8 @@ const EN: Dict = {
   "projects.tradepilot.title": "Trade-Pilot Integration — eexpand",
   "projects.tradepilot.description":
     "Development of custom widgets and backend integration for Trade-Pilot, eexpand's AI-powered platform for international trade intelligence. Built the WordPress/Symfony/MariaDB bridge connecting custom widgets to the core platform.",
-  "projects.tradepilot.metrics": "",
+  "projects.tradepilot.metrics":
+    "Developed and integrated 12 custom widgets on WordPress, interacting with the Symfony/MariaDB backend via API for real-time business data retrieval.",
   "projects.job-market-scraping.category": "Web Scraping & Automation",
   "projects.job-market-scraping.title": "Job Market Scraping Engine — Ezway (Internal Tool)",
   "projects.job-market-scraping.description":
@@ -237,7 +238,8 @@ const FR: Dict = {
   "projects.tradepilot.title": "Intégration Trade-Pilot — eexpand",
   "projects.tradepilot.description":
     "Développement de widgets personnalisés et intégration backend pour Trade-Pilot, la plateforme propulsée par l'IA d'eexpand pour l'intelligence commerciale internationale. Construction du pont WordPress/Symfony/MariaDB connectant les widgets personnalisés à la plateforme centrale.",
-  "projects.tradepilot.metrics": "",
+  "projects.tradepilot.metrics":
+    "Développement et intégration de 12 widgets personnalisés sur WordPress, interagissant avec le backend Symfony/MariaDB via API pour la remontée de données commerciales en temps réel.",
   "projects.job-market-scraping.category": "Web Scraping & Automatisation",
   "projects.job-market-scraping.title": "Moteur de Scraping du Marché de l'Emploi — Ezway (Outil Interne)",
   "projects.job-market-scraping.description":
