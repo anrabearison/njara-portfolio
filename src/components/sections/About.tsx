@@ -65,9 +65,7 @@ export function About() {
                 <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all hover:border-[#00D4FF]/40 hover:bg-white/[0.04]">
                   <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#00D4FF]/10 blur-2xl transition-opacity group-hover:opacity-100" />
                   <div className="flex items-baseline gap-4">
-                    <div className="font-display text-5xl font-bold text-gradient">
-                      {s.value}
-                    </div>
+                    <div className="font-display text-5xl font-bold text-gradient">{s.value}</div>
                     <div className="text-sm text-muted-foreground">{t(s.labelKey)}</div>
                   </div>
                 </div>

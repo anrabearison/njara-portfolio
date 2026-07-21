@@ -11,10 +11,7 @@ export function Projects() {
   const { t } = useI18n();
   const [visibleCount, setVisibleCount] = useState(3);
 
-  const orderedProjects = useMemo(
-    () => [...PROJECTS].sort((a, b) => a.order - b.order),
-    [],
-  );
+  const orderedProjects = useMemo(() => [...PROJECTS].sort((a, b) => a.order - b.order), []);
 
   const visibleProjects = orderedProjects.slice(0, visibleCount);
   const isExpanded = visibleCount >= orderedProjects.length;

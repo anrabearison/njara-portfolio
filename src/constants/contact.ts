@@ -8,7 +8,12 @@ export interface ContactCard {
 }
 
 export const CONTACT_CARDS: ContactCard[] = [
-  { icon: Mail, labelKey: "contact.email", value: "rabearisonnjara@gmail.com", href: "mailto:rabearisonnjara@gmail.com" },
+  {
+    icon: Mail,
+    labelKey: "contact.email",
+    value: "rabearisonnjara@gmail.com",
+    href: "mailto:rabearisonnjara@gmail.com",
+  },
   { icon: Phone, labelKey: "contact.phone", value: "+261 34 74 370 44", href: "tel:+261347437044" },
   { icon: MapPin, labelKey: "contact.location", value: "" }, // value will be set dynamically
 ];

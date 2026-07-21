@@ -4,7 +4,16 @@ export const SKILL_GROUPS = [
   {
     titleKey: "skills.group.backend",
     icon: Server,
-    items: ["NestJS", "Node.js", "TypeScript", "Java (Spring Boot)", "PHP (Symfony)", "Spring MVC", "REST API", "Microservices"],
+    items: [
+      "NestJS",
+      "Node.js",
+      "TypeScript",
+      "Java (Spring Boot)",
+      "PHP (Symfony)",
+      "Spring MVC",
+      "REST API",
+      "Microservices",
+    ],
   },
   {
     titleKey: "skills.group.frontend",
@@ -14,12 +23,27 @@ export const SKILL_GROUPS = [
   {
     titleKey: "skills.group.ai",
     icon: Sparkles,
-    items: ["Cursor", "GitHub Copilot", "Antigravity", "AI-assisted development", "RAG", "Machine Learning", "Windsurf"],
+    items: [
+      "Cursor",
+      "GitHub Copilot",
+      "Antigravity",
+      "AI-assisted development",
+      "RAG",
+      "Machine Learning",
+      "Windsurf",
+    ],
   },
   {
     titleKey: "skills.group.llm",
     icon: Bot,
-    items: ["RAG Architecture", "Gemini API", "Voyage AI (embeddings)", "pgvector", "Supabase Vector", "LLM Integration"],
+    items: [
+      "RAG Architecture",
+      "Gemini API",
+      "Voyage AI (embeddings)",
+      "pgvector",
+      "Supabase Vector",
+      "LLM Integration",
+    ],
   },
   {
     titleKey: "skills.group.db",
@@ -29,7 +53,16 @@ export const SKILL_GROUPS = [
   {
     titleKey: "skills.group.devops",
     icon: Wrench,
-    items: ["Docker", "Git", "Jenkins", "GitLab CI/CD", "Apache POI", "Postman", "Python (BeautifulSoup)", "Vercel"],
+    items: [
+      "Docker",
+      "Git",
+      "Jenkins",
+      "GitLab CI/CD",
+      "Apache POI",
+      "Postman",
+      "Python (BeautifulSoup)",
+      "Vercel",
+    ],
   },
   {
     titleKey: "skills.group.methods",

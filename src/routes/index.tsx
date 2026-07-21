@@ -11,7 +11,6 @@ import { Education } from "@/components/sections/Education";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/layout/Footer";
 
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -29,13 +28,13 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Njara Rabearison — Senior Full-Stack Developer" },
       {
         property: "og:description",
-        content: "12+ years crafting robust, scalable platforms across fintech, e-commerce, healthcare and CRM.",
+        content:
+          "12+ years crafting robust, scalable platforms across fintech, e-commerce, healthcare and CRM.",
       },
     ],
   }),
   component: PortfolioRoot,
 });
-
 
 /* ---------------- Page ---------------- */
 

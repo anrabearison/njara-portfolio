@@ -11,7 +11,19 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     id: "ombiko",
-    tags: ["NestJS", "React", "TypeScript", "PostgreSQL", "Supabase", "pgvector", "Gemini API", "Voyage AI", "Docker", "JWT", "Cloudinary"],
+    tags: [
+      "NestJS",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Supabase",
+      "pgvector",
+      "Gemini API",
+      "Voyage AI",
+      "Docker",
+      "JWT",
+      "Cloudinary",
+    ],
     link: "https://ankijaniko.vercel.app",
     featured: true,
     order: 1,
@@ -33,7 +45,14 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "lean-contact",
-    tags: ["PHP", "Symfony", "React.js", "REST API Integration", "ETL", "VoIP/SMS/Email Automation"],
+    tags: [
+      "PHP",
+      "Symfony",
+      "React.js",
+      "REST API Integration",
+      "ETL",
+      "VoIP/SMS/Email Automation",
+    ],
     featured: true,
     order: 2,
   },

@@ -9,7 +9,7 @@ interface LangToggleProps {
 export const LangToggle = memo(function LangToggle({ className = "" }: LangToggleProps) {
   const { lang, setLang } = useI18n();
   const next: Lang = lang === "en" ? "fr" : "en";
-  
+
   return (
     <button
       type="button"

@@ -27,9 +27,7 @@ export function Experience() {
                 <Reveal
                   delay={60}
                   className={
-                    i % 2 === 0
-                      ? "md:col-start-1 md:pr-8 md:text-right"
-                      : "md:col-start-2 md:pl-8"
+                    i % 2 === 0 ? "md:col-start-1 md:pr-8 md:text-right" : "md:col-start-2 md:pl-8"
                   }
                 >
                   <div className="relative ml-12 md:ml-0">

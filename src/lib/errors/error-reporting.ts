@@ -20,10 +20,10 @@ declare global {
 
 export function reportError(error: unknown, context: Record<string, unknown> = {}) {
   if (typeof window === "undefined") return;
-  
+
   // Log to console in all cases
   console.error("Error reported:", error, context);
-  
+
   // Try to send to external error tracking service if available
   window.__errorReportingEvents?.captureException?.(
     error,
