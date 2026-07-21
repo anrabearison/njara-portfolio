@@ -5,7 +5,10 @@ import { Typewriter } from "../animations/Typewriter";
 export function Hero() {
   const { t, tArr } = useI18n();
   return (
-    <section id="home" className="relative flex min-h-screen items-center px-4 pt-28 pb-16 sm:px-6 sm:pt-32 sm:pb-20">
+    <section
+      id="home"
+      className="relative flex min-h-screen items-center px-4 pt-28 pb-16 sm:px-6 sm:pt-32 sm:pb-20"
+    >
       <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-12">
         <div className="space-y-6 sm:space-y-7">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#22c55e]/30 bg-[#22c55e]/10 px-3 py-1.5 text-xs font-medium text-[#4ade80]">
@@ -58,7 +61,10 @@ export function Hero() {
         <div className="relative">
           <div
             className="pointer-events-none absolute inset-0 -z-10 rounded-3xl opacity-60 blur-3xl sm:-inset-4"
-            style={{ background: "radial-gradient(circle at 50% 50%, rgba(0,212,255,0.35), transparent 60%)" }}
+            style={{
+              background:
+                "radial-gradient(circle at 50% 50%, rgba(0,212,255,0.35), transparent 60%)",
+            }}
           />
           <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0b1220]/80 shadow-2xl backdrop-blur">
             <div className="flex items-center gap-2 border-b border-white/5 px-4 py-3">
@@ -69,18 +75,32 @@ export function Hero() {
             </div>
             <pre className="overflow-x-auto p-4 text-[11px] leading-relaxed sm:p-5 sm:text-[13px]">
               <code className="font-mono">
-{`import { Module } from '@nestjs/common';
-import { CQRS, EventBus } from '@nestjs/cqrs';
+                {`import { Module } from '@nestjs/common';
+import { CqrsModule } from '@nestjs/cqrs';
 
-`}<span className="text-[#7C3AED]">{`@Module`}</span>{`({
-  imports: [`}<span className="text-[#00D4FF]">{`CQRS`}</span>{`, `}<span className="text-[#00D4FF]">{`EventBus`}</span>{`],
-  providers: [`}<span className="text-[#facc15]">{`OrderService`}</span>{`],
+`}
+                <span className="text-[#7C3AED]">{`@Module`}</span>
+                {`({
+  imports: [`}
+                <span className="text-[#00D4FF]">{`CqrsModule`}</span>
+                {`],
+  providers: [`}
+                <span className="text-[#facc15]">{`OrderService`}</span>
+                {`, `}
+                <span className="text-[#facc15]">{`CreateOrderHandler`}</span>
+                {`],
 })
-export class `}<span className="text-[#00D4FF]">{`OrderModule`}</span>{` {
-  `}<span className="text-muted-foreground">{`// clean architecture · TDD · DDD`}</span>{`
-  scale = `}<span className="text-[#4ade80]">{`'horizontal'`}</span>{`;
-  uptime = `}<span className="text-[#4ade80]">{`99.99`}</span>{`;
-}`}
+export class `}
+                <span className="text-[#00D4FF]">{`OrderModule`}</span>
+                {` {}
+
+`}
+                <span className="text-muted-foreground">{`// Clean Architecture · TDD · DDD`}</span>
+                {`
+`}
+                <span className="text-muted-foreground">{`// scale: horizontal · uptime: 99.99%`}</span>
+                {`
+`}
               </code>
             </pre>
           </div>

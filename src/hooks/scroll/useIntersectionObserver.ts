@@ -22,7 +22,7 @@ export function useIntersectionObserver(options: UseIntersectionObserverOptions 
           if (triggerOnce) io.disconnect();
         }
       },
-      { threshold, rootMargin }
+      { threshold, rootMargin },
     );
 
     io.observe(el);

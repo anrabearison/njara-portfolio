@@ -133,7 +133,8 @@ const EN: Dict = {
   // Contact
   "contact.eyebrow": "06 / Contact",
   "contact.title": "Let's Work Together",
-  "contact.subtitle": "Open to new opportunities: freelance missions, consulting, or full-time (CDI) roles — web & app development, AI/RAG integrations, machine learning, data scraping/automation. Remote or hybrid, based on your needs.",
+  "contact.subtitle":
+    "Open to new opportunities: freelance missions, consulting, or full-time (CDI) roles — web & app development, AI/RAG integrations, machine learning, data scraping/automation. Remote or hybrid, based on your needs.",
   "contact.email": "Email",
   "contact.phone": "Phone",
   "contact.location": "Location",
@@ -153,7 +154,8 @@ const EN: Dict = {
   "contact.form.placeholder": "Tell me about your project...",
   "contact.form.send": "Send Message",
   "contact.form.sending": "Sending...",
-  "contact.form.sent": "Your message has been sent successfully. I will get back to you as soon as possible.",
+  "contact.form.sent":
+    "Your message has been sent successfully. I will get back to you as soon as possible.",
   "contact.form.error": "Failed to send. Please try again.",
   "contact.subject": "Contact from Portfolio",
 
@@ -241,7 +243,8 @@ const FR: Dict = {
   "projects.tradepilot.metrics":
     "Développement et intégration de 12 widgets personnalisés sur WordPress, interagissant avec le backend Symfony/MariaDB via API pour la remontée de données commerciales en temps réel.",
   "projects.job-market-scraping.category": "Web Scraping & Automatisation",
-  "projects.job-market-scraping.title": "Moteur de Scraping du Marché de l'Emploi — Ezway (Outil Interne)",
+  "projects.job-market-scraping.title":
+    "Moteur de Scraping du Marché de l'Emploi — Ezway (Outil Interne)",
   "projects.job-market-scraping.description":
     "Moteur d'automatisation et de web scraping modulaire construit pour l'usage interne d'Ezway, permettant la collecte intelligente et structurée en temps réel d'offres d'emploi sur plusieurs job boards.",
   "projects.job-market-scraping.metrics":
@@ -290,7 +293,8 @@ const FR: Dict = {
   // Contact
   "contact.eyebrow": "06 / Contact",
   "contact.title": "Travaillons ensemble",
-  "contact.subtitle": "Ouvert aux nouvelles opportunités : missions freelance, consulting ou CDI — développement web & app, intégrations IA/RAG, machine learning, data scraping/automatisation. Remote ou hybrid, selon vos besoins.",
+  "contact.subtitle":
+    "Ouvert aux nouvelles opportunités : missions freelance, consulting ou CDI — développement web & app, intégrations IA/RAG, machine learning, data scraping/automatisation. Remote ou hybrid, selon vos besoins.",
   "contact.email": "Email",
   "contact.phone": "Téléphone",
   "contact.location": "Localisation",
@@ -310,12 +314,14 @@ const FR: Dict = {
   "contact.form.placeholder": "Parlez-moi de votre projet...",
   "contact.form.send": "Envoyer le message",
   "contact.form.sending": "Envoi en cours...",
-  "contact.form.sent": "Votre message a bien été envoyé. Je vous répondrai dans les plus brefs délais.",
+  "contact.form.sent":
+    "Votre message a bien été envoyé. Je vous répondrai dans les plus brefs délais.",
   "contact.form.error": "Échec de l'envoi. Veuillez réessayer.",
   "contact.subject": "Contact depuis Portfolio",
 
   // Footer
-  "footer.text": "© 2026 Njara Rabearison · Développeur Full-Stack Senior · Antananarivo, Madagascar",
+  "footer.text":
+    "© 2026 Njara Rabearison · Développeur Full-Stack Senior · Antananarivo, Madagascar",
 };
 
 // Experience entries are translated separately (arrays of bullets)
@@ -340,9 +346,9 @@ export const EXPERIENCE_I18N: Record<Lang, ExpEntry[]> = {
       company: "Ezway Technology",
       period: "Jul 2025 – Dec 2025",
       bullets: [
-        "Trade-Pilot project: custom widget design and hybrid WordPress/Symfony/MariaDB architecture",
-        "Smart web scraping: BeautifulSoup crawlers extracting 10k+ job postings/day in real time",
-        "React.js & automation UIs: reactive integrations with improved loading fluidity",
+        "Trade-Pilot (for eexpand): development and integration of 12 custom widgets on WordPress for Trade-Pilot, eexpand's AI-powered platform for international business intelligence, with construction of the technical bridge between WordPress, Symfony, and MariaDB ensuring real-time business data retrieval via API.",
+        "Job market scraping (Ezway internal tool): modular automation and web scraping engine for intelligent, structured real-time collection of job postings across multiple job boards, with direct synchronization to the Flask/MariaDB backend.",
+        "React.js & automation UIs: reactive integrations with improved loading fluidity.",
       ],
     },
     {
@@ -350,10 +356,8 @@ export const EXPERIENCE_I18N: Record<Lang, ExpEntry[]> = {
       company: "Webhelp Madagascar — Solvencia",
       period: "Dec 2019 – Jul 2025",
       bullets: [
-        "ETL pipelines: standardization of 1M+ customer records per day into a unified schema",
-        "High-availability systems: VoIP/SMS connectivity ensuring instant routing of large flows",
-        "Automation engines: callback algorithms improving campaign efficiency by 25%",
-        "Major software evolutions: migration from monolithic architectures to PHP (Symfony) / React.js",
+        "Lean-Contact: designed and developed the data integration system (import from files or databases) and automated multichannel campaign launches (calls, SMS, email, mail) for debt collection and satisfaction surveys; full internalization of the pipeline (data → communication → flow), previously dependent on paid external platforms, via REST API orchestration across multiple providers.",
+        "Major software evolutions: migration from monolithic architectures to PHP (Symfony) / React.js.",
       ],
     },
     {
@@ -361,10 +365,10 @@ export const EXPERIENCE_I18N: Record<Lang, ExpEntry[]> = {
       company: "Bocasay Madagascar",
       period: "Nov 2017 – Dec 2019",
       bullets: [
-        "Winlassie project: AngularJS to Angular 2+ migration (hybridization, 40% loading performance gain)",
-        "Illicado project: gift card distribution module handling 100k+ high-load transactions per day",
-        "Robust Node.js REST APIs and secure persistence for gift card traceability",
-        "Strict unit testing and CI/CD continuous integration pipelines",
+        "Winlassie (for a Bocasay client): fullstack contribution to a large-scale occupational risk management application; led approximately 70% of the frontend migration from AngularJS to Angular 2+, with hybrid coexistence in production via ngUpgrade to ensure service continuity.",
+        "Backend development: view management, PDF report generation, and a Symfony bundle for client data transformation/mapping ensuring compliance with Winlassie's database schema.",
+        "Illicado (for a Bocasay client): full-stack reinforcement within a team on this large-scale gift card distribution platform, working on targeted tickets covering transactional APIs and the frontend presentation layer.",
+        "Strict unit testing and CI/CD continuous integration pipelines.",
       ],
     },
     {
@@ -382,9 +386,7 @@ export const EXPERIENCE_I18N: Record<Lang, ExpEntry[]> = {
       company: "Carrefour Madagascar",
       period: "Sep 2014 – Mar 2015",
       bullets: [
-        "Financial reporting: automatic export engine (Java/Spring MVC/Apache POI) dynamically generating .xlsx/.csv reports",
-        "Operational gain: 100% replacement of manual data entry and verification with a direct audit flow to accountants",
-        "Database integration: efficient modeling of transactional queries on IBM DB2",
+        "Automated financial reporting (Jumbo Score): built an automatic export engine (Java/Spring MVC/Apache POI) dynamically generating .xlsx/.csv financial reports for accounting teams, replacing 100% of manual data entry and verification workflows with a direct audit flow to accountants, based on efficient transactional modeling on IBM DB2.",
       ],
     },
     {
@@ -416,9 +418,9 @@ export const EXPERIENCE_I18N: Record<Lang, ExpEntry[]> = {
       company: "Ezway Technology",
       period: "Juil 2025 – Déc 2025",
       bullets: [
-        "Projet Trade-Pilot : Conception de widgets sur mesure et architecture hybride WordPress/Symfony/MariaDB",
-        "Web Scraping intelligent : Crawleurs BeautifulSoup extrayant +10k offres/jour en temps réel",
-        "React.js & Interfaces d'automatisation : Intégrations réactives avec fluidité de chargement accrue",
+        "Trade-Pilot (pour eexpand) : développement et intégration de 12 widgets personnalisés sur WordPress pour Trade-Pilot, la plateforme propulsée par l'IA d'eexpand dédiée à l'intelligence commerciale internationale, avec construction du pont technique entre WordPress, Symfony et MariaDB assurant la remontée de données commerciales en temps réel via API.",
+        "Scraping du marché de l'emploi (outil interne Ezway) : moteur d'automatisation et de web scraping modulaire pour la collecte intelligente et structurée d'offres d'emploi en temps réel sur plusieurs job boards, avec synchronisation directe vers le backend Flask/MariaDB.",
+        "React.js & interfaces d'automatisation : intégrations réactives avec une fluidité de chargement améliorée.",
       ],
     },
     {
@@ -426,10 +428,8 @@ export const EXPERIENCE_I18N: Record<Lang, ExpEntry[]> = {
       company: "Webhelp Madagascar — Solvencia",
       period: "Déc 2019 – Juil 2025",
       bullets: [
-        "Pipelines ETL : Standardisation de 1M+ données clients par jour vers un schéma unique",
-        "Systèmes à haute disponibilité : Connectivité VoIP/SMS assurant le routage instantané de flux volumineux",
-        "Moteurs d'automatisation : Algorithmes de relance ayant amélioré l'efficacité des campagnes de 25%",
-        "Évolutions logicielles majeures : Migration d'architectures monolithiques vers PHP (Symfony) / React.js",
+        "Lean-Contact : conception et développement du système d'intégration de données (import depuis fichiers ou bases de données) et automatisation des campagnes multicanal (appels, SMS, email, courrier) pour le recouvrement de créances et les enquêtes de satisfaction ; internalisation complète du pipeline (données → communication → flux), auparavant dépendant de plateformes payantes externes, via une orchestration API REST entre plusieurs fournisseurs.",
+        "Évolutions logicielles majeures : migration d'architectures monolithiques vers PHP (Symfony) / React.js.",
       ],
     },
     {
@@ -437,10 +437,10 @@ export const EXPERIENCE_I18N: Record<Lang, ExpEntry[]> = {
       company: "Bocasay Madagascar",
       period: "Nov 2017 – Déc 2019",
       bullets: [
-        "Projet Winlassie : Migration AngularJS vers Angular 2+ (hybridation, gain de performance de 40% sur le chargement)",
-        "Projet Illicado : Module de distribution de cartes cadeaux supportant 100k+ transactions par jour à forte charge",
-        "API REST robustes en Node.js et persistance sécurisée pour la traçabilité des titres-cadeaux",
-        "Mise en place de tests unitaires rigoureux et de pipelines d'intégration continue CI/CD",
+        "Winlassie (pour un client de Bocasay) : contribution fullstack à une application de gestion des risques professionnels à grande échelle ; pilotage d'environ 70% de la migration frontend d'AngularJS vers Angular 2+, avec coexistence hybride en production via ngUpgrade pour garantir la continuité de service.",
+        "Développement backend : gestion des vues, génération de rapports PDF, et un bundle Symfony de transformation/mapping des données clients garantissant la conformité au schéma de base de données de Winlassie.",
+        "Illicado (pour un client de Bocasay) : renfort fullstack au sein d'une équipe sur cette plateforme de distribution de cartes cadeaux à grande échelle, intervenant sur des tickets ciblés couvrant les APIs transactionnelles et la couche de présentation (frontend).",
+        "Tests unitaires rigoureux et pipelines d'intégration continue (CI/CD).",
       ],
     },
     {
@@ -458,9 +458,7 @@ export const EXPERIENCE_I18N: Record<Lang, ExpEntry[]> = {
       company: "Carrefour Madagascar",
       period: "Sept 2014 – Mars 2015",
       bullets: [
-        "Reporting Financier : Moteur d'export automatique (Java/Spring MVC/Apache POI) générant dynamiquement des rapports .xlsx/.csv",
-        "Gain opérationnel : Remplacement de 100% des saisies et vérifications manuelles par un flux d'audit direct aux comptables",
-        "Intégration base de données : Modélisation performante des requêtes transactionnelles sur IBM DB2",
+        "Reporting financier automatisé (Jumbo Score) : construction d'un moteur d'export automatique (Java/Spring MVC/Apache POI) générant dynamiquement des rapports financiers .xlsx/.csv pour les équipes comptables, remplaçant à 100% les workflows de saisie et vérification manuelles par un flux d'audit direct aux comptables, basé sur une modélisation transactionnelle performante sur IBM DB2.",
       ],
     },
     {
@@ -495,7 +493,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       const saved = localStorage.getItem("lang") as Lang | null;
       if (saved === "en" || saved === "fr") {
         setLangState(saved);
-      } else if (typeof navigator !== "undefined" && navigator.language?.toLowerCase().startsWith("fr")) {
+      } else if (
+        typeof navigator !== "undefined" &&
+        navigator.language?.toLowerCase().startsWith("fr")
+      ) {
         setLangState("fr");
       }
     } catch {

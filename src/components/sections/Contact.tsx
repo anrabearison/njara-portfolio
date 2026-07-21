@@ -186,17 +186,15 @@ export function Contact() {
                 <label className="mb-2 block text-xs uppercase tracking-wider text-muted-foreground">
                   {t("contact.form.subject")}
                 </label>
-                <Select
-                  value={selectedSubject}
-                  onValueChange={setSelectedSubject}
-                  required
-                >
+                <Select value={selectedSubject} onValueChange={setSelectedSubject} required>
                   <SelectTrigger className="w-full rounded-xl border border-white/10 bg-[#0D1117] px-4 py-3 text-sm outline-none transition-colors focus:border-[#00D4FF]/60 focus:shadow-[0_0_0_3px_rgba(0,212,255,0.15)] text-foreground">
                     <SelectValue placeholder={t("contact.form.subject.placeholder")} />
                   </SelectTrigger>
                   <SelectContent className="bg-[#0D1117] border border-white/10 text-foreground">
                     <SelectItem value="freelance">{t("contact.form.subject.freelance")}</SelectItem>
-                    <SelectItem value="consulting">{t("contact.form.subject.consulting")}</SelectItem>
+                    <SelectItem value="consulting">
+                      {t("contact.form.subject.consulting")}
+                    </SelectItem>
                     <SelectItem value="fulltime">{t("contact.form.subject.fulltime")}</SelectItem>
                     <SelectItem value="webapp">{t("contact.form.subject.webapp")}</SelectItem>
                     <SelectItem value="ai">{t("contact.form.subject.ai")}</SelectItem>

@@ -4,7 +4,7 @@ function Particles() {
   const [particles, setParticles] = useState<
     { left: number; top: number; size: number; delay: number; duration: number; cyan: boolean }[]
   >([]);
-  
+
   useEffect(() => {
     setParticles(
       Array.from({ length: 28 }).map(() => ({
@@ -38,9 +38,7 @@ function Particles() {
             width: p.size,
             height: p.size,
             background: p.cyan ? "#00D4FF" : "#7C3AED",
-            boxShadow: p.cyan
-              ? "0 0 10px rgba(0,212,255,0.8)"
-              : "0 0 10px rgba(124,58,237,0.8)",
+            boxShadow: p.cyan ? "0 0 10px rgba(0,212,255,0.8)" : "0 0 10px rgba(124,58,237,0.8)",
             animationDelay: `${p.delay}s`,
             animationDuration: `${p.duration}s`,
           }}

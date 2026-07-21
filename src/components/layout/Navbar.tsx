@@ -94,7 +94,9 @@ export function Navbar() {
                     href={n.href}
                     onClick={closeMenu}
                     className={`block rounded-lg px-3 py-3 text-sm font-medium transition-colors ${
-                      isActive ? "text-[#00D4FF] bg-white/5" : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                      isActive
+                        ? "text-[#00D4FF] bg-white/5"
+                        : "text-muted-foreground hover:text-foreground hover:bg-white/5"
                     }`}
                   >
                     {t(n.key)}

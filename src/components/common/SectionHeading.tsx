@@ -6,7 +6,11 @@ interface SectionHeadingProps {
   subtitle?: string;
 }
 
-export const SectionHeading = memo(function SectionHeading({ eyebrow, title, subtitle }: SectionHeadingProps) {
+export const SectionHeading = memo(function SectionHeading({
+  eyebrow,
+  title,
+  subtitle,
+}: SectionHeadingProps) {
   return (
     <div className="max-w-2xl">
       <div className="font-mono text-xs uppercase tracking-[0.2em] text-[#00D4FF]">{eyebrow}</div>
