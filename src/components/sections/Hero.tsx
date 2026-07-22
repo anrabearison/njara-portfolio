@@ -47,8 +47,8 @@ export function Hero() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href="/cv-njara-rabearison.md"
-              download="CV_Njara_Rabearison.md"
+              href="/cv-njara-rabearison.pdf"
+              download="CV_Njara_Rabearison.pdf"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-[#00D4FF]/50 px-5 py-3 text-sm font-semibold text-[#00D4FF] transition-all hover:bg-[#00D4FF]/10 sm:px-6"
             >
               <Download className="h-4 w-4" />
