@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Njara Rabearison — CV</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --paper:#FAF9F6;
+    --ink:#1B1E23;
+    --ink-soft:#4A4F58;
+    --rule:#D9D6CE;
+    --steel:#2B4C6F;
+    --steel-soft:#7C93A8;
+    --amber:#B4762A;
+    --tag-bg:#EFEDE6;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:#E7E4DC; color:var(--ink);
+    font-family:'Inter',sans-serif; font-size:14px; line-height:1.55;
+    display:flex; justify-content:center; padding:36px 16px;
+  }
+  .page{
+    background:var(--paper); width:100%; max-width:860px;
+    padding:56px 64px 64px; box-shadow:0 8px 30px rgba(0,0,0,.12);
+  }
+
+  /* ---- Header ---- */
+  header{ display:flex; justify-content:space-between; align-items:flex-end;
+    border-bottom:2px solid var(--ink); padding-bottom:18px; margin-bottom:6px;}
+  .name{ font-family:'Source Serif 4',serif; font-weight:700; font-size:34px; letter-spacing:.2px;}
+  .role{ font-family:'JetBrains Mono',monospace; font-size:12.5px; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--steel); margin-top:6px;}
+  .contact{ text-align:right; font-family:'JetBrains Mono',monospace; font-size:11.5px;
+    color:var(--ink-soft); line-height:1.9;}
+  .contact a{ color:var(--ink-soft); text-decoration:none; border-bottom:1px dotted var(--steel-soft);}
+  .contact a:hover{ color:var(--steel);}
+
+  .langs{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--steel-soft);
+    margin:10px 0 28px; letter-spacing:.03em;}
+
+  /* ---- Section ---- */
+  .eyebrow{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--amber); margin:30px 0 12px; display:flex; align-items:center; gap:10px;}
+  .eyebrow::after{ content:""; flex:1; height:1px; background:var(--rule);}
+  .eyebrow .n{ color:var(--steel-soft);}
+
+  .summary{ font-family:'Source Serif 4',serif; font-size:16.5px; line-height:1.65; color:#2A2D33;}
+  .summary strong{ color:var(--steel); font-weight:600;}
+
+  /* ---- Skills grid ---- */
+  .skills{ display:grid; grid-template-columns:150px 1fr; row-gap:9px; column-gap:14px; font-size:13px;}
+  .skills dt{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--steel);
+    text-transform:uppercase; letter-spacing:.04em; padding-top:2px;}
+  .skills dd{ margin:0; color:var(--ink-soft);}
+  .tag{ display:inline-block; background:var(--tag-bg); border:1px solid var(--rule); border-radius:3px;
+    padding:2px 7px; margin:2px 4px 2px 0; font-size:12px; color:var(--ink);}
+
+  /* ---- Experience: commit-log timeline ---- */
+  .timeline{ position:relative; margin-left:6px; padding-left:26px; border-left:2px solid var(--rule);}
+  .job{ position:relative; margin-bottom:26px;}
+  .job::before{ content:""; position:absolute; left:-33px; top:5px; width:10px; height:10px;
+    border-radius:50%; background:var(--paper); border:2px solid var(--steel);}
+  .job-head{ display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:4px 12px;}
+  .job-title{ font-weight:600; font-size:15px; color:var(--ink);}
+  .job-org{ color:var(--steel); font-weight:500;}
+  .job-date{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--steel-soft); white-space:nowrap;}
+  .job ul{ margin:8px 0 0; padding-left:18px;}
+  .job li{ margin:4px 0; color:#2A2D33;}
+  .job li b, .job li strong{ color:var(--steel);}
+  .proj-tag{ font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--amber); margin-right:6px;}
+  .metric{ color:var(--amber); font-weight:600;}
+
+  /* ---- Education / Certifications ---- */
+  .edu-item{ margin-bottom:12px;}
+  .edu-title{ font-weight:600; font-size:14px;}
+  .edu-sub{ color:var(--ink-soft); font-size:12.5px;}
+  .cert-item{ margin-bottom:8px; font-size:13px;}
+  .cert-item a{ color:var(--steel); text-decoration:none; font-weight:500; border-bottom:1px dotted var(--steel-soft);}
+  .cert-org{ color:var(--ink-soft); font-size:12px;}
+
+  footer{ margin-top:36px; padding-top:14px; border-top:1px solid var(--rule);
+    font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--steel-soft); text-align:center;}
+
+  @media print{
+    body{ background:#fff; padding:0; font-size:11px; line-height:1.3;}
+    .page{ box-shadow:none; padding:16px 30px; max-width:100%;}
+    header{ padding-bottom:8px; margin-bottom:2px;}
+    .name{ font-size:24px;}
+    .role{ font-size:10.5px; margin-top:2px;}
+    .contact{ font-size:9.5px; line-height:1.5;}
+    .langs{ margin:4px 0 10px; font-size:9.5px;}
+    .eyebrow{ margin:10px 0 6px; font-size:9.5px;}
+    .summary{ font-size:12px; line-height:1.35;}
+    .skills{ row-gap:4px; font-size:11px;}
+    .tag{ padding:1px 5px; margin:1px 2px 1px 0; font-size:10px;}
+    .timeline{ padding-left:20px;}
+    .job{ margin-bottom:8px; page-break-inside:avoid; break-inside:avoid;}
+    .job-title{ font-size:12.5px;}
+    .job-date{ font-size:9.5px;}
+    .job ul{ margin:3px 0 0; padding-left:15px;}
+    .job li{ margin:1px 0;}
+    .proj-tag{ font-size:9px;}
+    .timeline{ border-left:none; padding-left:14px;}
+    .job::before{ left:-21px; z-index:1; top:4px;}
+    .job::after{ content:""; position:absolute; left:-16px; top:14px; bottom:-8px;
+      width:0; border-left:2px solid var(--rule); z-index:0;}
+    .job:last-child::after{ display:none;}
+    .edu-item{ margin-bottom:4px; page-break-inside:avoid; break-inside:avoid;}
+    .cert-item{ margin-bottom:3px; page-break-inside:avoid; break-inside:avoid;}
+    footer{ margin-top:16px; padding-top:8px; font-size:9px;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div>
+      <div class="name">Njara Rabearison</div>
+      <div class="role">Développeur Full-Stack Senior</div>
+    </div>
+    <div class="contact">
+      Antananarivo, Madagascar<br>
+      +261 34 74 370 44<br>
+      <a href="mailto:rabearisonnjara@gmail.com">rabearisonnjara@gmail.com</a><br>
+      <a href="https://njara.vercel.app">njara.vercel.app</a> ·
+      <a href="https://github.com/anrabearison">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/rabearison-njara-12114a90/">LinkedIn</a>
+    </div>
+  </header>
+  <div class="langs">FR — courant &nbsp;·&nbsp; EN — technique &nbsp;·&nbsp; MG — natif</div>
+
+  <div class="eyebrow">Profil <span class="n">// 12+ ans</span></div>
+  <p class="summary">
+    Développeur <strong>Full-Stack Senior</strong> avec plus de 12 ans d'expérience, spécialisé en architecture
+    <strong>microservices</strong> et <strong>API REST</strong> performantes, sur l'écosystème Node.js/TypeScript
+    (NestJS), Java (Spring Boot / Spring MVC), PHP (Symfony), Angular et React.js. Développe aussi des solutions
+    <strong>IA</strong> (RAG, machine learning) et des outils de scraping. Expérience confirmée sur des plateformes
+    critiques multi-secteurs : gestion des risques, e-commerce, CRM multicanal, données cliniques et agritech.
+  </p>
+
+  <div class="eyebrow">Compétences techniques</div>
+  <dl class="skills">
+    <dt>Backend</dt>
+    <dd><span class="tag">NestJS</span><span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">Java / Spring Boot</span><span class="tag">Spring MVC</span><span class="tag">PHP / Symfony</span><span class="tag">API REST</span><span class="tag">Microservices</span><span class="tag">RabbitMQ</span></dd>
+    <dt>Frontend</dt>
+    <dd><span class="tag">React.js</span><span class="tag">Angular</span><span class="tag">AngularJS</span><span class="tag">JavaScript ES6+</span><span class="tag">HTML5</span><span class="tag">CSS3</span></dd>
+    <dt>Data, ETL &amp; Scraping</dt>
+    <dd><span class="tag">Python</span><span class="tag">BeautifulSoup</span><span class="tag">Flask</span><span class="tag">ETL / Data Mapping</span><span class="tag">SAS</span></dd>
+    <dt>Bases de données</dt>
+    <dd><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">MySQL</span><span class="tag">MariaDB</span><span class="tag">Oracle SQL</span><span class="tag">IBM DB2</span></dd>
+    <dt>DevOps &amp; Outils</dt>
+    <dd><span class="tag">Docker</span><span class="tag">Git</span><span class="tag">Jenkins</span><span class="tag">GitLab CI/CD</span><span class="tag">Apache POI</span><span class="tag">Postman</span><span class="tag">Vercel</span></dd>
+    <dt>Méthodologies</dt>
+    <dd><span class="tag">Agile Scrum</span><span class="tag">TDD</span><span class="tag">Clean Architecture</span><span class="tag">DDD</span><span class="tag">ETL / Data Mapping</span><span class="tag">UML</span></dd>
+    <dt>IA &amp; Productivité</dt>
+    <dd><span class="tag">Cursor</span><span class="tag">GitHub Copilot</span><span class="tag">Antigravity</span><span class="tag">Windsurf</span></dd>
+    <dt>IA &amp; LLM</dt>
+    <dd><span class="tag">RAG Architecture</span><span class="tag">Gemini API</span><span class="tag">Voyage AI (embeddings)</span><span class="tag">pgvector</span><span class="tag">Supabase Vector</span><span class="tag">LLM Integration</span></dd>
+  </dl>
+
+  <div class="eyebrow">Expérience professionnelle</div>
+  <div class="timeline">
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Développeur Full-Stack Senior Indépendant</span> — <span class="job-org">Freelance</span></div>
+        <div class="job-date">01/2026 → présent</div>
+      </div>
+      <ul>
+        <li><span class="proj-tag">OMBIKO</span>conception et développement d'une application full-stack de gestion de cheptel bovin intégrant un assistant santé animale basé sur une architecture RAG (NestJS, React, PostgreSQL, Supabase pgvector, Gemini API, Voyage AI)</li>
+        <li>Pipeline RAG intégrant une base de connaissances vétérinaires (<span class="metric">12 maladies, 71 sections</span>) pour un diagnostic structuré propre à Madagascar</li>
+        <li>Génération de documents vétérinaires réglementaires et administratifs au format PDF</li>
+        <li>Optimisation du cycle de développement via outils IA (Cursor, GitHub Copilot, Windsurf)</li>
+        <li>Veille technologique active sur les innovations IA et les architectures modernes</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Développeur Full-Stack Senior</span> — <span class="job-org">Ezway Technology</span></div>
+        <div class="job-date">07/2025 → 12/2025</div>
+      </div>
+      <ul>
+        <li><span class="proj-tag">TRADE-PILOT</span>développement de widgets personnalisés et intégration backend (WordPress, Symfony, MariaDB) pour la plateforme d'intelligence commerciale d'eexpand</li>
+        <li><span class="proj-tag">JOB SCRAPER</span>moteur de web scraping (Python / BeautifulSoup) collectant et structurant des offres d'emploi en temps réel, synchronisé avec un backend Flask/MariaDB</li>
+        <li>Interfaces React.js d'automatisation : intégrations réactives avec fluidité de chargement améliorée</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Ingénieur Logiciel Full-Stack Senior</span> — <span class="job-org">Webhelp Madagascar — Solvencia</span></div>
+        <div class="job-date">12/2019 → 07/2025</div>
+      </div>
+      <ul>
+        <li><span class="proj-tag">LEAN-CONTACT</span>conception du système d'intégration de données de la plateforme CRM multicanal (appels, SMS, e-mails, courrier), avec internalisation complète du pipeline (intégration → communication → gestion des flux), auparavant dépendant de plateformes payantes externes, via orchestration d'API REST multi-fournisseurs</li>
+        <li>Pipelines ETL : standardisation des enregistrements clients vers un schéma unifié</li>
+        <li>Systèmes haute disponibilité : connectivité VoIP/SMS assurant le routage instantané de flux importants</li>
+        <li>Moteurs d'automatisation : algorithmes de relance améliorant l'efficacité des campagnes</li>
+        <li>Migration d'architectures monolithiques vers PHP (Symfony) / React.js</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Développeur Full-Stack</span> — <span class="job-org">Bocasay Madagascar</span></div>
+        <div class="job-date">11/2017 → 12/2019</div>
+      </div>
+      <ul>
+        <li><span class="proj-tag">WINLASSIE</span>migration stratégique d'environ <span class="metric">70 %</span> du frontend AngularJS → Angular 2+, coexistence hybride en production via ngUpgrade ; côté backend : gestion des vues, génération de rapports PDF et bundle Symfony de transformation/mapping des données client garantissant la conformité au schéma de la base Winlassie</li>
+        <li><span class="proj-tag">ILLICADO</span>renfort fullstack sur une plateforme de distribution de cartes cadeaux à grande échelle (API transactionnelles et frontend) — contexte critique à fort volume de transactions financières</li>
+        <li>Pipelines CI/CD (Jenkins), tests unitaires et revues de code</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Data Manager</span> — <span class="job-org">QData Madagascar</span></div>
+        <div class="job-date">03/2015 → 11/2017</div>
+      </div>
+      <ul>
+        <li><span class="proj-tag">QUANTAVIEW</span>eCRF (electronic Case Report Form) pour essais cliniques internationaux</li>
+        <li>Scripts PHP/MySQL de validation et nettoyage de données pour les études cliniques</li>
+        <li>Analyse de données : préparation de jeux de données via scripts SAS et modèles statistiques</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Ingénieur Développement Web</span> — <span class="job-org">Carrefour Madagascar</span></div>
+        <div class="job-date">09/2014 → 03/2015</div>
+      </div>
+      <ul>
+        <li>Outil de reporting financier automatisé (Java, Spring MVC, Apache POI) générant dynamiquement des rapports .xlsx/.csv</li>
+        <li>Remplacement à <span class="metric">100 %</span> de la saisie et de la vérification manuelles par un flux d'audit direct vers les comptables</li>
+        <li>Intégration base de données : modélisation efficace des requêtes transactionnelles sur IBM DB2</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Développeur Java/JEE — Stage</span> — <span class="job-org">Trésor Public Malagasy</span></div>
+        <div class="job-date">10/2013 → 08/2014</div>
+      </div>
+      <ul>
+        <li>Sécurité financière : détection automatique des retraits de fonds non autorisés en dehors des procédures de l'État</li>
+        <li>Intégrité : algorithmes de vérification identifiant des écarts de solde significatifs sur des volumes de transactions massifs</li>
+        <li>Réconciliation : système de cohérence globale de base de données entre le serveur central et les postes régionaux</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="eyebrow eyebrow-formation">Formation</div>
+  <div class="edu-item">
+    <div class="edu-title">Master Professionnel en Informatique</div>
+    <div class="edu-sub">ENI Fianarantsoa — Génie logiciel &amp; bases de données</div>
+  </div>
+  <div class="edu-item">
+    <div class="edu-title">Maîtrise en Mathématiques</div>
+    <div class="edu-sub">Université d'Antananarivo — Probabilités &amp; statistiques</div>
+  </div>
+
+  <div class="eyebrow">Certifications <span class="n">// 2024</span></div>
+  <div class="cert-item">
+    <a href="https://www.freecodecamp.org/certification/fcc9acfeb56-7d67-44b4-99b1-97956567058a/back-end-development-and-apis">Back End Development and APIs</a>
+    <span class="cert-org"> — freeCodeCamp</span>
+  </div>
+  <div class="cert-item">
+    <a href="https://www.linkedin.com/learning/certificates/3439a96a10c84d85848576c4a72e0a16c1e640af6aca7e73a4f8a2b41e674440">Devenir développeur React</a>
+    <span class="cert-org"> — LinkedIn Learning</span>
+  </div>
+
+  <footer>njara.vercel.app — dernière mise à jour 2026</footer>
+
+</div>
+</body>
+</html>
